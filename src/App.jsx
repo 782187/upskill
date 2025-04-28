@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import ScrollToTop from './Component/ScrollToTop';
 import Navbar from './Component/Navbar';
 import Footer from './Component/Footer';
@@ -18,6 +20,7 @@ import SoftwareTesting from './Component/Pages/Courses/Testing'
 import WebDevelopment from './Component/Pages/Courses/WebDevelopment'
 
 function App() {
+  AOS.init();
   return (
     <>
       <Router>
