@@ -1,0 +1,29 @@
+.course-banner {
+  background:#8fd8ee;
+}
+
+.text-orange {
+  color: blue;
+}
+
+.text-blue {
+  color: #0d6efd;
+}
+
+.animate-slide {
+  animation: slideInUp 0.8s ease-in-out;
+}
+
+.animate-fade {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

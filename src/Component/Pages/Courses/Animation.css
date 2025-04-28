@@ -1,0 +1,667 @@
+.dynamic-header {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the container content */
+}
+
+.dynamic-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-background {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+}
+
+.dynamic-header .container {
+  position: relative; /* Bring container content above the video and overlay */
+  z-index: 10;
+}
+
+/* Adjust banner text container for better positioning */
+.dynamic-header .banner-text-container {
+  /* You might want to adjust text alignment or padding here */
+text-align: center;
+padding: 10px;
+}
+
+.dynamic-header .banner-image-container {
+  /* Adjust image container if needed */
+max-width: 100%;
+}
+
+/* Responsive adjustments for video background */
+@media (max-width: 768px) {
+  .dynamic-header {
+    min-height: 300px; /* Adjust for smaller screens */
+  }
+  .dynamic-header .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .dynamic-header .text-start,
+  .dynamic-header .banner-image-container {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .dynamic-header .banner-image-container img {
+    max-height: 100px;
+    width: auto;
+  }
+}
+/* Base Styles */
+.itv-primary-color {
+  color: #2687ee; /* Example primary color */
+}
+
+.itv-secondary-color {
+  color: #ff6b00; /* Example secondary color */
+}
+
+#id1{
+background-color: #212529;
+}
+#id2{
+color: #e0e0e0;}
+#id3{
+color: #e0e0e0;}
+#id4{
+background-color: #212529;
+color: #e0e0e0;}
+#id5{
+color: gold;}
+#id8{
+background-color: #212529;}
+
+.itv-section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.itv-paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.itv-card {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.itv-list-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.itv-list-item:last-child {
+  border-bottom: none;
+}
+
+.itv-highlight-text {
+  color: #28a745; /* Example highlight color */
+  font-weight: bold;
+}
+
+/* Banner Styles */
+.itv-banner {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.banner-text-container {
+  margin-bottom: 2rem;
+}
+
+.banner-image-container {
+  text-align: center;
+}
+
+.floating-image {
+  animation: floatImage 2s ease-in-out infinite alternate;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.itv-primary-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.itv-primary-button:hover {
+  background-color: #0056b3;
+}
+
+/* Module Titles in Curriculum */
+.itv-module-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Badges for Technologies */
+.itv-badge-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.itv-badge-info {
+  background-color: #0b8b9e;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.itv-badge-success {
+  background-color: #28a745;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.itv-badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.itv-badge-secondary {
+  background-color: #6c757d;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.itv-badge-dark {
+  background-color: #343a40;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Footer Styles */
+.itv-footer {
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes floatImage {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-15px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(75px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply Animations with Delays */
+.itv-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.itv-fade-in-left {
+  animation: fadeInLeft 0.5s ease-out forwards;
+}
+
+.itv-fade-in-right {
+  animation: fadeInRight 0.3s ease-out forwards;
+}
+
+.itv-fade-in-up {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+.itv-fade-in-down {
+  animation: fadeInDown 0.3s ease-out forwards;
+}
+
+.itv-slide-in-left {
+  animation: slideInLeft 0.3s ease-out forwards;
+}
+
+.itv-slide-in-right {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.itv-zoom-in {
+  animation: zoomIn 0.5s ease-out forwards;
+}
+
+/* Animation Delays */
+.itv-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.itv-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.itv-delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* Responsive Adjustments (Example - you might need more) */
+@media (max-width: 768px) {
+  .banner-text-container {
+    text-align: center;
+  }
+  .banner-image-container {
+    margin-top: 2rem;
+  }
+  .course-details .row > div {
+    margin-bottom: 1.5rem;
+  }
+  .course-details .row > div:last-child {
+    margin-bottom: 0;
+  }
+  .itv-section-title {
+    font-size: 2rem;
+  }
+}
+/* ItvedantAnimation.css */
+
+/* ... (rest of your CSS remains the same) ... */
+
+.itv-secondary-button {
+  background-color: #ff6b00; /* Example secondary button color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.itv-secondary-button:hover {
+  background-color: #e05800;
+}
+
+/* Responsive Adjustments for the Demo Section */
+@media (max-width: 992px) {
+  .bg-light .row > div {
+    margin-bottom: 2rem;
+  }
+  .bg-light .row > div:last-child {
+    margin-bottom: 0;
+  }
+}
+/* ItvedantAnimation.css */
+
+/* ... (rest of your CSS remains the same) ... */
+
+/* Certificate Preview Section Styles */
+.certificate-preview-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden; /* Clip the overlay designs */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-overlay-design {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 123, 255, 0.1); /* Example subtle color */
+  border-radius: 50%;
+  z-index: 1; /* Ensure it's above the image */
+}
+
+.certificate-overlay-design.top-left {
+  top: -40px;
+  left: -40px;
+  animation: pulseOverlay 3s ease-in-out infinite alternate;
+}
+
+.certificate-overlay-design.bottom-right {
+  bottom: -40px;
+  right: -40px;
+  animation: pulseOverlay 2.5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pulseOverlay {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+}
+
+/* Kenburns Animation for List Items */
+@keyframes KenburnsLeft {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(1.1) translateX(-10px);
+  }
+}
+
+@keyframes KenburnsRight {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(1.1) translateX(10px);
+  }
+}
+
+.itv-Kenburns-left {
+  animation: KenburnsLeft 5s ease-out infinite alternate;
+}
+
+.itv-Kenburns-right {
+  animation: KenburnsRight 5s ease-out infinite alternate;
+}
+
+/* Pulse Animation for the Final Paragraph */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.itv-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Responsive Adjustments for the Certificate Section */
+@media (max-width: 992px) {
+  .certificate-preview-container {
+    margin-bottom: 2rem;
+  }
+}
+/* ItvedantAnimation.css */
+
+/* ... (rest of your existing CSS, including light and dark themes) ... */
+
+/*--------------------------------------------------------------
+# Unique Section Backgrounds
+--------------------------------------------------------------*/
+
+/* Header Background */
+.itv-banner {
+  background: linear-gradient(135deg, #f2f7fd 0%, #e0e8f5 100%); /* Subtle gradient */
+  position: relative;
+  overflow: hidden; /* To contain pseudo-elements */
+}
+
+.itv-banner::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(0, 123, 255, 0.15); /* Primary color with transparency */
+  border-radius: 50%;
+  animation: pulseCircle 4s ease-in-out infinite alternate;
+}
+
+.itv-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 107, 0, 0.1); /* Secondary color with transparency */
+  border-radius: 50%;
+  animation: pulseCircle 3.5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pulseCircle {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Course Overview Background */
+.itv-section:nth-child(2) { /* Targeting the second itv-section */
+  background: #fff; /* Solid white for clarity */
+  position: relative;
+}
+
+.itv-section:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary-color) 0%, transparent 100%); /* Subtle highlight */
+}
+
+/* Course Curriculum Background */
+.course-details {
+  background: #f9f9f9; /* Light gray */
+  position: relative;
+  z-index: 1; /* To ensure content is above pseudo-elements */
+}
+
+.course-details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #e0e0e0,
+    #e0e0e0 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  opacity: 0.1; /* Subtle pattern */
+  z-index: -1;
+}
+
+/* Demo Booking Background */
+.bg-light.itv-section { /* Targeting itv-section with bg-light */
+  background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%); /* Another subtle gradient */
+  position: relative;
+}
+
+.bg-light.itv-section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to left, transparent 0%, var(--secondary-color) 50%, transparent 100%); /* Highlight at the bottom */
+}
+
+/* Certification Preview Background */
+.container.py-5.itv-section:last-of-type { /* Targeting the last relevant section */
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.container.py-5.itv-section:last-of-type::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background-color: rgba(28, 200, 138, 0.15); /* Success color with transparency */
+  border-radius: 30%;
+  animation: rotateScale 5s linear infinite;
+}
+
+.container.py-5.itv-section:last-of-type::after {
+  content: "";
+  position: absolute;
+  bottom: 30%;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background-color: rgba(255, 193, 7, 0.1); /* Warning color with transparency */
+  border-radius: 50%;
+  animation: rotateScaleReverse 4s linear infinite;
+}
+
+@keyframes rotateScale {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateScaleReverse {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg) scale(0.9);
+    opacity: 0;
+  }
+}
