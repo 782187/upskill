@@ -17,7 +17,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <Course />
+      <Course /> 
       <UpskillUPS />
       <HiringPartner />
       <Review />

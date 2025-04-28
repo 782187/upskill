@@ -48,6 +48,7 @@ const AboutSection = () => {
                                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80"
                                 alt="Students"
                                 className="img-fluid rounded shadow"
+                                style={{ maxWidth: '100%', height: 'auto' }}
                             />
                             <div className="position-absolute bottom-0 end-0 translate-middle bg-primary rounded-circle d-none d-md-block" style={{ width: '80px', height: '80px' }}></div>
                             <div className="position-absolute top-0 start-0 translate-middle bg-warning rounded-circle d-none d-md-block" style={{ width: '80px', height: '80px' }}></div>
