@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DemoBookingForm from "./DemoBookingForm";
 import CertificationPreview from "./CertificationPreview";
 import javaCert from "../../../assets/java-certification.jpg";
-import "./FullStackJava.css"; // Keep your existing styles
-import "./Animation.css"; // Import new animation styles
-import videoBg from "../../../assets/herobg.mp4"; // Import your video file
+import "./FullStackJava.css"; 
+import "./Animation.css"; 
+import videoBg from "../../../assets/herobg.mp4"; 
 
 export default function FullStackJava() {
   return (

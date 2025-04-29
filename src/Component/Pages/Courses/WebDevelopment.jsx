@@ -54,7 +54,7 @@ export default function WebDevelopment() {
             <p className="lead mt-3 itv-slide-in-left itv-delay-1">
               Master the essential skills to create stunning and functional websites.
             </p>
-            <div className="dynamic-background">
+            <div className="dynamic-background" style={{overflow: "hidden"}}>
               <video src={videoBg} autoPlay loop muted className="video-background" />
               <div className="video-overlay"></div>
             </div>

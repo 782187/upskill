@@ -2,10 +2,10 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DemoBookingForm from "./DemoBookingForm";
 import CertificationPreview from "./CertificationPreview";
-import testingCert from "../../../assets/testing-certification.jpg"; // Assuming you have a Testing certificate image
-import "./SoftwareTesting.css"; // Create this CSS file
-import "./Animation.css"; // Ensure this is imported
-import videoBg from "../../../assets/herobg.mp4"; // Import your video file
+import testingCert from "../../../assets/testing-certification.jpg"; 
+import "./SoftwareTesting.css"; 
+import "./Animation.css";
+import videoBg from "../../../assets/herobg.mp4"; 
 
 function CurriculumSection({ title, items }) {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -54,10 +54,10 @@ export default function Testing() {
             <p className="lead mt-3 itv-slide-in-left itv-delay-1">
               Become a skilled Software Tester and contribute to building reliable applications.
             </p>
-             <div className="dynamic-background">
-          <video src={videoBg} autoPlay loop muted className="video-background" />
-          <div className="video-overlay"></div> {/* Optional overlay for better text contrast */}
-        </div>
+            <div className="dynamic-background" style={{overflow: "hidden"}}>
+              <video src={videoBg} autoPlay loop muted className="video-background" />
+              <div className="video-overlay"></div>
+            </div>
           </div>
         </div>
       </header>
@@ -147,88 +147,88 @@ export default function Testing() {
       </section>
 
       <section className=" py-5 itv-section" id="id4">
-                          <div className="container">
-                            <h2 className="text-center itv-primary-color mb-4 itv-section-title itv-fade-in-up">
-                              Take the Next Step
-                            </h2>
-                            <div className="row align-items-center">
-                              <div className="col-md-6 itv-slide-in-left">
-                                  <DemoBookingForm />
-                              </div>
-                              <div className="col-md-6 mt-4 mt-md-0 itv-slide-in-right itv-delay-1">
-                                <div className="p-3">
-                                  <h5 className="itv-primary-color">Why Book a Demo?</h5>
-                                  <ul className="list-unstyled">
-                                    <li className="mb-2 itv-list-item">
-                                      <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Get a personalized course overview.
-                                    </li>
-                                    <li className="mb-2 itv-list-item">
-                                      <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Understand our teaching methodology.
-                                    </li>
-                                    <li className="mb-2 itv-list-item">
-                                      <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Ask questions directly to our experts.
-                                    </li>
-                                    <li className="mb-2 itv-list-item">
-                                      <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Learn about placement assistance details.
-                                    </li>
-                                    <li className="mb-2 itv-list-item">
-                                      <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Experience our interactive learning environment.
-                                    </li>
-                                  </ul>
-                                  <p className="itv-paragraph mt-3" id="id5">
-                                    See yourself how our Web Development course can transform your career. Book your free demo session today!
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                  
-       <section className="container py-5 itv-section">
-                          <h2 className="text-center itv-primary-color mb-4 itv-section-title itv-fade-in-up">
-                            Get Industry-Recognized Certification
-                          </h2>
-                          <div className="row align-items-center">
-                            <div className="col-md-6 itv-slide-in-left">
-                              <div className="certificate-preview-container position-relative">
-                                <div className="certificate-overlay-design top-left itv-fade-in itv-delay-1"></div>
-                                <CertificationPreview
-                                  image={testingCert}
-                                  alt="Full Stack Java Developer Certification"
-                                  className="img-fluid rounded shadow"
-                                />
-                                <div className="certificate-overlay-design bottom-right itv-fade-in itv-delay-2"></div>
-                              </div>
-                            </div>
-                            <div className="col-md-6 mt-4 mt-md-0 itv-slide-in-right itv-delay-1">
-                              <div className="p-3">
-                                <h5 className="itv-secondary-color">Validate Your Skills</h5>
-                                <p className="itv-paragraph">
-                                  Upon successful completion of our Web Development course, you will receive a prestigious
-                                  certification that validates your comprehensive skills in both front-end and back-end technologies.
-                                </p>
-                                <h5 className="itv-primary-color mt-3">Why Our Certification Matters?</h5>
-                                <ul className="list-unstyled">
-                                  <li className="mb-2 itv-list-item itv- Kenburns-right">
-                                    <i className="bi bi-award-fill itv-secondary-color me-2"></i> Industry-recognized and valued by top companies.
-                                  </li>
-                                  <li className="mb-2 itv-list-item itv-Kenburns-right itv-delay-05">
-                                    <i className="bi bi-briefcase-fill itv-secondary-color me-2"></i> Enhances your resume and job prospects.
-                                  </li>
-                                  <li className="mb-2 itv-list-item itv-Kenburns-left itv-delay-1">
-                                    <i className="bi bi-lightbulb-fill itv-secondary-color me-2"></i> Demonstrates your commitment to professional development.
-                                  </li>
-                                  <li className="mb-2 itv-list-item itv-Kenburns-right itv-delay-15">
-                                    <i className="bi bi-check-circle-fill itv-secondary-color me-2"></i> Provides a competitive edge in the job market.
-                                  </li>
-                                </ul>
-                                <p className="itv-paragraph mt-3 itv-pulse">
-                                  Invest in your future and showcase your expertise with our Web Developer Certification!
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
+        <div className="container">
+          <h2 className="text-center itv-primary-color mb-4 itv-section-title itv-fade-in-up">
+            Take the Next Step
+          </h2>
+          <div className="row align-items-center">
+            <div className="col-md-6 itv-slide-in-left">
+              <DemoBookingForm />
+            </div>
+            <div className="col-md-6 mt-4 mt-md-0 itv-slide-in-right itv-delay-1">
+              <div className="p-3">
+                <h5 className="itv-primary-color">Why Book a Demo?</h5>
+                <ul className="list-unstyled">
+                  <li className="mb-2 itv-list-item">
+                    <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Get a personalized course overview.
+                  </li>
+                  <li className="mb-2 itv-list-item">
+                    <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Understand our teaching methodology.
+                  </li>
+                  <li className="mb-2 itv-list-item">
+                    <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Ask questions directly to our experts.
+                  </li>
+                  <li className="mb-2 itv-list-item">
+                    <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Learn about placement assistance details.
+                  </li>
+                  <li className="mb-2 itv-list-item">
+                    <i className="bi bi-check-circle-fill itv-primary-color me-2"></i> Experience our interactive learning environment.
+                  </li>
+                </ul>
+                <p className="itv-paragraph mt-3" id="id5">
+                  See yourself how our Web Development course can transform your career. Book your free demo session today!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container py-5 itv-section">
+        <h2 className="text-center itv-primary-color mb-4 itv-section-title itv-fade-in-up">
+          Get Industry-Recognized Certification
+        </h2>
+        <div className="row align-items-center">
+          <div className="col-md-6 itv-slide-in-left">
+            <div className="certificate-preview-container position-relative">
+              <div className="certificate-overlay-design top-left itv-fade-in itv-delay-1"></div>
+              <CertificationPreview
+                image={testingCert}
+                alt="Full Stack Java Developer Certification"
+                className="img-fluid rounded shadow"
+              />
+              <div className="certificate-overlay-design bottom-right itv-fade-in itv-delay-2"></div>
+            </div>
+          </div>
+          <div className="col-md-6 mt-4 mt-md-0 itv-slide-in-right itv-delay-1">
+            <div className="p-3">
+              <h5 className="itv-secondary-color">Validate Your Skills</h5>
+              <p className="itv-paragraph">
+                Upon successful completion of our Web Development course, you will receive a prestigious
+                certification that validates your comprehensive skills in both front-end and back-end technologies.
+              </p>
+              <h5 className="itv-primary-color mt-3">Why Our Certification Matters?</h5>
+              <ul className="list-unstyled">
+                <li className="mb-2 itv-list-item itv- Kenburns-right">
+                  <i className="bi bi-award-fill itv-secondary-color me-2"></i> Industry-recognized and valued by top companies.
+                </li>
+                <li className="mb-2 itv-list-item itv-Kenburns-right itv-delay-05">
+                  <i className="bi bi-briefcase-fill itv-secondary-color me-2"></i> Enhances your resume and job prospects.
+                </li>
+                <li className="mb-2 itv-list-item itv-Kenburns-left itv-delay-1">
+                  <i className="bi bi-lightbulb-fill itv-secondary-color me-2"></i> Demonstrates your commitment to professional development.
+                </li>
+                <li className="mb-2 itv-list-item itv-Kenburns-right itv-delay-15">
+                  <i className="bi bi-check-circle-fill itv-secondary-color me-2"></i> Provides a competitive edge in the job market.
+                </li>
+              </ul>
+              <p className="itv-paragraph mt-3 itv-pulse">
+                Invest in your future and showcase your expertise with our Web Developer Certification!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
