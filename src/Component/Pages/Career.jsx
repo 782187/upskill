@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <>
       <section id="home" className="p-5 d-flex align-items-center position-relative bg-light">
-        <div className="container position-relative">
+        <div className="container position-relative py-3">
           <div className="row align-items-center">
             <div className="col-md-6 mb-4 mb-md-0">
               <h1 className="display-4 fw-bold mb-3">

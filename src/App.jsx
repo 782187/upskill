@@ -13,6 +13,7 @@ import CorporateTraining from './Component/Pages/Corporate';
 import Blogs from './Component/Pages/Blog/Blog';
 import Career from './Component/Pages/Career'
 import Events from './Component/Pages/Events';
+import HireFromUs from './Component/Pages/HireFromUs';
 // import Feedback from './pages/Feedback';
 import FullStackJava from './Component/Pages/Courses/FullStackJava'
 import FullStackPython from './Component/Pages/Courses/FullStackPython'
@@ -24,7 +25,7 @@ function App() {
   return (
     <>
       <Router>
-      <ScrollToTop/>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -33,8 +34,7 @@ function App() {
           <Route path="/courses/:slug" element={<CourseDetail />} />
           <Route path="/corporate-training" element={<CorporateTraining />} />
           <Route path="/blogs" element={<Blogs />} />
-          {/* <Route path='/hire' element={}/>
-        <Route path='/career' element={}/> */}
+          <Route path='/hire' element={<HireFromUs/>} />
           <Route path="/events" element={<Events />} />
           {/*<Route path="/feedback" element={<Feedback />} /> */}
           <Route path='/career' element={<Career />} />
@@ -43,8 +43,8 @@ function App() {
           <Route path="/courses/software-testing" element={<SoftwareTesting />} />
           <Route path="/courses/web-development" element={<WebDevelopment />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </>
   );
 }

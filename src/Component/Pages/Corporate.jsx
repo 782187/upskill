@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import {
   GraduationCap,
@@ -10,18 +9,15 @@ import {
   CalendarCheck,
   School,
 } from "lucide-react";
-import EnquiryForm from "./Home/EnquiryForm"; 
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
-  }),
-};
+import EnquiryForm from "./Home/EnquiryForm";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const CorporateTrainingPage = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const infoItems = [
     {
       icon: <ClipboardCheck size={40} className="text-primary" />,
@@ -82,48 +78,43 @@ const CorporateTrainingPage = () => {
 
   return (
     <div>
-
-      {/* Hero Section */}
-      <div className="min-vh-50 d-flex align-items-center justify-content-center px-4 py-4"
+      <div
+        className="min-vh-50 d-flex align-items-center justify-content-center px-4 py-4"
         style={{
           background: "linear-gradient(to right, #d0e8f4, #b3d7f1, #a0c3ea)",
           color: "#333",
-        }}>
-        <motion.div
-          className="container text-center"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-        >
-          <motion.div className="d-flex justify-content-center gap-4 mb-3">
+        }}
+        data-aos="fade-up"
+      >
+        <div className="container text-center py-3">
+          <div className="d-flex justify-content-center gap-4 mb-3">
             <GraduationCap size={35} className="text-primary" />
             <Users size={35} className="text-warning" />
             <BriefcaseBusiness size={35} className="text-info" />
-          </motion.div>
-          <motion.h1 className="display-5 fw-bold mb-3">
+          </div>
+          <h1 className="display-5 fw-bold mb-3">
             Empower Your Workforce with <span className="text-primary">Expert Training</span>
-          </motion.h1>
-          <motion.p className="lead text-muted mb-4 mx-auto" style={{ maxWidth: "650px" }}>
+          </h1>
+          <p className="lead text-muted mb-4 mx-auto" style={{ maxWidth: "650px" }}>
             Tailored training solutions to help your team excel and meet your business goals.
-          </motion.p>
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          </p>
+          <div>
             <Button variant="primary" size="lg" className="px-5 py-3 rounded-pill shadow">
               Get Started
             </Button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
-      {/* Corporate Training Overview + EnquiryForm */}
-      <div className="py-5 bg-white">
+      <div className="py-3 bg-white" data-aos="fade-up">
         <div className="container">
           <div className="row align-items-start">
-            <div className="col-md-7">
+            <div className="col-md-7 py-5">
               <h2 className="fw-bold text-primary mb-4">Corporate Training Overview</h2>
               <p className="text-muted">
-                Transform your workforce with UpSkill IT Training & Placement’s comprehensive corporate training programs.
+                Transform your workforce with UpSkill IT Training & Placement's comprehensive corporate training programs.
                 Designed to meet the unique needs of businesses, our training solutions equip teams with essential skills
-                across a range of technologies and methodologies. Whether you’re looking to enhance software development,
+                across a range of technologies and methodologies. Whether you're looking to enhance software development,
                 data analysis, project management, or IT infrastructure, our programs offer practical, hands-on experience
                 that directly translates to real-world success.
               </p>
@@ -134,12 +125,12 @@ const CorporateTrainingPage = () => {
               </p>
               <p className="text-muted">
                 At UpSkill, we focus on driving productivity, fostering innovation, and achieving measurable results. Partner
-                with us to elevate your team’s skills, improve performance, and stay ahead in today’s competitive market.
+                with us to elevate your teams skills, improve performance, and stay ahead in today's competitive market.
                 Our commitment is to empower your workforce with the tools and knowledge needed to excel and lead in their
                 respective fields.
               </p>
             </div>
-            <div className="col-md-5">
+            <div className="col-md-5 py-5">
               <div className="p-4 shadow rounded-4 bg-light">
                 <EnquiryForm />
               </div>
@@ -148,32 +139,30 @@ const CorporateTrainingPage = () => {
         </div>
       </div>
 
-      {/* Info Section */}
-      <div className="py-5 bg-white">
+      <div className="py-3 bg-white" data-aos="fade-up">
         <div className="container">
           <h2 className="text-center fw-bold mb-5 display-6 text-primary">Corporate Training Highlights</h2>
-          <div className="row g-4">
+          <div className="row py-5 g-4">
             {infoItems.map((item, i) => (
-              <motion.div className="col-md-4" key={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}>
+              <div className="col-md-4" key={i}>
                 <div className="card h-100 border-0 shadow p-4 rounded-4">
                   <div className="mb-3">{item.icon}</div>
                   <h5 className="fw-semibold mb-2">{item.title}</h5>
                   <p className="text-muted">{item.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Training Types */}
-      <div className="py-5" style={{ background: "#f7fafd" }}>
+      <div className="py-3" style={{ background: "#f7fafd" }} data-aos="fade-up">
         <div className="container">
           <h2 className="text-center fw-bold mb-5 display-6 text-info">Training Types That Fit You</h2>
-          <div className="row g-4">
+          <div className="row g-4 py-5">
             {trainingTypes.map((type, i) => (
-              <motion.div className="col-md-4" key={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}>
-                <motion.div whileHover={{ scale: 1.05 }} className="card h-100 text-center shadow border-0 p-4 rounded-4">
+              <div className="col-md-4" key={i}>
+                <div className="card h-100 text-center shadow border-0 p-4 rounded-4">
                   <div className="mb-3 d-flex justify-content-center">{type.icon}</div>
                   <h5 className="card-title fw-semibold">{type.title}</h5>
                   <p className="card-text text-muted mb-4">{type.description}</p>
@@ -185,25 +174,25 @@ const CorporateTrainingPage = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Why Choose Us */}
       <div
         className="py-5 text-white"
         style={{
           background: "linear-gradient(to bottom right, #1e3a8a, #3b82f6)",
         }}
+        data-aos="fade-up"
       >
         <div className="container">
           <h2 className="text-center fw-bold mb-5 display-6">Why Choose Us</h2>
           <div className="row g-4">
             {reasons.map((reason, i) => (
-              <motion.div className="col-md-6" key={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}>
+              <div className="col-md-6" key={i}>
                 <div
                   className="card h-100 text-white border-0"
                   style={{
@@ -216,12 +205,11 @@ const CorporateTrainingPage = () => {
                     <p className="card-text text-white-50">{reason.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </div>
-
     </div>
   );
 };

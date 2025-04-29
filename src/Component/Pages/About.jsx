@@ -1,18 +1,8 @@
 import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Book, BookOpen, Users } from "lucide-react";
 import EnquiryForm from "./Home/EnquiryForm";
 
 const AboutUs = () => {
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            easing: "ease-in-out",
-            once: true,
-        });
-    }, []);
-
     return (
         <div className="overflow-x-hidden">
             <section
@@ -23,14 +13,14 @@ const AboutUs = () => {
                     height: "50vh",
                 }}
             >
-                <div className="container text-center" data-aos="zoom-in">
-                    <h1 className="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+                <div className="container text-center">
+                    <h1 className="display-3 fw-bold mb-4">
                         Welcome to <span style={{ color: "#F97316" }}>Upskill Institute</span>
                     </h1>
-                    <p className="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <p className="lead mb-4">
                         At Upskill Institute, we are dedicated to transforming individuals into skilled IT professionals ready to excel in the dynamic world of technology. Our institute offers comprehensive training programs and placement services designed to bridge the gap between academic knowledge and industry demands.
                     </p>
-                    <a href="#mission" className="btn btn-warning fw-semibold px-4 py-2 animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="#mission" className="btn btn-warning fw-semibold px-4 py-2">
                         Explore Our Journey
                     </a>
                 </div>
@@ -39,7 +29,7 @@ const AboutUs = () => {
             <section id="mission" className="py-5 px-4 bg-light">
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-md-6" data-aos="fade-up">
+                        <div className="col-md-6">
                             <div className="d-flex flex-column align-items-start mb-4">
                                 <div className="bg-indigo-100 p-4 rounded-circle mb-3">
                                     <Book className="h-8 w-8 text-indigo-600" />
@@ -54,7 +44,7 @@ const AboutUs = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-md-6" data-aos="fade-up">
+                        <div className="col-md-6">
                             <EnquiryForm />
                         </div>
                     </div>
@@ -64,7 +54,7 @@ const AboutUs = () => {
             <section id="vision" className="py-5 px-4 bg-dark text-white">
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-md-6" data-aos="fade-up">
+                        <div className="col-md-6">
                             <img
                                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
                                 alt="Vision Image"
@@ -72,7 +62,7 @@ const AboutUs = () => {
                                 style={{ maxHeight: "400px", objectFit: "cover" }}
                             />
                         </div>
-                        <div className="col-md-6" data-aos="fade-up">
+                        <div className="col-md-6">
                             <div className="d-flex flex-column align-items-start mb-4">
                                 <div className="bg-purple-100 p-4 rounded-circle mb-3">
                                     <BookOpen className="h-8 w-8 text-purple-600" />
@@ -93,7 +83,7 @@ const AboutUs = () => {
 
             <section id="offerings" className="py-5 px-4 bg-light">
                 <div className="container">
-                    <div className="text-center mb-4" data-aos="fade-up">
+                    <div className="text-center mb-4">
                         <div className="bg-indigo-100 p-4 rounded-circle inline-flex mb-3">
                             <Users className="h-8 w-8 text-indigo-600" />
                         </div>
@@ -105,7 +95,7 @@ const AboutUs = () => {
                     </div>
 
                     <div className="row row-cols-1 row-cols-md-3 g-4">
-                        <div className="col" data-aos="fade-up">
+                        <div className="col">
                             <div className="card p-4 h-100 shadow-sm border-0">
                                 <h4 className="text-dark mb-3 text-center">Comprehensive Training Programs</h4>
                                 <ul className="text-muted ps-3">
@@ -116,7 +106,7 @@ const AboutUs = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col" data-aos="fade-up" data-aos-delay="100">
+                        <div className="col">
                             <div className="card p-4 h-100 shadow-sm border-0">
                                 <h4 className="text-dark mb-3 text-center">Hands-on Experience</h4>
                                 <ul className="text-muted ps-3">
@@ -126,7 +116,7 @@ const AboutUs = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col" data-aos="fade-up" data-aos-delay="200">
+                        <div className="col">
                             <div className="card p-4 h-100 shadow-sm border-0">
                                 <h4 className="text-dark mb-3 text-center">Placement Services</h4>
                                 <ul className="text-muted ps-3">
@@ -140,7 +130,7 @@ const AboutUs = () => {
                     </div>
 
                     <div className="row row-cols-1 row-cols-md-3 g-4">
-                        <div className="col" data-aos="fade-up">
+                        <div className="col">
                             <div className="card p-4 text-center h-100 shadow-sm border-0">
                                 <div className="bg-indigo-100 p-4 rounded-circle mb-3 mx-auto">
                                     <Book className="h-7 w-7 text-indigo-600" />
@@ -149,7 +139,7 @@ const AboutUs = () => {
                                 <p className="text-muted">Up-to-date, practical courses that prepare you for today's tech careers.</p>
                             </div>
                         </div>
-                        <div className="col" data-aos="fade-up" data-aos-delay="100">
+                        <div className="col">
                             <div className="card p-4 text-center h-100 shadow-sm border-0">
                                 <div className="bg-indigo-100 p-4 rounded-circle mb-3 mx-auto">
                                     <Users className="h-7 w-7 text-indigo-600" />
@@ -158,7 +148,7 @@ const AboutUs = () => {
                                 <p className="text-muted">Participate in live projects, workshops, and collaborative initiatives.</p>
                             </div>
                         </div>
-                        <div className="col" data-aos="fade-up" data-aos-delay="200">
+                        <div className="col">
                             <div className="card p-4 text-center h-100 shadow-sm border-0">
                                 <div className="bg-indigo-100 p-4 rounded-circle mb-3 mx-auto">
                                     <BookOpen className="h-7 w-7 text-indigo-600" />
