@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRightFromLineIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../../../Style/HeroSection.css';
-import EnquiryForm from './EnquiryForm'; 
+import EnquiryForm from './EnquiryForm';
 
 const slides = [
   {

@@ -9,9 +9,9 @@ import videoBg from "../../../assets/herobg.mp4"; // Import your video file
 
 export default function FullStackJava() {
   return (
-   <div className="course-page container-fluid px-0">
+    <div className="course-page container-fluid px-0">
       <header className="course-banner text-white text-center py-5 itv-banner dynamic-header">
-      
+
         <div className="container d-flex justify-content-between align-items-center flex-wrap">
           <div className="text-start banner-text-container">
             <h1 className="display-4 fw-bold itv-fade-in-left">
@@ -21,12 +21,12 @@ export default function FullStackJava() {
               <br />
               <span className="itv-primary-color">Placement Assistance</span>
             </h1>
-         
+
           </div>
-          <div className="dynamic-background">
-          <video src={videoBg} autoPlay loop muted className="video-background" />
-          <div className="video-overlay " style={{width:"100%"}}></div> {/* Optional overlay for better text contrast */}
-        </div>
+          <div className="dynamic-background" style={{overflow: "hidden"}}>
+            <video src={videoBg} autoPlay loop muted className="video-background" />
+            <div className="video-overlay " style={{ width: "100%" }}></div>
+          </div>
         </div>
       </header>
 
@@ -130,14 +130,14 @@ export default function FullStackJava() {
         </div>
       </section>
 
-   <section className=" py-5 itv-section" id="id4">
+      <section className=" py-5 itv-section" id="id4">
         <div className="container">
           <h2 className="text-center itv-primary-color mb-4 itv-section-title itv-fade-in-up">
             Take the Next Step
           </h2>
           <div className="row align-items-center">
             <div className="col-md-6 itv-slide-in-left">
-                <DemoBookingForm />
+              <DemoBookingForm />
             </div>
             <div className="col-md-6 mt-4 mt-md-0 itv-slide-in-right itv-delay-1">
               <div className="p-3">
@@ -168,7 +168,7 @@ export default function FullStackJava() {
         </div>
       </section>
 
-       <section className="container py-5 itv-section">
+      <section className="container py-5 itv-section">
         <h2 className="text-center itv-primary-color mb-4 itv-section-title itv-fade-in-up">
           Get Industry-Recognized Certification
         </h2>
