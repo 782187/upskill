@@ -157,7 +157,7 @@ const HireFromUs = () => {
                         </div>
 
                         <div className="col-lg-6 d-flex align-items-center justify-content-center">
-                            <div className="position-relative w-100" style={{ maxWidth: "500px",marginTop: "150px" }}>
+                            <div className="position-relative w-100" style={{ maxWidth: "570px",marginTop:"150px"}}>
                                 <img
                                     src="/developer.gif"
                                     alt="Hiring process illustration"

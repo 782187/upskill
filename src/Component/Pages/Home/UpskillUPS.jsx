@@ -42,7 +42,7 @@ const AboutSection = () => {
         <section className="py-5 bg-white" id="about">
             <div className="container">
                 <div className="row align-items-center g-5">
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 col-12">
                         <div className="position-relative">
                             <img
                                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80"
@@ -55,7 +55,7 @@ const AboutSection = () => {
                         </div>
                     </div>
 
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 col-12">
                         <h2 className="display-6 fw-bold mb-4 text-primary">Welcome to Upskill Institute</h2>
                         <p className="lead text-muted mb-3">
                             At Upskill Institute, we are dedicated to transforming individuals into skilled IT professionals ready to excel in the dynamic world of technology. Our institute offers comprehensive training programs and placement services designed to bridge the gap between academic knowledge and industry demands.
@@ -64,7 +64,7 @@ const AboutSection = () => {
                             {stats.map((stat) => {
                                 const Icon = stat.icon;
                                 return (
-                                    <div className="col-6" key={stat.id}>
+                                    <div className="col-6 col-sm-6 col-md-3" key={stat.id}>
                                         <div className="border rounded text-center p-3 h-100 shadow-sm">
                                             <div className={`rounded-circle d-inline-flex align-items-center justify-content-center mb-2 ${stat.color}`} style={{ width: '50px', height: '50px' }}>
                                                 <Icon size={24} />
