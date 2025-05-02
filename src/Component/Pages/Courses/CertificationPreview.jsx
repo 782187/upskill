@@ -1,7 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./CertificationPreview.css"; // Add this CSS file for custom animations
-
+import "./CertificationPreview.css"; 
 export default function CertificationPreview({ image, caption }) {
   return (
     <section className="certification-preview container text-center my-5">

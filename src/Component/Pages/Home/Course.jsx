@@ -8,7 +8,7 @@ function Course() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/UpskillServlet/get-courses')
+        axios.get('https://upskill-servlet.onrender.com/UpskillServlet/get-courses')
             .then(response => setDynamicCourses(response.data))
             .catch(error => console.error("Backend error:", error));
 
@@ -34,7 +34,7 @@ function Course() {
                         
                         const isStatic = !!course.Image;
                         const imageUrl = isStatic 
-                            ?course.Image : `http://localhost:8080/UpskillServlet/get-image?courseId=${course.id}`;
+                            ?course.Image : `https://upskill-servlet.onrender.com/UpskillServlet/get-image?courseId=${course.id}`;
 
                         return (
                             <div className="col-12 col-sm-6 col-md-3" key={index}>

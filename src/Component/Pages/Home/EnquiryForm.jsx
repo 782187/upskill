@@ -16,7 +16,7 @@ const EnquiryForm = () => {
     formData.append('phone', phone);
     formData.append('year', year);
 
-    axios.post('http://localhost:8080/UpskillServlet/submit-enquiry', formData, {
+    axios.post('https://upskill-servlet.onrender.com/UpskillServlet/submit-enquiry', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
