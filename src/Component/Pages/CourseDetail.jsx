@@ -8,7 +8,7 @@ function CourseDetail() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`https://upskill-servlet.onrender.com/UpskillServlet/get-course-detail?slug=${slug}`)
+        axios.get(`https://upskill-servlet.onrender.com/get-course-detail?slug=${slug}`)
             .then(response => {
                 setCourse(response.data);
             })
@@ -46,7 +46,7 @@ function CourseDetail() {
                         <div className="col-md-6">
                             <div className="position-relative overflow-hidden rounded-4 shadow-sm">
                                 <img 
-                                    src={`https://upskill-servlet.onrender.com/UpskillServlet/get-image?courseId=${course.id}`} 
+                                    src={`https://upskill-servlet.onrender.com/get-image?courseId=${course.id}`} 
                                     alt={course.title}
                                     className="img-fluid w-100 h-100"
                                     style={{ objectFit: 'cover', height: '400px' }}
@@ -116,7 +116,7 @@ function CourseDetail() {
                     <h3 className="mb-4 text-secondary">Sample Certificate</h3>
                     <div className="d-flex justify-content-center">
                         <img 
-                            src={`https://upskill-servlet.onrender.com/UpskillServlet/get-certificate-image?courseId=${course.id}`} 
+                            src={`https://upskill-servlet.onrender.com/get-certificate-image?courseId=${course.id}`} 
                             alt="Course Certificate" 
                             className="img-fluid rounded-4 shadow"
                             style={{ maxWidth: '700px', height: 'auto' }}
