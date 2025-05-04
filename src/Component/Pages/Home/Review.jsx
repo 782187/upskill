@@ -22,7 +22,7 @@ const Review = () => {
 
   const fetchReviews = async () => {
     try {
-      const res = await axios.get("https://upskill-servlet.onrender.com/FetchFeedbackServlet");
+      const res = await axios.get("https://upskill-server.onrender.com/FetchFeedbackServlet");
       setReviews(res.data);
     } catch (error) {
       console.error("Error fetching reviews:", error);
