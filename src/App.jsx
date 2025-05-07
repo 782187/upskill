@@ -21,6 +21,12 @@ import SoftwareTesting from './Component/Pages/Courses/Testing'
 import WebDevelopment from './Component/Pages/Courses/WebDevelopment'
 
 function App() {
+  useEffect(() => {
+    fetch("https://upskill-server.onrender.com/incrementVisit", {
+      method: "POST",
+    });
+  }, []);
+  
   AOS.init();
   return (
     <>
