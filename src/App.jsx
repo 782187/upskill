@@ -1,0 +1,70 @@
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './App.css';
+
+import ScrollToTop from './Component/ScrollToTop';
+import Navbar from './Component/Navbar';
+import Footer from './Component/Footer';
+
+import Home from './Component/Pages/Home/Home';
+import About from './Component/Pages/About';
+import Courses from './Component/Pages/Home/Course';
+import CourseDetail from './Component/Pages/CourseDetail';
+import CorporateTraining from './Component/Pages/Corporate';
+import Blogs from './Component/Pages/Blog/Blog';
+import Career from './Component/Pages/Career';
+import Events from './Component/Pages/Events';
+import HireFromUs from './Component/Pages/HireFromUs';
+import FullStackJava from './Component/Pages/Courses/FullStackJava';
+import FullStackPython from './Component/Pages/Courses/FullStackPython';
+import SoftwareTesting from './Component/Pages/Courses/Testing';
+import WebDevelopment from './Component/Pages/Courses/WebDevelopment';
+import ContactUs from './Component/Pages/ContactUs';
+
+function App() {
+  useEffect(() => {
+    AOS.init();
+    fetch("https://upskill-server.onrender.com/incrementVisit", { method: "POST" });
+  }, []);
+
+  return (
+    <Router>
+      <ScrollToTop />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:slug" element={<CourseDetail />} />
+        <Route path="/corporate-training" element={<CorporateTraining />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/hire" element={<HireFromUs />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/courses/java-full-stack" element={<FullStackJava />} />
+        <Route path="/courses/python-full-stack" element={<FullStackPython />} />
+        <Route path="/courses/software-testing" element={<SoftwareTesting />} />
+        <Route path="/courses/web-development" element={<WebDevelopment />} />
+        <Route path="/contactus" element={<ContactUs/>} />
+      </Routes>
+      <Footer />
+
+      <a
+        href="https://wa.me/7821879681?text=I'm%20inquiring%20about%20the%20Website%20Design%20"
+        className="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+          alt="WhatsApp"
+          className="whatsapp-icon"
+        />
+      </a>
+    </Router>
+  );
+}
+
+export default App;
