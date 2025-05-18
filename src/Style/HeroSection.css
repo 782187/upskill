@@ -104,40 +104,6 @@
   }
 }
 
-@media (max-width: 768px) {
-
-  .tech-blob-blue,
-  .tech-blob-orange {
-    width: 180px;
-    height: 180px;
-  }
-
-  .hero-section-content {
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-
-  .hero-section-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-section-content p {
-    font-size: 1rem;
-  }
-
-  .glass-card {
-    padding: 1.5rem 1rem;
-  }
-
-  .logo-track {
-    gap: 24px;
-  }
-
-  .company-logo {
-    height: 30px;
-  }
-}
-
 .custom-dropdown .dropdown-item {
   padding: 10px 20px;
   font-weight: 500;
@@ -153,7 +119,7 @@
 }
 
 nav ul li {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .animated-border-btn {
@@ -193,13 +159,16 @@ nav ul li {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
+
 .book-demo-sticker {
   position: fixed;
   top: 50%;
@@ -220,15 +189,70 @@ nav ul li {
   white-space: nowrap;
 }
 
-/* Gradient animation */
 @keyframes animatedGradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .tech-blob-blue,
+  .tech-blob-orange {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-section-content {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-section-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-section-content p {
+    font-size: 1rem;
+  }
+
+  .glass-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .logo-track {
+    gap: 24px;
+  }
+
+  .company-logo {
+    height: 30px;
+  }
+
+  .book-demo-sticker {
+    top: auto;
+    bottom: 20px;
+    left: auto;
+    transform: none;
+    transform-origin: initial;
+    background: linear-gradient(45deg, #ff6f00, #ff9800, #ff6f00);
+    background-size: 400% 400%;
+    animation: animatedGradient 6s ease infinite;
+    color: white;
+    font-weight: bold;
+    padding: 14px 20px;
+    border-radius: 30px;
+    z-index: 9999;
+    cursor: pointer;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 0.95rem;
+    white-space: nowrap;
   }
 }
