@@ -238,7 +238,7 @@ nav ul li {
 
   .book-demo-sticker {
     top: auto;
-    bottom: 20px;
+    bottom: 0px;
     left: auto;
     transform: none;
     transform-origin: initial;
