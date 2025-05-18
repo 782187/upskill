@@ -47,7 +47,7 @@ function App() {
         <Route path="/courses/python-full-stack" element={<FullStackPython />} />
         <Route path="/courses/software-testing" element={<SoftwareTesting />} />
         <Route path="/courses/web-development" element={<WebDevelopment />} />
-        <Route path="/contactus" element={<ContactUs/>} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
       <Footer />
 

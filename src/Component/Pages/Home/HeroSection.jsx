@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import EnquiryForm from './EnquiryForm';
+import DemoBookingModal from '../DemoBookingModal';
 import '../../../Style/HeroSection.css';
 
 const HeroSection = () => {
@@ -14,9 +15,11 @@ const HeroSection = () => {
       }}
     >
 
-      <div className="book-demo-sticker">
+      <div className="book-demo-sticker" data-bs-toggle="modal"
+        data-bs-target="#demoModal">
         <span>📘 Book Demo</span>
       </div>
+      <DemoBookingModal />
 
       <div
         className="col-12 col-md-6 d-flex flex-column justify-content-center hero-section-content px-5 py-4"
