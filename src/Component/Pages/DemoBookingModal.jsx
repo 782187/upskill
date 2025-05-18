@@ -41,7 +41,7 @@ const DemoBookingModal = () => {
                 className={validated ? "was-validated" : ""}
                 onSubmit={handleSubmit}
               >
-                <div className="row g-4">
+                <div className="row gy-2 gy-sm-4 gx-2 gx-sm-4">
                   <div className="col-md-6">
                     <label htmlFor="name" className="form-label text-primary fw-semibold">
                       Full Name
