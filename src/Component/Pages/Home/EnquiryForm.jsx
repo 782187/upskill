@@ -11,6 +11,7 @@ const EnquiryForm = () => {
 
   const [statusMessage, setStatusMessage] = useState('');
   const [statusType, setStatusType] = useState('');
+  const [loading, setLoading] = useState(false); 
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -30,6 +31,9 @@ const EnquiryForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatusMessage('');
+    setStatusType('');
 
     const data = new FormData();
     data.append('name', formData.name);
@@ -51,27 +55,23 @@ const EnquiryForm = () => {
       if (response.data.status === 'success') {
         setStatusMessage(response.data.message);
         setStatusType('success');
+        resetForm();
       } else {
         setStatusMessage(response.data.message || 'Something went wrong');
         setStatusType('error');
       }
-      resetForm();
     } catch (error) {
       if (error.response) {
-        console.error('Server Error:', error.response.data);
         setStatusMessage(error.response.data.message || 'Server error occurred.');
       } else if (error.request) {
-        console.error('No response received:', error.request);
         setStatusMessage('No response from server. Please check your internet connection.');
       } else {
-        console.error('Error:', error.message);
         setStatusMessage(error.message || 'An unexpected error occurred.');
       }
-
       setStatusType('error');
-      resetForm();
+    } finally {
+      setLoading(false);
     }
-
   };
 
   return (
@@ -100,6 +100,7 @@ const EnquiryForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            disabled={loading}
           />
         </div>
 
@@ -114,6 +115,7 @@ const EnquiryForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            disabled={loading}
           />
         </div>
 
@@ -128,6 +130,7 @@ const EnquiryForm = () => {
             value={formData.phone}
             onChange={handleChange}
             required
+            disabled={loading}
           />
         </div>
 
@@ -142,11 +145,19 @@ const EnquiryForm = () => {
             value={formData.year}
             onChange={handleChange}
             required
+            disabled={loading}
           />
         </div>
 
-        <button type="submit" className="btn btn-primary w-100">
-          Submit Enquiry
+        <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+          {loading ? (
+            <>
+              <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              Sending...
+            </>
+          ) : (
+            'Submit Enquiry'
+          )}
         </button>
       </form>
     </div>

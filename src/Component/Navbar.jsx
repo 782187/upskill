@@ -154,7 +154,7 @@ function Navbar() {
                         </li>
                         <li className="nav-item">
                             <div className="animated-border-btn">
-                                <Link className="nav-link text-light" to="/request" onClick={handleClick}>
+                                <Link className="nav-link text-light" to="#">
                                     Request Callback
                                 </Link>
                             </div>
