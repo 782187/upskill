@@ -92,7 +92,7 @@ const Review = () => {
             >
               <div className="card-body text-center p-4 d-flex flex-column align-items-center">
                 <motion.img
-                  src={review.image || "https://via.placeholder.com/70"}
+                  src={review.image}
                   alt={review.name}
                   className="rounded-circle mb-3 border border-primary shadow-sm"
                   style={{ width: 70, height: 70, objectFit: "cover" }}
