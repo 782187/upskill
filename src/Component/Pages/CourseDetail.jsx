@@ -28,7 +28,6 @@ const CourseDetail = () => {
         <div className="wave-layer wave-layer1"></div>
         <div className="wave-layer wave-layer2"></div>
         <div className="wave-layer wave-layer3"></div>
-        <div className="overlay"></div>
         <div className="container text-white d-flex flex-column justify-content-center align-items-start h-75">
           <div>
             <h1 className="display-4 fw-bold">{course.title}</h1>
