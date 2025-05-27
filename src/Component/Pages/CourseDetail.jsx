@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import '../../Style/CourseDetail.css';
-import EnquiryForm from './Home/EnquiryForm';
-import Course from './Home/Course';
-import Review from './Home/Review';
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import '../../Style/CourseDetail.css'
+import EnquiryForm from './Home/EnquiryForm'
+import Course from './Home/Course'
+import Review from './Home/Review'
 
 const CourseDetail = () => {
-  const { slug } = useParams();
-  const [course, setCourse] = useState(null);
-  const [error, setError] = useState(null);
+  const { slug } = useParams()
+  const [course, setCourse] = useState(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     axios
       .get(`https://upskill-server.onrender.com/get-course-detail?slug=${slug}`)
       .then((response) => setCourse(response.data))
-      .catch(() => setError('Course not found or an error occurred.'));
-  }, [slug]);
+      .catch(() => setError('Course not found or an error occurred.'))
+  }, [slug])
 
-  if (error) return <div className="text-center text-danger mt-5">{error}</div>;
-  if (!course) return <div className="text-center mt-5">Loading...</div>;
+  if (error) return <div className="text-center text-danger mt-5">{error}</div>
+  if (!course) return <div className="text-center mt-5">Loading...</div>
 
   return (
     <>
@@ -134,7 +134,7 @@ const CourseDetail = () => {
       <Course />
       <Review />
     </>
-  );
-};
+  )
+}
 
-export default CourseDetail;
+export default CourseDetail
