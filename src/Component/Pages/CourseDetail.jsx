@@ -14,7 +14,7 @@ function CourseDetail() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        AOS.init({ duration: 800 });
+        AOS.init({ duration: 1000 });
     }, []);
 
     useEffect(() => {
@@ -37,22 +37,111 @@ function CourseDetail() {
 
     return (
         <>
-            <section
-                className="text-white hero-section d-flex align-items-center"
-                style={{
-                    minHeight: '80vh',
-                    background: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url(https://source.unsplash.com/1600x900/?technology) no-repeat center center/cover`
-                }}
-            >
+            {/* Hero Section */}
+            <section className="hero-section position-relative">
+                <video className="bg-video" autoPlay muted loop>
+                    <source src="/video/tech-bg.mp4" type="video/mp4" />
+                </video>
+                <div className="overlay"></div>
+                <div className="container text-white d-flex flex-column justify-content-center align-items-start h-100">
+                    <div data-aos="fade-right">
+                        <h1 className="display-4 fw-bold">{course.title}</h1>
+                        <p className="lead">Master {course.technology} with real-world skills & certification.</p>
+                        <a href="#enquiry" className="btn btn-warning mt-3 px-4 py-2 fw-semibold">Enquire Now</a>
+                    </div>
+                </div>
+            </section>
+
+            {/* Course Overview */}
+            <section className="py-5 bg-light">
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-md-6 text-center text-md-start mb-4 mb-md-0" data-aos="zoom-in">
-                            <h1 className="display-4 fw-bold text-white">{course.title}</h1>
-                            <p className="lead">Master {course.technology} with industry-relevant skills and certification</p>
+                    <div className="row align-items-center g-4">
+                        <div className="col-lg-6" data-aos="zoom-in">
+                            <img
+                                src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
+                                className="img-fluid rounded shadow-sm w-100"
+                                style={{ objectFit: 'cover', height: '400px' }}
+                                alt={course.title}
+                            />
                         </div>
-                        <div className="col-md-6" data-aos="fade-left">
-                            <div className="bg-white p-4 rounded shadow enquiry-form-wrapper">
-                                <h5 className="mb-3 text-dark text-center">Enquire About This Course</h5>
+                        <div className="col-lg-6" data-aos="fade-left">
+                            <h2 className="section-heading text-primary">Course Overview</h2>
+                            <ul className="list-group list-group-flush fs-5">
+                                <li className="list-group-item"><strong>Technology:</strong> {course.technology}</li>
+                                <li className="list-group-item"><strong>Duration:</strong> {course.duration}</li>
+                                <li className="list-group-item"><strong>Mode:</strong> {course.mode}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Course Description & Topics */}
+            <section className="py-5 bg-white">
+                <div className="container">
+                    <div className="row g-5">
+                        <div className="col-lg-6" data-aos="fade-up">
+                            <h3 className="section-heading text-secondary">What You'll Learn</h3>
+                            <p className="fs-5" style={{ whiteSpace: 'pre-line' }}>{course.description}</p>
+                        </div>
+                        <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                            <h3 className="section-heading text-secondary">Topics Covered</h3>
+                            <ul className="list-unstyled fs-5">
+                                {course.topics.split('\n').map((topic, i) => (
+                                    <li key={i} className="mb-2 d-flex align-items-start">
+                                        <i className="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                        {topic}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Certificate Sample */}
+            <section className="py-5 bg-light">
+                <div className="container text-center" data-aos="zoom-in-up">
+                    <h3 className="section-heading text-primary mb-4">Sample Certificate</h3>
+                    <img
+                        src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
+                        alt="Certificate"
+                        className="img-fluid rounded shadow-sm"
+                        style={{ maxWidth: '90%', height: 'auto' }}
+                    />
+                </div>
+            </section>
+
+            {/* Features */}
+            <section className="bg-dark text-white py-5">
+                <div className="container">
+                    <div className="row text-center g-4">
+                        <div className="col-md-4" data-aos="flip-left">
+                            <i className="bi bi-laptop feature-icon text-primary"></i>
+                            <h5 className="mt-3">100% Practical</h5>
+                            <p>Real-time projects and hands-on training.</p>
+                        </div>
+                        <div className="col-md-4" data-aos="flip-up">
+                            <i className="bi bi-person-badge feature-icon text-warning"></i>
+                            <h5 className="mt-3">Industry Experts</h5>
+                            <p>Learn from certified and experienced mentors.</p>
+                        </div>
+                        <div className="col-md-4" data-aos="flip-right">
+                            <i className="bi bi-award feature-icon text-info"></i>
+                            <h5 className="mt-3">Certification</h5>
+                            <p>Recognized certificate on course completion.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Enquiry Form */}
+            <section className="py-5 bg-white" id="enquiry">
+                <div className="container" data-aos="fade-up">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-8">
+                            <div className="bg-light p-4 rounded shadow">
+                                <h4 className="text-center text-secondary mb-4">Enquire About This Course</h4>
                                 <EnquiryForm />
                             </div>
                         </div>
@@ -60,83 +149,9 @@ function CourseDetail() {
                 </div>
             </section>
 
-            <section className="py-5 bg-light" data-aos="fade-up">
-                <div className="container">
-                    <div className="row g-5 align-items-center">
-                        <div className="col-md-6">
-                            <img
-                                src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
-                                alt={course.title}
-                                className="img-fluid w-100 course-img"
-                                style={{ height: '400px', objectFit: 'cover' }}
-                            />
-                        </div>
-                        <div className="col-md-6">
-                            <h2 className="section-heading text-primary">Course Overview</h2>
-                            <p><strong>Duration:</strong> {course.duration}</p>
-                            <p><strong>Mode:</strong> {course.mode}</p>
-                            <p><strong>Technology:</strong> {course.technology}</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="py-5" data-aos="fade-up">
-                <div className="container">
-                    <div className="row g-5">
-                        <div className="col-md-6">
-                            <h3 className="section-heading text-secondary">Description</h3>
-                            <p style={{ whiteSpace: 'pre-line' }}>{course.description}</p>
-                        </div>
-                        <div className="col-md-6">
-                            <h3 className="section-heading text-secondary">Topics Covered</h3>
-                            <ul className="list-unstyled">
-                                {course.topics.split('\n').map((topic, index) => (
-                                    <li key={index} className="mb-3 d-flex align-items-center">
-                                        <i className="bi bi-check-circle-fill text-success me-2"></i>
-                                        <span>{topic}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="container text-center">
-                    <h3 className="section-heading text-secondary">Sample Certificate</h3>
-                    <div className="d-flex justify-content-center">
-                        <img
-                            src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
-                            alt="Course Certificate"
-                            className="img-fluid certificate-img"
-                            style={{ maxWidth: '700px', height: 'auto' }}
-                        />
-                    </div>
-                </div>
-            </section>
-
-            <section className="bg-dark text-light py-5" data-aos="fade-up">
-                <div className="container">
-                    <div className="row text-center g-4">
-                        <div className="col-md-4">
-                            <i className="bi bi-laptop feature-icon text-primary"></i>
-                            <h5 className="mt-3">100% Practical Learning</h5>
-                            <p>Hands-on projects and real-world case studies.</p>
-                        </div>
-                        <div className="col-md-4">
-                            <i className="bi bi-person-badge feature-icon text-success"></i>
-                            <h5 className="mt-3">Expert Trainers</h5>
-                            <p>Learn from industry professionals with years of experience.</p>
-                        </div>
-                        <div className="col-md-4">
-                            <i className="bi bi-award feature-icon text-warning"></i>
-                            <h5 className="mt-3">Certification</h5>
-                            <p>Receive an industry-recognized certificate after completion.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <Course/>
-            <Review/>
+            {/* Related Courses & Reviews */}
+            <Course />
+            <Review />
         </>
     );
 }
