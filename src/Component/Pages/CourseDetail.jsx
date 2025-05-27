@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import EnquiryForm from './Home/EnquiryForm'; 
 
 function CourseDetail() {
     const { slug } = useParams();
@@ -27,62 +28,62 @@ function CourseDetail() {
 
     return (
         <>
-            <section 
-                className="text-white text-center d-flex align-items-center" 
-                style={{ 
-                    height: '70vh',
-                    background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(https://source.unsplash.com/1600x900/?technology) no-repeat center center/cover`
+            <section
+                className="d-flex align-items-center text-white"
+                style={{
+                    minHeight: '100vh',
+                    background: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url(https://source.unsplash.com/1600x900/?technology,code) no-repeat center center/cover`,
                 }}
             >
-                <div className="container">
-                    <h1 className="display-3 fw-bold">{course.title}</h1>
-                    <p className="lead">Master {course.technology} with industry-relevant skills and certification</p>
-                </div>
-            </section>
-
-            <section className="py-5 bg-light">
-                <div className="container">
-                    <div className="row g-5 align-items-center">
-                        <div className="col-md-6">
-                            <div className="position-relative overflow-hidden rounded-4 shadow-sm">
-                                <img 
-                                    src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`} 
-                                    alt={course.title}
-                                    className="img-fluid w-100 h-100"
-                                    style={{ objectFit: 'cover', height: '400px' }}
-                                />
-                            </div>
+                <div className="container py-5">
+                    <div className="row align-items-center g-5">
+                        <div className="col-lg-6 text-center text-lg-start">
+                            <h1 className="display-3 fw-bold animate__animated animate__fadeInDown">
+                                {course.title}
+                            </h1>
+                            <p className="lead mt-3 animate__animated animate__fadeInUp">
+                                Master {course.technology} with industry-ready skills & certification.
+                            </p>
                         </div>
-
-                        <div className="col-md-6">
-                            <h2 className="mb-4 text-primary">Course Overview</h2>
-                            <div className="mb-3"><strong>Duration:</strong> {course.duration}</div>
-                            <div className="mb-3"><strong>Mode:</strong> {course.mode}</div>
-                            <div className="mb-3"><strong>Technology:</strong> {course.technology}</div>
+                        <div className="col-lg-6">
+                            <div className="bg-white p-4 p-md-5 rounded-4 shadow animate__animated animate__fadeInRight">
+                                <EnquiryForm />
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="py-5">
+            <section className="py-5 bg-light">
                 <div className="container">
                     <div className="row g-5">
                         <div className="col-md-6">
-                            <h3 className="mb-4 text-secondary">Description</h3>
-                            <p style={{ whiteSpace: 'pre-line' }}>
-                                {course.description}
-                            </p>
+                            <h3 className="text-secondary mb-4">Course Description</h3>
+                            <p style={{ whiteSpace: 'pre-line' }}>{course.description}</p>
                         </div>
 
                         <div className="col-md-6">
-                            <h3 className="mb-4 text-secondary">Topics Covered</h3>
-                            <ul className="list-unstyled">
-                                {course.topics.split('\n').map((topic, index) => (
-                                    <li key={index} className="mb-3 d-flex align-items-center">
-                                        <i className="bi bi-check-circle-fill text-success me-2"></i> 
-                                        <span>{topic}</span>
-                                    </li>
-                                ))}
+                            <div className="rounded-4 overflow-hidden shadow-sm mb-4">
+                                <img
+                                    src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
+                                    alt={course.title}
+                                    className="img-fluid w-100"
+                                    style={{ height: '300px', objectFit: 'cover' }}
+                                />
+                            </div>
+
+                            <ul className="list-group shadow-sm">
+                                <li className="list-group-item"><strong>Duration:</strong> {course.duration}</li>
+                                <li className="list-group-item"><strong>Mode:</strong> {course.mode}</li>
+                                <li className="list-group-item"><strong>Technology:</strong> {course.technology}</li>
+                                <li className="list-group-item">
+                                    <strong>Topics Covered:</strong>
+                                    <ul className="mt-2">
+                                        {course.topics.split('\n').map((topic, index) => (
+                                            <li key={index}>{topic}</li>
+                                        ))}
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -100,12 +101,12 @@ function CourseDetail() {
                         <div className="col-md-4">
                             <i className="bi bi-person-badge fs-1 text-success"></i>
                             <h5 className="mt-3">Expert Trainers</h5>
-                            <p>Learn from industry professionals with years of experience.</p>
+                            <p>Learn from professionals with years of industry experience.</p>
                         </div>
                         <div className="col-md-4">
                             <i className="bi bi-award fs-1 text-warning"></i>
                             <h5 className="mt-3">Certification</h5>
-                            <p>Receive an industry-recognized certificate after completion.</p>
+                            <p>Get certified upon successful course completion.</p>
                         </div>
                     </div>
                 </div>
@@ -115,9 +116,9 @@ function CourseDetail() {
                 <div className="container text-center">
                     <h3 className="mb-4 text-secondary">Sample Certificate</h3>
                     <div className="d-flex justify-content-center">
-                        <img 
-                            src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`} 
-                            alt="Course Certificate" 
+                        <img
+                            src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
+                            alt="Course Certificate"
                             className="img-fluid rounded-4 shadow"
                             style={{ maxWidth: '700px', height: 'auto' }}
                         />
