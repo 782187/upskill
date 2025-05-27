@@ -4,7 +4,9 @@ import axios from 'axios';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../../Style/CourseDetail.css';
-import EnquiryForm from './Home/EnquiryForm'; 
+import EnquiryForm from './Home/EnquiryForm';
+import Course from './Home/Course';
+import Review from './Home/Review';
 
 function CourseDetail() {
     const { slug } = useParams();
@@ -35,7 +37,7 @@ function CourseDetail() {
 
     return (
         <>
-            <section 
+            <section
                 className="text-white hero-section d-flex align-items-center"
                 style={{
                     minHeight: '80vh',
@@ -62,8 +64,8 @@ function CourseDetail() {
                 <div className="container">
                     <div className="row g-5 align-items-center">
                         <div className="col-md-6">
-                            <img 
-                                src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`} 
+                            <img
+                                src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
                                 alt={course.title}
                                 className="img-fluid w-100 course-img"
                                 style={{ height: '400px', objectFit: 'cover' }}
@@ -91,12 +93,23 @@ function CourseDetail() {
                             <ul className="list-unstyled">
                                 {course.topics.split('\n').map((topic, index) => (
                                     <li key={index} className="mb-3 d-flex align-items-center">
-                                        <i className="bi bi-check-circle-fill text-success me-2"></i> 
+                                        <i className="bi bi-check-circle-fill text-success me-2"></i>
                                         <span>{topic}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
+                    </div>
+                </div>
+                <div className="container text-center">
+                    <h3 className="section-heading text-secondary">Sample Certificate</h3>
+                    <div className="d-flex justify-content-center">
+                        <img
+                            src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
+                            alt="Course Certificate"
+                            className="img-fluid certificate-img"
+                            style={{ maxWidth: '700px', height: 'auto' }}
+                        />
                     </div>
                 </div>
             </section>
@@ -122,20 +135,8 @@ function CourseDetail() {
                     </div>
                 </div>
             </section>
-
-            <section className="py-5 bg-light" data-aos="fade-up">
-                <div className="container text-center">
-                    <h3 className="section-heading text-secondary">Sample Certificate</h3>
-                    <div className="d-flex justify-content-center">
-                        <img 
-                            src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`} 
-                            alt="Course Certificate" 
-                            className="img-fluid certificate-img"
-                            style={{ maxWidth: '700px', height: 'auto' }}
-                        />
-                    </div>
-                </div>
-            </section>
+            <Course/>
+            <Review/>
         </>
     );
 }
