@@ -10,7 +10,7 @@ const CourseDetail = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/Upskill/GetCourseBySlug?slug=${slug}`);
+        const response = await axios.get(`https://upskill-server.onrender.com/get-course-detail?slug=${slug}`);
         setCourse(response.data);
       } catch (error) {
         console.error("Error fetching course:", error);
@@ -37,15 +37,13 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Course Details Section */}
       <section className="course-detail-details">
         <div className="container">
           <div className="row justify-content-center">
-            {/* Course Card */}
             <div className="col-md-10">
               <div className="card course-detail-card">
                 <img
-                  src={`http://localhost:8080/Upskill/uploads/${course.image}`}
+                  src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
                   alt={course.title}
                   className="course-detail-card-img"
                 />
@@ -75,7 +73,6 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Why Join Section */}
       <section className="course-detail-features text-center">
         <div className="container">
           <h3 className="mb-4">Why Join Our Course?</h3>
@@ -99,12 +96,11 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Certificate Showcase */}
       <section className="course-detail-certificate text-center">
         <div className="container">
-          <h3 className="mb-4">Certificate You’ll Receive</h3>
+          <h3 className="mb-4">Certificate You'll Receive</h3>
           <img
-            src="https://www.shutterstock.com/image-vector/certificate-template-blue-gold-elegant-260nw-1093611534.jpg"
+            src="https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}"
             alt="Course Certificate"
           />
         </div>
