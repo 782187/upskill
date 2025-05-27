@@ -14,25 +14,17 @@ const CourseDetail = () => {
   useEffect(() => {
     axios
       .get(`https://upskill-server.onrender.com/get-course-detail?slug=${slug}`)
-      .then((response) => {
-        setCourse(response.data);
-      })
-      .catch(() => {
-        setError('Course not found or an error occurred.');
-      });
+      .then((response) => setCourse(response.data))
+      .catch(() => setError('Course not found or an error occurred.'));
   }, [slug]);
 
-  if (error) {
-    return <div className="text-center text-danger mt-5">{error}</div>;
-  }
-
-  if (!course) {
-    return <div className="text-center mt-5">Loading...</div>;
-  }
+  if (error) return <div className="text-center text-danger mt-5">{error}</div>;
+  if (!course) return <div className="text-center mt-5">Loading...</div>;
 
   return (
     <>
       <section className="hero-section position-relative">
+        <div className="floating-water"></div>
         <div className="overlay"></div>
         <div className="container text-white d-flex flex-column justify-content-center align-items-start h-100">
           <div>
@@ -40,10 +32,7 @@ const CourseDetail = () => {
             <p className="lead">
               Master {course.technology} with real-world skills & certification.
             </p>
-            <a
-              href="#enquiry"
-              className="btn btn-warning mt-3 px-4 py-2 fw-semibold"
-            >
+            <a href="#enquiry" className="btn btn-warning mt-3 px-4 py-2 fw-semibold">
               Enquire Now
             </a>
           </div>
@@ -64,15 +53,9 @@ const CourseDetail = () => {
             <div className="col-lg-6">
               <h2 className="section-heading text-primary">Course Overview</h2>
               <ul className="list-group list-group-flush fs-5">
-                <li className="list-group-item">
-                  <strong>Technology:</strong> {course.technology}
-                </li>
-                <li className="list-group-item">
-                  <strong>Duration:</strong> {course.duration}
-                </li>
-                <li className="list-group-item">
-                  <strong>Mode:</strong> {course.mode}
-                </li>
+                <li className="list-group-item"><strong>Technology:</strong> {course.technology}</li>
+                <li className="list-group-item"><strong>Duration:</strong> {course.duration}</li>
+                <li className="list-group-item"><strong>Mode:</strong> {course.mode}</li>
               </ul>
             </div>
           </div>
@@ -84,9 +67,7 @@ const CourseDetail = () => {
           <div className="row g-5">
             <div className="col-lg-6">
               <h3 className="section-heading text-secondary">What You'll Learn</h3>
-              <p className="fs-5" style={{ whiteSpace: 'pre-line' }}>
-                {course.description}
-              </p>
+              <p className="fs-5" style={{ whiteSpace: 'pre-line' }}>{course.description}</p>
             </div>
             <div className="col-lg-6">
               <h3 className="section-heading text-secondary">Topics Covered</h3>
@@ -142,9 +123,7 @@ const CourseDetail = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="bg-light p-4 rounded shadow">
-                <h4 className="text-center text-secondary mb-4">
-                  Enquire About This Course
-                </h4>
+                <h4 className="text-center text-secondary mb-4">Enquire About This Course</h4>
                 <EnquiryForm />
               </div>
             </div>
