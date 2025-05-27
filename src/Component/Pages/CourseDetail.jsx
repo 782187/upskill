@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import EnquiryForm from "./Home/EnquiryForm";
-import "../../Style/CourseDetail.css"
+import "../../Style/CourseDetail.css";
+
 const CourseDetail = () => {
   const { slug } = useParams();
   const [course, setCourse] = useState(null);
@@ -26,53 +27,56 @@ const CourseDetail = () => {
 
   return (
     <div>
-      <section className="course-detail-hero">
-        <div>
-          <h1 className="course-detail-title">{course.title}</h1>
-          <p className="course-detail-subtitle">{course.description}</p>
-        </div>
-        <div className="course-detail-enquiry-box">
-          <h4 className="mb-3 text-primary">Request a Callback</h4>
-          <EnquiryForm />
-        </div>
-      </section>
-
-      <section className="course-detail-details">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-md-10">
-              <div className="card course-detail-card">
-                <img
-                  src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
-                  alt={course.title}
-                  className="course-detail-card-img"
-                />
-                <div className="card-body">
-                  <h3 className="card-title mb-4">Course Overview</h3>
-                  <p className="card-text">{course.description}</p>
-
-                  <h5 className="mt-4 text-primary">Key Topics</h5>
-                  <ul>
-                    {course.topics.split(",").map((topic, index) => (
-                      <li key={index}>
-                        <i className="bi bi-check-circle-fill course-detail-topic-icon"></i>
-                        {topic.trim()}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <h5 className="mt-4 text-primary">Duration</h5>
-                  <p>{course.duration}</p>
-
-                  <h5 className="mt-4 text-primary">Mode</h5>
-                  <p>{course.mode}</p>
-                </div>
-              </div>
+      {/* Hero Section */}
+      <section className="course-detail-hero container">
+        <div className="row align-items-center">
+          <div className="col-md-6">
+            <h1 className="course-detail-title">{course.title}</h1>
+            <p className="course-detail-subtitle">{course.subtitle || course.description}</p>
+          </div>
+          <div className="col-md-6">
+            <div className="course-detail-enquiry-box">
+              <h4 className="mb-3 text-primary">Request a Callback</h4>
+              <EnquiryForm />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Description + Image & Info Section */}
+      <section className="course-detail-body-section container my-5">
+        <div className="row">
+          <div className="col-md-6 mb-4">
+            <h3 className="text-primary mb-3">Course Description</h3>
+            <p>{course.description}</p>
+
+            <h5 className="mt-4 text-primary">Key Topics</h5>
+            <ul className="list-unstyled">
+              {course.topics.split(",").map((topic, index) => (
+                <li key={index}>
+                  <i className="bi bi-check-circle-fill course-detail-topic-icon"></i>
+                  {topic.trim()}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="col-md-6">
+            <div className="course-info-card p-3 shadow rounded">
+              <img
+                src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
+                alt={course.title}
+                className="img-fluid rounded mb-3"
+              />
+              <p><strong>Duration:</strong> {course.duration}</p>
+              <p><strong>Mode:</strong> {course.mode}</p>
+              <p><strong>Technology:</strong> {course.technology}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
       <section className="course-detail-features text-center">
         <div className="container">
           <h3 className="mb-4">Why Join Our Course?</h3>
@@ -96,11 +100,12 @@ const CourseDetail = () => {
         </div>
       </section>
 
+      {/* Certificate Section */}
       <section className="course-detail-certificate text-center">
         <div className="container">
           <h3 className="mb-4">Certificate You'll Receive</h3>
           <img
-            src="https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}"
+            src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
             alt="Course Certificate"
           />
         </div>
