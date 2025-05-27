@@ -33,9 +33,6 @@ const CourseDetail = () => {
   return (
     <>
       <section className="hero-section position-relative">
-        <video className="bg-video" autoPlay muted loop>
-          <source src="/video/tech-bg.mp4" type="video/mp4" />
-        </video>
         <div className="overlay"></div>
         <div className="container text-white d-flex flex-column justify-content-center align-items-start h-100">
           <div>
