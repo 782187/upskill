@@ -25,8 +25,11 @@ const CourseDetail = () => {
     <>
       <section className="hero-section position-relative">
         <div className="floating-water"></div>
+        <div className="wave-layer wave-layer1"></div>
+        <div className="wave-layer wave-layer2"></div>
+        <div className="wave-layer wave-layer3"></div>
         <div className="overlay"></div>
-        <div className="container text-white d-flex flex-column justify-content-center align-items-start h-100">
+        <div className="container text-white d-flex flex-column justify-content-center align-items-start h-75">
           <div>
             <h1 className="display-4 fw-bold">{course.title}</h1>
             <p className="lead">
@@ -84,16 +87,14 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      <section className="py-5 bg-light">
-        <div className="container text-center">
-          <h3 className="section-heading text-primary mb-4">Sample Certificate</h3>
-          <img
-            src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
-            alt="Certificate"
-            className="img-fluid rounded shadow-sm"
-            style={{ maxWidth: '90%', height: 'auto' }}
-          />
-        </div>
+      <section className="py-5 bg-light text-center">
+        <h3 className="section-heading text-primary mb-4">Sample Certificate</h3>
+        <img
+          src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
+          alt="Certificate"
+          className="img-fluid rounded shadow-sm"
+          style={{ maxWidth: '90%', height: 'auto' }}
+        />
       </section>
 
       <section className="bg-dark text-white py-5">
@@ -122,10 +123,7 @@ const CourseDetail = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              <div className="bg-light p-4 rounded shadow">
-                <h4 className="text-center text-secondary mb-4">Enquire About This Course</h4>
-                <EnquiryForm />
-              </div>
+              <EnquiryForm />
             </div>
           </div>
         </div>
