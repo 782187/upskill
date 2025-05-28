@@ -69,18 +69,17 @@ const CourseDetail = () => {
           <div className="row g-5">
             <div className="col-lg-6">
               <h3 className="section-heading text-secondary">What You'll Learn</h3>
-              <p className="fs-5" style={{ whiteSpace: 'pre-line' }}>{course.description}</p>
+              <div
+                className="fs-5"
+                style={{ whiteSpace: 'pre-line' }}
+                dangerouslySetInnerHTML={{ __html: course.description }}
+              ></div>
             </div>
             <div className="col-lg-6">
               <h3 className="section-heading text-secondary">Topics Covered</h3>
-              <ul className="list-unstyled fs-5">
-                {course.topics.split('\n').map((topic, i) => (
-                  <li key={i} className="mb-2 d-flex align-items-start">
-                    <i className="bi bi-check-circle-fill text-success me-2 mt-1"></i>
-                    {topic}
-                  </li>
-                ))}
-              </ul>
+              <div className="fs-5">
+                <div dangerouslySetInnerHTML={{ __html: course.topics }}></div>
+              </div>
             </div>
           </div>
         </div>

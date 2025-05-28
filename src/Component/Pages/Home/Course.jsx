@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import './Courses.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 function Course() {
     const [dynamicCourses, setDynamicCourses] = useState([]);
@@ -30,7 +34,21 @@ function Course() {
 
                 {error && <p className="text-danger text-center">{error.message}</p>}
 
-                <div className="row g-4">
+                <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 2000 }}
+                    loop={true}
+                    breakpoints={{
+                        576: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        992: { slidesPerView: 3 },
+                        1200: { slidesPerView: 4 }
+                    }}
+                >
                     {allCourses.map((course, index) => {
                         const isStatic = !!course.Image;
                         const imageUrl = isStatic
@@ -38,12 +56,13 @@ function Course() {
                             : `https://upskill-server.onrender.com/get-image?courseId=${course.id}`;
 
                         return (
-                            <div className="col-12 col-md-6 col-lg-3" key={index}>
-                                <div className="card shadow-sm card-hover h-100">
+                            <SwiperSlide key={index}>
+                                <div className="card h-100 shadow-sm">
                                     <img
                                         src={imageUrl}
                                         className="card-img-top"
                                         alt={course.title || course.courseName}
+                                        style={{ height: "200px", objectFit: "cover" }}
                                     />
                                     <div className="card-body d-flex flex-column">
                                         <h5 className="card-title">
@@ -64,10 +83,10 @@ function Course() {
                                         </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </SwiperSlide>
                         );
                     })}
-                </div>
+                </Swiper>
             </div>
         </div>
     );
