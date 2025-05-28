@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 
 function Course() {
     const [dynamicCourses, setDynamicCourses] = useState([]);
     const [staticCourses, setStaticCourses] = useState([]);
     const [error, setError] = useState(null);
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
 
     useEffect(() => {
         axios.get('https://upskill-server.onrender.com/get-courses')
@@ -41,16 +42,20 @@ function Course() {
                     modules={[Navigation, Autoplay]}
                     spaceBetween={20}
                     slidesPerView={1}
-                    navigation
-                    autoplay={{ delay: 2000 }}
+                    autoplay={{ delay: 2500 }}
                     loop={true}
+                    onInit={(swiper) => {
+                        swiper.params.navigation.prevEl = prevRef.current;
+                        swiper.params.navigation.nextEl = nextRef.current;
+                        swiper.navigation.init();
+                        swiper.navigation.update();
+                    }}
                     breakpoints={{
                         576: { slidesPerView: 1 },
                         768: { slidesPerView: 2 },
                         992: { slidesPerView: 3 },
                         1200: { slidesPerView: 4 }
                     }}
-                    style={{ paddingBottom: "3rem" }}
                 >
                     {allCourses.map((course, index) => {
                         const isStatic = !!course.Image;
@@ -120,6 +125,44 @@ function Course() {
                         );
                     })}
                 </Swiper>
+
+                <div style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: "20px",
+                    marginTop: "20px"
+                }}>
+                    <button ref={prevRef} style={{
+                        padding: "10px 20px",
+                        backgroundColor: "#ff7f00",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                        fontWeight: "bold",
+                        transition: "background 0.3s"
+                    }}
+                        onMouseOver={e => e.currentTarget.style.backgroundColor = "#e06600"}
+                        onMouseOut={e => e.currentTarget.style.backgroundColor = "#ff7f00"}
+                    >
+                        ← Prev
+                    </button>
+                    <button ref={nextRef} style={{
+                        padding: "10px 20px",
+                        backgroundColor: "#ff7f00",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                        fontWeight: "bold",
+                        transition: "background 0.3s"
+                    }}
+                        onMouseOver={e => e.currentTarget.style.backgroundColor = "#e06600"}
+                        onMouseOut={e => e.currentTarget.style.backgroundColor = "#ff7f00"}
+                    >
+                        Next →
+                    </button>
+                </div>
             </div>
         </div>
     );
