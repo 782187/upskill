@@ -49,7 +49,7 @@ const Review = () => {
         slidesPerView={1}
         spaceBetween={20}
         loop={true}
-        autoplay={{ delay: 8000 }}
+        autoplay={{ delay: 2000 }}
         navigation={true}
         breakpoints={{
           768: {
