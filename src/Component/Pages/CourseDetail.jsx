@@ -78,7 +78,7 @@ const CourseDetail = () => {
             <div className="col-lg-6">
               <h3 className="section-heading text-secondary">Topics Covered</h3>
               <div className="fs-5">
-                <div dangerouslySetInnerHTML={{ __html: course.topics }}></div>
+                <div style={{ whiteSpace: 'pre-line' }} dangerouslySetInnerHTML={{ __html: course.topics }}></div>
               </div>
             </div>
           </div>

@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 function Course() {
     const [dynamicCourses, setDynamicCourses] = useState([]);
@@ -25,21 +24,24 @@ function Course() {
     const allCourses = [...staticCourses, ...dynamicCourses];
 
     return (
-        <div className="bg-light py-5">
+        <div style={{ backgroundColor: "#f8f9fa", padding: "3rem 0" }}>
             <div className="container">
-                <h2 className="text-center mb-3 text-orange">Our Training Programs</h2>
-                <p className="text-center mb-4">
+                <h2 style={{ textAlign: "center", marginBottom: "1rem", color: "orange" }}>
+                    Our Training Programs
+                </h2>
+                <p style={{ textAlign: "center", marginBottom: "2rem", color: "#333" }}>
                     Comprehensive courses designed by industry experts to help you master in-demand skills and advance your career.
                 </p>
 
-                {error && <p className="text-danger text-center">{error.message}</p>}
+                {error && (
+                    <p style={{ color: "red", textAlign: "center" }}>{error.message}</p>
+                )}
 
                 <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
+                    modules={[Navigation, Autoplay]}
                     spaceBetween={20}
                     slidesPerView={1}
                     navigation
-                    pagination={{ clickable: true }}
                     autoplay={{ delay: 2000 }}
                     loop={true}
                     breakpoints={{
@@ -48,6 +50,7 @@ function Course() {
                         992: { slidesPerView: 3 },
                         1200: { slidesPerView: 4 }
                     }}
+                    style={{ paddingBottom: "3rem" }}
                 >
                     {allCourses.map((course, index) => {
                         const isStatic = !!course.Image;
@@ -57,30 +60,60 @@ function Course() {
 
                         return (
                             <SwiperSlide key={index}>
-                                <div className="card h-100 shadow-sm">
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        height: "100%",
+                                        border: "1px solid #ddd",
+                                        borderRadius: "8px",
+                                        overflow: "hidden",
+                                        backgroundColor: "#fff",
+                                        boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+                                    }}
+                                >
                                     <img
                                         src={imageUrl}
-                                        className="card-img-top"
                                         alt={course.title || course.courseName}
-                                        style={{ height: "200px", objectFit: "cover" }}
+                                        style={{
+                                            height: "200px",
+                                            width: "100%",
+                                            objectFit: "cover"
+                                        }}
                                     />
-                                    <div className="card-body d-flex flex-column">
-                                        <h5 className="card-title">
+                                    <div style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        flex: 1,
+                                        padding: "16px"
+                                    }}>
+                                        <h5 style={{ marginBottom: "8px", fontSize: "1.1rem", color: "#333" }}>
                                             {course.title || course.courseName}
                                         </h5>
-                                        <p className="card-text mb-1">
+                                        <p style={{ marginBottom: "4px", fontSize: "0.95rem", color: "#555" }}>
                                             <strong>Duration:</strong> {course.duration || course.courseDuration}
                                         </p>
-                                        <p className="card-text mb-3">
+                                        <p style={{ marginBottom: "16px", fontSize: "0.95rem", color: "#555" }}>
                                             <strong>Mode:</strong> {course.mode || course.batch}
                                         </p>
-                                        <Link
-                                            to={`/courses/${course.slug}`}
-                                            className="btn mt-auto"
-                                            style={{ backgroundColor: "orange", color: "white" }}
-                                        >
-                                            Explore
-                                        </Link>
+                                        <div style={{ marginTop: "auto" }}>
+                                            <Link
+                                                to={`/courses/${course.slug}`}
+                                                style={{
+                                                    display: "inline-block",
+                                                    width: "100%",
+                                                    padding: "10px",
+                                                    backgroundColor: "orange",
+                                                    color: "white",
+                                                    textAlign: "center",
+                                                    borderRadius: "4px",
+                                                    textDecoration: "none",
+                                                    fontWeight: "bold"
+                                                }}
+                                            >
+                                                Explore
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </SwiperSlide>
