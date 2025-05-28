@@ -1,7 +1,11 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const StarRating = ({ rating }) => (
   <div className="d-flex gap-1 justify-content-center mb-2">
@@ -17,7 +21,6 @@ const StarRating = ({ rating }) => (
 );
 
 const Review = () => {
-  const scrollRef = useRef(null);
   const [reviews, setReviews] = useState([]);
 
   const fetchReviews = async () => {
@@ -29,19 +32,8 @@ const Review = () => {
     }
   };
 
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === "left"
-        ? -scrollRef.current.clientWidth
-        : scrollRef.current.clientWidth;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
   useEffect(() => {
     fetchReviews();
-    const interval = setInterval(() => scroll("right"), 8000);
-    return () => clearInterval(interval);
   }, []);
 
   if (reviews.length === 0) {
@@ -51,39 +43,33 @@ const Review = () => {
   return (
     <div className="bg-light py-5 px-3">
       <h2 className="text-center mb-5 fw-bold display-5 text-primary">What Our Students Say</h2>
-      <div className="position-relative px-2">
-        
-        <button
-          className="btn btn-outline-dark position-absolute top-50 start-0 translate-middle-y z-3 rounded-circle shadow-sm"
-          style={{ width: 45, height: 45 }}
-          onClick={() => scroll("left")}
-        >
-          <ChevronLeft size={24} />
-        </button>
 
-        <motion.div
-          className="d-flex overflow-hidden"
-          ref={scrollRef}
-          style={{
-            cursor: "grab",
-            gap: "1.5rem",
-            width: "100%",
-          }}
-          whileTap={{ cursor: "grabbing" }}
-          drag="x"
-          dragConstraints={{ left: -scrollRef.current?.scrollWidth, right: 0 }}
-        >
-          {reviews.map((review, index) => (
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        slidesPerView={1}
+        spaceBetween={20}
+        loop={true}
+        autoplay={{ delay: 8000 }}
+        navigation={true}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+          1200: {
+            slidesPerView: 3,
+          },
+        }}
+      >
+        {reviews.map((review, index) => (
+          <SwiperSlide key={index}>
             <motion.div
-              key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="card border-0 flex-shrink-0 bg-white shadow-sm"
+              className="card border-0 bg-white shadow-sm"
               style={{
-                width: "20rem",
+                width: "100%",
                 minHeight: "20rem",
                 borderRadius: "20px",
                 overflow: "hidden",
@@ -102,23 +88,14 @@ const Review = () => {
                 />
                 <h6 className="mb-1 fw-bold">{review.name}</h6>
                 <StarRating rating={review.rating} />
-                <p className="text-muted small mt-3" style={{ height: "7rem"}}>
+                <p className="text-muted small mt-3" style={{ height: "7rem" }}>
                   {review.review}
                 </p>
               </div>
             </motion.div>
-          ))}
-        </motion.div>
-
-        <button
-          className="btn btn-outline-dark position-absolute top-50 end-0 translate-middle-y z-3 rounded-circle shadow-sm"
-          style={{ width: 45, height: 45 }}
-          onClick={() => scroll("right")}
-        >
-          <ChevronRight size={24} />
-        </button>
-
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
