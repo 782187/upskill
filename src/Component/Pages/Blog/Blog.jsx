@@ -31,7 +31,7 @@ function Blog() {
   };
 
   return (
-    <div className="container py-5">
+    <div className="container py-3">
       <div className="row align-items-center">
         <div className="col-md-6 mb-4 mb-md-0">
           <h1 className="fw-bold display-5" style={{ color: "orange", textShadow: "2px 3px 3px gray" }}>
@@ -57,7 +57,8 @@ function Blog() {
         </div>
       </div>
 
-      <div className="container py-5" id="blogid">
+      <h2 className="text-center text-primary fw-bold display-5">Blogs</h2>
+      <div className="container py-3" id="blogid">
         {loading ? (
           <div className="text-center py-5">
             <div className="spinner-border text-primary" role="status"></div>
@@ -88,12 +89,12 @@ function Blog() {
                     <h6 className="card-title fw-semibold text-dark">{blog.title}</h6>
                     <p className="text-muted small mb-3">{blog.short_desc}</p>
 
-                    <a
-                      href={blog.slug}
+                    <Link
+                      to={`/blogs/${blog.slug}`}
                       className="btn btn-sm btn-warning text-white fw-semibold mt-auto rounded-pill shadow-sm"
                     >
                       Explore More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

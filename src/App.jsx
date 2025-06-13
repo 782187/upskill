@@ -7,7 +7,7 @@ import './App.css';
 import ScrollToTop from './Component/ScrollToTop';
 import Navbar from './Component/Navbar';
 import Footer from './Component/Footer';
-
+import BlogDetail from './Component/Pages/Blog/BlogDetail';
 import Home from './Component/Pages/Home/Home';
 import About from './Component/Pages/About';
 import Courses from './Component/Pages/Home/Course';
@@ -38,6 +38,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:slug" element={<CourseDetail />} />
+        <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/corporate-training" element={<CorporateTraining />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/hire" element={<HireFromUs />} />
