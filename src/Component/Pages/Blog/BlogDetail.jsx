@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../../Style/HeroSection.css'
 
 function BlogDetail() {
     const { slug } = useParams();
@@ -86,7 +87,8 @@ function BlogDetail() {
                     dangerouslySetInnerHTML={{ __html: blog.content }}
                 />
             </div>
-
+            <div className="tech-blob tech-blob-blue" />
+            <div className="tech-blob tech-blob-orange" />
         </div>
     );
 }
