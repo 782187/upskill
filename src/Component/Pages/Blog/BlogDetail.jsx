@@ -53,7 +53,7 @@ function BlogDetail() {
                         right: '-80px',
                         width: '200px',
                         height: '200px',
-                        background: 'radial-gradient(circle at 30 % 30 %, #89cff0, #005792)',
+                        background: 'radial-gradient(circle at 30% 30%, #89cff0, #005792)',
                         borderRadius: '50%',
                     }}
                 />
@@ -65,7 +65,7 @@ function BlogDetail() {
                         left: '-80px',
                         width: '200px',
                         height: '200px',
-                        background: 'radial-gradient(circle at 70 % 70 %, #ffb347, #ff6f00)',
+                        background: 'radial-gradient(circle at 70% 70%, #ffb347, #ff6f00)',
                         borderRadius: '50%',
                     }}
                 />
