@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../../Style/HeroSection.css'
 
 function BlogDetail() {
     const { slug } = useParams();
@@ -41,13 +40,41 @@ function BlogDetail() {
     return (
         <div className="w-100 bg-light">
             <div
-                className="container-fluid py-5"
+                className="position-relative container-fluid py-5 overflow-hidden"
                 style={{
                     background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)',
                     minHeight: '450px',
                 }}
             >
-                <div className="row align-items-center justify-content-center animate__animated animate__fadeIn">
+                <div
+                    style={{
+                        position: 'absolute',
+                        top: '-50px',
+                        right: '-80px',
+                        width: '200px',
+                        height: '200px',
+                        background: 'rgba(0, 123, 255, 0.15)',
+                        borderRadius: '50%',
+                        filter: 'blur(60px)',
+                        zIndex: 0,
+                    }}
+                />
+
+                <div
+                    style={{
+                        position: 'absolute',
+                        bottom: '-60px',
+                        left: '-80px',
+                        width: '200px',
+                        height: '200px',
+                        background: 'rgba(255, 159, 67, 0.15)',
+                        borderRadius: '50%',
+                        filter: 'blur(60px)',
+                        zIndex: 0,
+                    }}
+                />
+
+                <div className="row align-items-center justify-content-center position-relative animate__animated animate__fadeIn" style={{ zIndex: 1 }}>
                     <div className="col-md-6 px-5 text-center text-md-start">
                         <h1 className="fw-bold mb-3" style={{ fontSize: '2.8rem', color: '#2c3e50' }}>
                             {blog.title}
@@ -87,8 +114,6 @@ function BlogDetail() {
                     dangerouslySetInnerHTML={{ __html: blog.content }}
                 />
             </div>
-            <div className="tech-blob tech-blob-blue" />
-            <div className="tech-blob tech-blob-orange" />
         </div>
     );
 }
