@@ -50,15 +50,15 @@ function BlogDetail() {
                         <img
                             src={blog.image}
                             alt={blog.title}
-                            className="img-fluid rounded-4 shadow"
+                            className="img-fluid rounded-4 shadow blog-animation"
                             style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
                         />
                     </div>
                 </div>
             </div>
 
-            <div className="container-fluid px-3 px-md-5 py-5">
-                <div className="bg-white p-4 p-md-5 rounded-4 shadow mx-auto"
+            <div className="container-fluid px-1 px-md-2 py-5">
+                <div className="bg-white p-1 p-md-2 rounded-4 shadow mx-auto"
                     style={{
                         lineHeight: '1.8',
                         fontSize: '1.1rem',
