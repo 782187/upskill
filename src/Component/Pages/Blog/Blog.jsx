@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../Style/blog.css";
+import bgImg from "../../../assets/blogbg.png";
 import EnquiryForm from "../Home/EnquiryForm";
 import axios from "axios";
 
 function Blog() {
   const [showModal, setShowModal] = useState(false);
-  const [blogs,setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,51 +19,88 @@ function Blog() {
     return () => clearTimeout(timer);
   }, []);
 
-
   const fetchBlog = async () => {
     try {
       const res = await axios.get("https://upskill-server.onrender.com/getblog");
       setBlogs(res.data);
     } catch (err) {
       console.error("Cannot fetch blogs", err);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div>
-      <div className="hero-section text-white text-center">
-        <h1 className="display-4 fw-bold gradient-text">Explore Top Blogs</h1>
-        <p className="lead">Discover insights and knowledge from the tech world.</p>
+    <div className="container py-5">
+      <div className="row align-items-center">
+        <div className="col-md-6 mb-4 mb-md-0">
+          <h1 className="fw-bold display-5" style={{ color: "orange", textShadow: "2px 3px 3px gray" }}>
+            Stay Updated with the Latest <br />
+            <span className="text-primary">Tech & Training Blogs</span>
+          </h1>
+          <p className="text-muted mt-3">
+            Explore expert-written blogs on web development, programming, career tips,
+            and industry trends from our experienced trainers.
+          </p>
+          <form className="d-flex mt-4" onSubmit={(e) => e.preventDefault()}>
+            <a href="#blogid" className="btn btn-success rounded-end px-4">View Blogs</a>
+          </form>
+        </div>
+
+        <div className="col-md-6 text-center">
+          <img
+            src={bgImg}
+            alt="Blog Illustration"
+            className="img-fluid"
+            style={{ maxHeight: "400px" }}
+          />
+        </div>
       </div>
 
-      <div className="container py-5">
-        <div className="row">
-          {blogs.map((blog, index) => (
-            <div
-              className="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch mb-4"
-              key={index}
-            >
-              <div className="card w-100 shadow-sm rounded-4 blog-card">
-                <img
-                  src={blog.image}
-                  className="card-img-top img-fluid p-2 bg-light"
-                  alt={blog.title}
-                  style={{ height: "150px", objectFit: "contain" }}
-                />
-                <div className="card-body d-flex flex-column">
-                  <h6 className="card-title fw-semibold">{blog.title}</h6>
-                  <p className="text-muted small mb-2">{blog.short_desc}</p>
-                  <a
-                    href={blog.slug}
-                    className="btn btn-warning btn-sm mt-auto text-white fw-semibold"
-                  >
-                    Explore More
-                  </a>
+      <div className="container py-5" id="blogid">
+        {loading ? (
+          <div className="text-center py-5">
+            <div className="spinner-border text-primary" role="status"></div>
+            <p className="mt-3">Loading blogs...</p>
+          </div>
+        ) : blogs.length === 0 ? (
+          <div className="text-center py-5">
+            <h5 className="text-muted">No blogs found at the moment.</h5>
+          </div>
+        ) : (
+          <div className="row">
+            {blogs.map((blog, index) => (
+              <div
+                className="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch mb-4"
+                key={index}
+              >
+                <div className="card w-100 blog-card shadow-sm border-0 rounded-4 overflow-hidden position-relative">
+                  <div className="image-wrapper bg-light d-flex align-items-center justify-content-center p-3">
+                    <img
+                      src={blog.image}
+                      className="img-fluid"
+                      alt={blog.title}
+                      style={{ maxHeight: "140px", objectFit: "contain" }}
+                    />
+                  </div>
+
+                  <div className="card-body d-flex flex-column">
+                    <h6 className="card-title fw-semibold text-dark">{blog.title}</h6>
+                    <p className="text-muted small mb-3">{blog.short_desc}</p>
+
+                    <a
+                      href={blog.slug}
+                      className="btn btn-sm btn-warning text-white fw-semibold mt-auto rounded-pill shadow-sm"
+                    >
+                      Explore More
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+
+        )}
       </div>
 
       <div
@@ -70,7 +109,7 @@ function Blog() {
         role="dialog"
         style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
       >
-        <div className="modal-dialog modal-dialog-centered" role="document">
+        <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div className="modal-content rounded-4 shadow">
             <div className="modal-header">
               <h5 className="modal-title text-primary">Have Questions?</h5>
