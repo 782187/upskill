@@ -55,7 +55,6 @@ function BlogDetail() {
                         height: '200px',
                         background: 'rgba(0, 123, 255, 0.15)',
                         borderRadius: '50%',
-                        filter: 'blur(60px)',
                         zIndex: 0,
                     }}
                 />
@@ -69,7 +68,6 @@ function BlogDetail() {
                         height: '200px',
                         background: 'rgba(255, 159, 67, 0.15)',
                         borderRadius: '50%',
-                        filter: 'blur(60px)',
                         zIndex: 0,
                     }}
                 />
