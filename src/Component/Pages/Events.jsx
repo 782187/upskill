@@ -54,27 +54,9 @@ const EventsPage = () => {
 
   return (
     <>
-      <nav className="navbar navbar-light bg-light sticky-top shadow-sm justify-content-center small">
-        <ul className="nav">
-          <li className="nav-item">
-            <a className="nav-link" href="#hero">Home</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#celebration">Celebrations</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#visits">Industrial Visits</a>
-          </li>
-        </ul>
-      </nav>
-
       <section
         id="hero"
-        className="position-relative min-vh-100 d-flex align-items-center justify-content-center text-white"
-        style={{
-          background: "url('/eventhero.jpg') center center / cover no-repeat",
-          backgroundAttachment: "fixed",
-        }}
+        className="position-relative d-flex align-items-center justify-content-center text-white bg-info"
       >
         <div
           className="position-absolute top-0 start-0 w-100 h-100"

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../Style/blog.css";
 import EnquiryForm from "../Home/EnquiryForm";
+import axios from "axios";
 
 function Blog() {
   const [showModal, setShowModal] = useState(false);
+  const [blogs,setBlogs] = useState([]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,56 +16,65 @@ function Blog() {
     return () => clearTimeout(timer);
   }, []);
 
-  const blogs = [
-    {
-      title: "Hollow Diamond Pattern in Java",
-      image: "Hollow.png",
-      date: "2025-01-19",
-      link: "#",
-    },
-    {
-      title: "Object Oriented Programming Explained With Real Life Example",
-      image: "oops.jpg",
-      date: "2025-02-01",
-      link: "#",
-    },
-    {
-      title: "Understanding APIs: A Beginner's Guide",
-      image: "API.png",
-      date: "2025-02-28",
-      link: "#",
-    },
-    {
-      title: "How to Host Your First Website for Free",
-      image: "Host.png",
-      date: "2025-03-16",
-      link: "#",
-    },
-    {
-      title: "How to Use Postman for API Testing",
-      image: "Postman.png",
-      date: "2025-03-28",
-      link: "#",
-    },
-    {
-      title: "Introduction to Docker for Beginners",
-      image: "Docker1.png",
-      date: "2025-04-01",
-      link: "#",
-    },
-    {
-      title: "Authentication vs Authorization: What's the Difference",
-      image: "Authontication.png",
-      date: "2025-04-13",
-      link: "#",
-    },
-    {
-      title: "Understanding DOM and How to Manipulate It",
-      image: "DOM.png",
-      date: "2025-05-02",
-      link: "#",
-    },
-  ];
+  const fetchBlog = async () => {
+    try {
+      const res = await axios.get("https://upskill-server.onrender.com/getblog");
+      setBlogs(res.data);
+    } catch (err) {
+      console.error("Cannot fetch blogs", err);
+    }
+  };
+
+  // const blogs = [
+  //   {
+  //     title: "Hollow Diamond Pattern in Java",
+  //     image: "Hollow.png",
+  //     date: "2025-01-19",
+  //     link: "#",
+  //   },
+  //   {
+  //     title: "Object Oriented Programming Explained With Real Life Example",
+  //     image: "oops.jpg",
+  //     date: "2025-02-01",
+  //     link: "#",
+  //   },
+  //   {
+  //     title: "Understanding APIs: A Beginner's Guide",
+  //     image: "API.png",
+  //     date: "2025-02-28",
+  //     link: "#",
+  //   },
+  //   {
+  //     title: "How to Host Your First Website for Free",
+  //     image: "Host.png",
+  //     date: "2025-03-16",
+  //     link: "#",
+  //   },
+  //   {
+  //     title: "How to Use Postman for API Testing",
+  //     image: "Postman.png",
+  //     date: "2025-03-28",
+  //     link: "#",
+  //   },
+  //   {
+  //     title: "Introduction to Docker for Beginners",
+  //     image: "Docker1.png",
+  //     date: "2025-04-01",
+  //     link: "#",
+  //   },
+  //   {
+  //     title: "Authentication vs Authorization: What's the Difference",
+  //     image: "Authontication.png",
+  //     date: "2025-04-13",
+  //     link: "#",
+  //   },
+  //   {
+  //     title: "Understanding DOM and How to Manipulate It",
+  //     image: "DOM.png",
+  //     date: "2025-05-02",
+  //     link: "#",
+  //   },
+  // ];
 
   return (
     <div>
@@ -88,9 +99,9 @@ function Blog() {
                 />
                 <div className="card-body d-flex flex-column">
                   <h6 className="card-title fw-semibold">{blog.title}</h6>
-                  <p className="text-muted small mb-2">{blog.date}</p>
+                  <p className="text-muted small mb-2">{blog.short_desc}</p>
                   <a
-                    href={blog.link}
+                    href={blog.slug}
                     className="btn btn-warning btn-sm mt-auto text-white fw-semibold"
                   >
                     Explore More
@@ -102,7 +113,6 @@ function Blog() {
         </div>
       </div>
 
-      {/* Bootstrap Modal */}
       <div
         className={`modal fade ${showModal ? "show d-block" : ""}`}
         tabIndex="-1"
