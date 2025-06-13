@@ -13,8 +13,10 @@ function Blog() {
       setShowModal(true);
     }, 5000);
 
+    fetchBlog();
     return () => clearTimeout(timer);
   }, []);
+
 
   const fetchBlog = async () => {
     try {
@@ -24,57 +26,6 @@ function Blog() {
       console.error("Cannot fetch blogs", err);
     }
   };
-
-  // const blogs = [
-  //   {
-  //     title: "Hollow Diamond Pattern in Java",
-  //     image: "Hollow.png",
-  //     date: "2025-01-19",
-  //     link: "#",
-  //   },
-  //   {
-  //     title: "Object Oriented Programming Explained With Real Life Example",
-  //     image: "oops.jpg",
-  //     date: "2025-02-01",
-  //     link: "#",
-  //   },
-  //   {
-  //     title: "Understanding APIs: A Beginner's Guide",
-  //     image: "API.png",
-  //     date: "2025-02-28",
-  //     link: "#",
-  //   },
-  //   {
-  //     title: "How to Host Your First Website for Free",
-  //     image: "Host.png",
-  //     date: "2025-03-16",
-  //     link: "#",
-  //   },
-  //   {
-  //     title: "How to Use Postman for API Testing",
-  //     image: "Postman.png",
-  //     date: "2025-03-28",
-  //     link: "#",
-  //   },
-  //   {
-  //     title: "Introduction to Docker for Beginners",
-  //     image: "Docker1.png",
-  //     date: "2025-04-01",
-  //     link: "#",
-  //   },
-  //   {
-  //     title: "Authentication vs Authorization: What's the Difference",
-  //     image: "Authontication.png",
-  //     date: "2025-04-13",
-  //     link: "#",
-  //   },
-  //   {
-  //     title: "Understanding DOM and How to Manipulate It",
-  //     image: "DOM.png",
-  //     date: "2025-05-02",
-  //     link: "#",
-  //   },
-  // ];
 
   return (
     <div>
