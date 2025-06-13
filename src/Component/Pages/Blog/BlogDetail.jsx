@@ -39,35 +39,54 @@ function BlogDetail() {
 
     return (
         <div className="w-100 bg-light">
-            <div className="container-fluid py-5" style={{ backgroundColor: '#f8f9fa' }}>
-                <div className="row align-items-center">
-                    <div className="col-md-6 text-center text-md-start px-5">
-                        <h1 className="display-5 fw-bold" style={{ color: '#343a40' }}>{blog.title}</h1>
-                        <p className="lead mt-3" style={{ color: '#6c757d' }}>{blog.short_desc}</p>
+            <div
+                className="container-fluid py-5"
+                style={{
+                    background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)',
+                    minHeight: '450px',
+                }}
+            >
+                <div className="row align-items-center justify-content-center animate__animated animate__fadeIn">
+                    <div className="col-md-6 px-5 text-center text-md-start">
+                        <h1 className="fw-bold mb-3" style={{ fontSize: '2.8rem', color: '#2c3e50' }}>
+                            {blog.title}
+                        </h1>
+                        <p className="lead" style={{ color: '#6c757d', fontSize: '1.2rem' }}>
+                            {blog.short_desc}
+                        </p>
                     </div>
 
-                    <div className="col-md-6">
+                    <div className="col-md-5">
                         <img
                             src={blog.image}
                             alt={blog.title}
-                            className="img-fluid rounded-4 shadow blog-animation"
-                            style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
+                            className="img-fluid rounded-4 shadow-lg blog-animation"
+                            style={{
+                                maxHeight: '400px',
+                                objectFit: 'cover',
+                                border: '4px solid white',
+                                transition: 'transform 0.3s',
+                            }}
+                            onMouseOver={e => e.currentTarget.style.transform = 'scale(1.03)'}
+                            onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
                         />
                     </div>
                 </div>
             </div>
 
-            <div className="container-fluid px-1 px-md-2 py-5">
-                <div className="bg-white p-1 p-md-2 rounded-4 shadow mx-auto"
+            <div className="container-fluid px-2 px-md-4 py-5">
+                <div
+                    className="bg-white p-3 p-md-5 rounded-4 shadow"
                     style={{
                         lineHeight: '1.8',
                         fontSize: '1.1rem',
                         whiteSpace: 'pre-line',
-                        maxWidth: '1200px'
+                        maxWidth: '100%',
                     }}
                     dangerouslySetInnerHTML={{ __html: blog.content }}
                 />
             </div>
+
         </div>
     );
 }
