@@ -102,7 +102,6 @@ function BlogDetail() {
                 <div
                     className="bg-white p-3 p-md-5 rounded-4 shadow"
                     style={{
-                        lineHeight: '1.8',
                         fontSize: '1.1rem',
                         whiteSpace: 'pre-line',
                         maxWidth: '100%',
