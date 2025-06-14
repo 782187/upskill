@@ -109,49 +109,8 @@ function BlogDetail() {
                     }}
                 >
                     <article style={{ all: 'initial', fontSize: 'inherit', lineHeight: 'inherit' }}>
-                        <style>
-                            {`
-                                article h1, article h2, article h3, article p, article ul, article ol, article li, article table {
-                                    margin: 0 0 10px 0;
-                                    padding: 0;
-                                }
-
-                                article ul, article ol {
-                                    padding-left: 20px;
-                                }
-
-                                article li {
-                                    margin-bottom: 6px;
-                                }
-
-                                article table {
-                                    border-collapse: collapse;
-                                    width: 100%;
-                                    margin-top: 10px;
-                                }
-
-                                article th, article td {
-                                    border: 1px solid #ccc;
-                                    padding: 8px;
-                                    text-align: left;
-                                }
-
-                                article th {
-                                    background-color: #f5f5f5;
-                                }
-                            `}
-                        </style>
-
                         <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                     </article>
-
-                    <div className="mt-4">
-                        <h5 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Related Posts</h5>
-                        <ul style={{ paddingLeft: '20px' }}>
-                            <li><a href="/blog/token-auth-rest-api">How to Add Token Auth in REST API</a></li>
-                            <li><a href="/blog/react-rest-integration">Connecting REST API with React</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
 
