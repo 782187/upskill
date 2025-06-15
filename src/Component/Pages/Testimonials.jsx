@@ -50,7 +50,7 @@ function Testimonials() {
             review.map((data, index) => (
               <div
                 key={index}
-                className="d-flex flex-column flex-md-row align-items-start p-4 rounded shadow-sm"
+                className="d-flex flex-column flex-md-row align-items-start p-3 rounded shadow-sm"
                 style={{ backgroundColor: "#f8f9fa", gap: "20px" }}
               >
                 <div className="d-flex align-items-center" style={{ minWidth: "220px" }}>
@@ -58,7 +58,7 @@ function Testimonials() {
                     src={data.image}
                     alt={data.name}
                     className="rounded-circle me-3"
-                    style={{ width: '70px', height: '70px', objectFit: 'cover' }}
+                    style={{ width: '80px', height: '80px', objectFit: 'cover' }}
                   />
                   <div>
                     <h6 className="mb-1">{data.name}</h6>
