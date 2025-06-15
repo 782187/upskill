@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EnquiryForm from './Home/EnquiryForm';
 import Course from './Home/Course';
+import ContactImg from './../../assets/contact.png'
 
 const ContactUs = () => {
   return (
@@ -20,7 +21,7 @@ const ContactUs = () => {
             </div>
             <div className="col-md-5 text-center">
               <img
-                src="./src/assets/contact.png"
+                src={ContactImg}
                 alt="Contact Illustration"
                 className="img-fluid"
                 style={{ maxHeight: '420px' }}
@@ -42,7 +43,7 @@ const ContactUs = () => {
                     <div>
                       <h6 className="mb-1">Call Us</h6>
                       <a href="tel:+917821879681" className="text-decoration-none text-dark">
-                        +91 8484833677
+                        +91 7821879681
                       </a>
                     </div>
                   </li>
