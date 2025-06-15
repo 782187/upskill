@@ -38,3 +38,7 @@ body {
         filter: drop-shadow(2px 3px 5px purple);
     }
 }
+
+.bg-contact{
+    background: linear-gradient(45deg,rgba(92, 123, 128, 0.2),rgba(168, 224, 247, 0.1));
+}
