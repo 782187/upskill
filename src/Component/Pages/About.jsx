@@ -5,26 +5,20 @@ import '../../Style/about.css'
 const AboutUs = () => {
     return (
         <div className="overflow-x-hidden">
-            <section
-                className="text-white bg-cover bg-center d-flex align-items-center"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80')",
-                    height: "60vh",
-                }}
-            >
+            <section className="bg-dark text-white py-5">
                 <div className="container text-center">
-                    <h1 className="display-4 fw-bold mb-3 animate-fade-in">
-                        Welcome to <span style={{ color: "#F97316" }}>Upskill Institute</span>
+                    <h1 className="display-4 fw-bold mb-3">
+                        Contact <span style={{ color: "#F97316" }}>Upskill</span> IT Training & Placement
                     </h1>
                     <p className="lead mb-4">
-                        We empower individuals to become industry-ready IT professionals through hands-on training, real-world projects, and career support.
+                        Ready to start your tech career? Have questions about our courses? Reach out — we’re here to guide you.
                     </p>
                     <a href="#mission" className="btn btn-warning fw-semibold px-4 py-2">
                         Explore Our Journey
                     </a>
                 </div>
             </section>
+
 
             <section id="mission" className="py-5 px-3 px-md-5 bg-light">
                 <div className="container">
