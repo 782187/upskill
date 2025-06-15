@@ -122,7 +122,7 @@ function Navbar() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="dropdown-item" to="#" onClick={handleClick}>
+                                    <Link className="dropdown-item" to="studentzone/testimonials" onClick={handleClick}>
                                         <i className="fas fa-user-check me-2 text-info"></i> Testimonials
                                     </Link>
                                 </li>
@@ -137,7 +137,7 @@ function Navbar() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="dropdown-item" to="/blogs" onClick={handleClick}>
+                                    <Link className="dropdown-item" to="studentzone/blogs" onClick={handleClick}>
                                         <i className="fas fa-blog me-2 text-primary"></i> Blogs
                                     </Link>
                                 </li>

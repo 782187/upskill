@@ -22,6 +22,7 @@ import FullStackPython from './Component/Pages/Courses/FullStackPython';
 import SoftwareTesting from './Component/Pages/Courses/Testing';
 import WebDevelopment from './Component/Pages/Courses/WebDevelopment';
 import ContactUs from './Component/Pages/ContactUs';
+import Testimonials from './Component/Pages/Testimonials';
 
 function App() {
   useEffect(() => {
@@ -40,7 +41,8 @@ function App() {
         <Route path="/courses/:slug" element={<CourseDetail />} />
         <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/corporate-training" element={<CorporateTraining />} />
-        <Route path="/blogs" element={<Blogs />} />
+        <Route path="studentzone/blogs" element={<Blogs />} />
+        <Route path="studentzone/testimonials" element={<Testimonials/>}/>
         <Route path="/hire" element={<HireFromUs />} />
         <Route path="/events" element={<Events />} />
         <Route path="/career" element={<Career />} />
