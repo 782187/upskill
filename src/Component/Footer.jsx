@@ -74,9 +74,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick Links and Explore - Responsive Flexbox on Mobile */}
             <div className="col-lg-4 col-md-6 d-flex flex-column flex-sm-row justify-content-between">
-              {/* Quick Links */}
               <div className="footer-section mb-4 mb-sm-0">
                 <h5 className="footer-title">Quick Links</h5>
                 <ul className="list-unstyled d-flex flex-column gap-2">
@@ -85,7 +83,6 @@ const Footer = () => {
                 </ul>
               </div>
 
-              {/* Explore */}
               <div className="footer-section">
                 <h5 className="footer-title">Explore</h5>
                 <ul className="list-unstyled d-flex flex-column gap-2">
@@ -100,7 +97,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Map Embed */}
             <div className="col-lg-4 col-md-12">
               <h5 className="footer-title mb-3">Visit Us</h5>
               <div className="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
