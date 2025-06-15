@@ -58,7 +58,7 @@ function Testimonials() {
                     src={data.image}
                     alt={data.name}
                     className="rounded-circle me-3"
-                    style={{ width: '80px', height: '80px', objectFit: 'cover' }}
+                    style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                   />
                   <div>
                     <h6 className="mb-1">{data.name}</h6>
