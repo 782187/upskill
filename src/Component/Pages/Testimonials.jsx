@@ -57,13 +57,15 @@ function Testimonials() {
                                     <img
                                         src={data.image}
                                         alt={data.name}
-                                        className="me-3 rounded border shadow-sm"
+                                        className="me-3 rounded-3 border shadow"
                                         style={{
-                                            width: '96px',
-                                            height: '96px',
+                                            width: '120px',
+                                            height: '120px',
                                             objectFit: 'cover',
+                                            imageRendering: 'auto',
                                         }}
                                     />
+
                                     <div>
                                         <h6 className="mb-1 fw-semibold">{data.name}</h6>
                                         <small className="text-muted d-block mb-1">{data.course}</small>
@@ -80,7 +82,6 @@ function Testimonials() {
                     )}
                 </div>
             )}
-
             <Course />
         </div>
     );
