@@ -77,8 +77,7 @@ function Course() {
                                             borderRadius: "8px",
                                             overflow: "hidden",
                                             backgroundColor: "#fff",
-                                            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-                                            height: "100%"
+                                            boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
                                         }}
                                     >
                                         <img

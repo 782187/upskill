@@ -7,104 +7,112 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const PlacedStudent = () => {
-  const [placements, setPlacements] = useState([]);
+    const [placements, setPlacements] = useState([]);
 
-  useEffect(() => {
-    const fetchPlacement = async () => {
-      try {
-        const res = await axios.get("https://upskill-server.onrender.com/getplacement");
-        setPlacements(res.data);
-      } catch (error) {
-        console.error("Error fetching placements:", error);
-      }
-    };
-    fetchPlacement();
-  }, []);
+    useEffect(() => {
+        const fetchPlacement = async () => {
+            try {
+                const res = await axios.get("https://upskill-server.onrender.com/getplacement");
+                setPlacements(res.data);
+            } catch (error) {
+                console.error("Error fetching placements:", error);
+            }
+        };
+        fetchPlacement();
+    }, []);
 
-  if (placements.length === 0) {
-    return <div className="text-center py-5">Loading placed students...</div>;
-  }
+    if (placements.length === 0) {
+        return <div className="text-center py-5">Loading placed students...</div>;
+    }
 
-  return (
-    <div className="bg-light py-5 px-3">
-      <div className="container">
-        <h2 className="text-center mb-5 fw-bold display-5 text-primary">
-          Our Placed Students
-        </h2>
+    return (
+        <div className="bg-light py-5 px-3">
+            <div className="container">
+                <h2 className="text-center mb-5 fw-bold display-5 text-primary">
+                    Our Placed Students
+                </h2>
 
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{ delay: 2500 }}
-          navigation={true}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
-          }}
-        >
-          {placements.map((s, index) => (
-            <SwiperSlide key={index}>
-              <div className="d-flex justify-content-center h-100">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="card border-0 shadow-sm h-100 d-flex flex-column justify-content-between align-items-center"
-                  style={{
-                    borderRadius: "15px",
-                    background: "#ffffff",
-                    boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
-                    width: "100%",
-                    transition: "transform 0.3s",
-                  }}
+                <Swiper
+                    modules={[Navigation, Autoplay]}
+                    slidesPerView={1}
+                    spaceBetween={30}
+                    loop={true}
+                    autoplay={{ delay: 2500 }}
+                    navigation={true}
+                    breakpoints={{
+                        768: { slidesPerView: 2 },
+                        1200: { slidesPerView: 3 },
+                    }}
                 >
-                  <img
-                    src={`data:image/jpeg;base64,${s.image}`}
-                    alt={s.name}
-                    className="mb-3"
-                    style={{
-                      width: "150px",
-                      height: "150px",
-                      objectFit: "cover",
-                      border: "3px solid #0d6efd",
-                    }}
-                  />
-                  <p className="bg-secondary text-center">{s.position}</p>
+                    {placements.map((s, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="d-flex justify-content-center h-100">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6 }}
+                                    viewport={{ once: true }}
+                                    className="text-center p-3"
+                                    style={{
+                                        border: "4px solid #28a745", 
+                                        borderRadius: "10px",
+                                        backgroundColor: "#fff",
+                                        width: "100%",
+                                        maxWidth: "300px",
+                                        boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                                    }}
+                                >
+                                    <img
+                                        src={`data:image/jpeg;base64,${s.image}`}
+                                        alt={s.name}
+                                        style={{
+                                            width: "100%",
+                                            height: "250px",
+                                            objectFit: "cover",
+                                            borderBottom: "4px solid #28a745",
+                                        }}
+                                        className="mb-3"
+                                    />
 
-                  <div
-                    className="badge bg-light text-primary mb-2 px-3 py-2"
-                    style={{
-                      fontSize: "0.85rem",
-                      borderRadius: "20px",
-                      fontWeight: "500",
-                    }}
-                  >
-                    @{s.companyName}
-                  </div>
+                                    <div
+                                        style={{
+                                            backgroundColor: "#28a745",
+                                            color: "#fff",
+                                            fontWeight: "bold",
+                                            padding: "6px 0",
+                                            marginBottom: "8px",
+                                        }}
+                                    >
+                                        {s.position}
+                                    </div>
 
-                  <h5 className="fw-bold text-success text-uppercase text-center">
-                    {s.name}
-                  </h5>
+                                    <div style={{ color: "#333", marginBottom: "4px" }}>
+                                        @{s.companyName}
+                                    </div>
 
-                  {s.companyLogo && (
-                    <img
-                      src={`data:image/jpeg;base64,${s.companyLogo}`}
-                      alt="Company Logo"
-                      className="img-fluid mt-3"
-                      style={{ maxHeight: "40px", objectFit: "contain" }}
-                    />
-                  )}
-                </motion.div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
-  );
+                                    <div
+                                        style={{
+                                            color: "#28a745",
+                                            fontWeight: "bold",
+                                            fontSize: "1.1rem",
+                                            textTransform: "uppercase",
+                                            marginBottom: "6px",
+                                        }}
+                                    >
+                                        {s.name}
+                                    </div>
+
+                                    <div style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000" }}>
+                                        {s.package} LPA PACKAGE
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+        </div>
+    );
 };
 
 export default PlacedStudent;
