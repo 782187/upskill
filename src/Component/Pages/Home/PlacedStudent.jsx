@@ -52,7 +52,7 @@ const PlacedStudent = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="card border-0 shadow-sm h-100 d-flex flex-column justify-content-between align-items-center p-4"
+                  className="card border-0 shadow-sm h-100 d-flex flex-column justify-content-between align-items-center"
                   style={{
                     borderRadius: "15px",
                     background: "#ffffff",
@@ -66,7 +66,7 @@ const PlacedStudent = () => {
                     alt={s.name}
                     className="mb-3"
                     style={{
-                      width: "120px",
+                      width: "150px",
                       height: "150px",
                       objectFit: "cover",
                       border: "3px solid #0d6efd",
