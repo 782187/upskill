@@ -57,7 +57,6 @@ const PlacedStudent = () => {
                     borderRadius: "15px",
                     background: "#ffffff",
                     boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
-                    maxWidth: "300px",
                     width: "100%",
                     transition: "transform 0.3s",
                   }}
@@ -65,15 +64,15 @@ const PlacedStudent = () => {
                   <img
                     src={`data:image/jpeg;base64,${s.image}`}
                     alt={s.name}
-                    className="rounded-circle mb-3"
+                    className="mb-3"
                     style={{
-                      width: "100px",
-                      height: "100px",
+                      width: "120px",
+                      height: "150px",
                       objectFit: "cover",
                       border: "3px solid #0d6efd",
                     }}
                   />
-                  <p className="p-2 bg-secondary text-center">{s.position}</p>
+                  <p className="bg-secondary text-center">{s.position}</p>
 
                   <div
                     className="badge bg-light text-primary mb-2 px-3 py-2"
