@@ -55,14 +55,12 @@ const PlacedStudent = () => {
                 style={{
                   border: "3px solid #ddd",
                   borderRadius: "10px",
-                  minHeight: "480px",
+                  width: "18rem",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
                 }}
               >
-                <h6 className="text-success fw-bold small">Upskill</h6>
-
                 <img
                   src={`data:image/jpeg;base64,${s.image}`}
                   alt={s.name}
