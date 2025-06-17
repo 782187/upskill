@@ -46,41 +46,59 @@ const PlacedStudent = () => {
         >
           {placements.map((s, index) => (
             <SwiperSlide key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-center bg-white border rounded shadow-sm p-3"
-                style={{
-                  border: "3px solid #ddd",
-                  borderRadius: "10px",
-                  width: "18rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                <img
-                  src={`data:image/jpeg;base64,${s.image}`}
-                  alt={s.name}
-                  className="rounded mb-3 mx-auto"
-                  style={{ width: "120px", height: "120px", objectFit: "cover" }}
-                />
-
-                <div className="text-muted small mt-1">@{s.companyName}</div>
-
-                <h5 className="fw-bold mt-2 text-success">{s.name.toUpperCase()}</h5>
-
-                {s.companyLogo && (
+              <div className="d-flex justify-content-center h-100">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="card border-0 shadow-sm h-100 d-flex flex-column justify-content-between align-items-center p-4"
+                  style={{
+                    borderRadius: "15px",
+                    background: "#ffffff",
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+                    maxWidth: "300px",
+                    width: "100%",
+                    transition: "transform 0.3s",
+                  }}
+                >
                   <img
-                    src={`data:image/jpeg;base64,${s.companyLogo}`}
-                    alt="Company Logo"
-                    className="img-fluid mx-auto mt-3"
-                    style={{ maxHeight: "40px", objectFit: "contain" }}
+                    src={`data:image/jpeg;base64,${s.image}`}
+                    alt={s.name}
+                    className="rounded-circle mb-3"
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      objectFit: "cover",
+                      border: "3px solid #0d6efd",
+                    }}
                   />
-                )}
-              </motion.div>
+
+                  <div
+                    className="badge bg-light text-primary mb-2 px-3 py-2"
+                    style={{
+                      fontSize: "0.85rem",
+                      borderRadius: "20px",
+                      fontWeight: "500",
+                    }}
+                  >
+                    @{s.companyName}
+                  </div>
+
+                  <h5 className="fw-bold text-success text-uppercase text-center">
+                    {s.name}
+                  </h5>
+
+                  {s.companyLogo && (
+                    <img
+                      src={`data:image/jpeg;base64,${s.companyLogo}`}
+                      alt="Company Logo"
+                      className="img-fluid mt-3"
+                      style={{ maxHeight: "40px", objectFit: "contain" }}
+                    />
+                  )}
+                </motion.div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
