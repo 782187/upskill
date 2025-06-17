@@ -9,84 +9,76 @@ import "swiper/css/navigation";
 const PlacedStudent = () => {
     const [placements, setPlacements] = useState([]);
 
-    const fetchPlacement = async () => {
-        try {
-            const res = await axios.get("https://upskill-server.onrender.com/getplacement");
-            setPlacements(res.data);
-        } catch (error) {
-            console.error("Error fetching reviews:", error);
-        }
-    };
-
     useEffect(() => {
+        const fetchPlacement = async () => {
+            try {
+                const res = await axios.get("https://upskill-server.onrender.com/getplacement");
+                setPlacements(res.data);
+            } catch (error) {
+                console.error("Error fetching placements:", error);
+            }
+        };
         fetchPlacement();
     }, []);
 
-    if (reviews.length === 0) {
-        return <div className="text-center py-5">Loading reviews...</div>;
+    if (placements.length === 0) {
+        return <div className="text-center py-5">Loading placed students...</div>;
     }
 
     return (
         <div className="bg-light py-5 px-3">
-            <h2 className="text-center mb-5 fw-bold display-5 text-primary">Our Placed Students</h2>
+            <div className="container">
+                <h2 className="text-center mb-5 fw-bold display-5 text-primary">
+                    Our Placed Students
+                </h2>
 
-            <Swiper
-                modules={[Navigation, Autoplay]}
-                slidesPerView={1}
-                spaceBetween={20}
-                loop={true}
-                autoplay={{ delay: 2000 }}
-                navigation={true}
-                breakpoints={{
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    1200: {
-                        slidesPerView: 3,
-                    },
-                }}
-            >
-                {placements.map((s, index) => (
-                    <SwiperSlide key={index}>
-                        <motion.div
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            viewport={{ once: true }}
-                            className="card border-0 bg-white shadow-sm"
-                            style={{
-                                width: "100%",
-                                minHeight: "20rem",
-                                borderRadius: "20px",
-                                overflow: "hidden",
-                                margin: "auto",
-                            }}
-                        >
-                            <div className="card-body text-center p-4 d-flex flex-column align-items-center">
-                                <motion.img
+                <Swiper
+                    modules={[Navigation, Autoplay]}
+                    slidesPerView={1}
+                    spaceBetween={30}
+                    loop={true}
+                    autoplay={{ delay: 2500 }}
+                    navigation={true}
+                    breakpoints={{
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                        },
+                    }}
+                >
+                    {placements.map((s, index) => (
+                        <SwiperSlide key={index}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5 }}
+                                viewport={{ once: true }}
+                                className="card text-center shadow border-0 p-4"
+                                style={{ borderRadius: "20px", minHeight: "360px" }}
+                            >
+                                <img
                                     src={`data:image/jpeg;base64,${s.image}`}
                                     alt={s.name}
-                                    className="rounded-circle mb-3 border border-primary shadow-sm"
-                                    style={{ width: 70, height: 70, objectFit: "cover" }}
-                                    initial={{ scale: 0 }}
-                                    whileInView={{ scale: 1 }}
-                                    transition={{ type: "spring", stiffness: 100 }}
+                                    className="rounded-circle border border-2 border-primary shadow-sm mx-auto mb-3"
+                                    style={{ width: 80, height: 80, objectFit: "cover" }}
                                 />
-                                <h6 className="mb-1 fw-bold">{s.name}</h6>
-                                <p className="card-text mb-2" height={{ height: "7rem" }}>
+                                <h5 className="fw-bold mb-1">{s.name}</h5>
+                                <p className="mb-2">
                                     <strong>Company:</strong> {s.companyName}
                                 </p>
                                 <img
                                     src={`data:image/jpeg;base64,${s.companyLogo}`}
-                                    alt="Company Logo"
-                                    className="img-fluid"
+                                    alt={`${s.companyName} Logo`}
+                                    className="img-fluid mt-auto"
                                     style={{ maxHeight: "40px", objectFit: "contain" }}
                                 />
-                            </div>
-                        </motion.div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                            </motion.div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
         </div>
     );
 };

@@ -5,6 +5,7 @@ import UpskillUPS from './UpskillUPS';
 import HiringPartner from './HiringPartner';
 import Review from './Review';
 import EnquiryForm from './EnquiryForm';
+import PlacedStudent from './PlacedStudent';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { CheckCircle } from 'lucide-react';
@@ -64,6 +65,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <PlacedStudent/>
     </div>
   );
 }
