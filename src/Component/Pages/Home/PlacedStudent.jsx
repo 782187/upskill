@@ -54,7 +54,7 @@ const PlacedStudent = () => {
                                     viewport={{ once: true }}
                                     className="text-center p-3"
                                     style={{
-                                        border: "4px solid #28a745", 
+                                        border: "4px solid orange",
                                         borderRadius: "10px",
                                         backgroundColor: "#fff",
                                         width: "100%",
@@ -69,14 +69,14 @@ const PlacedStudent = () => {
                                             width: "100%",
                                             height: "250px",
                                             objectFit: "cover",
-                                            borderBottom: "4px solid #28a745",
+                                            borderBottom: "4px solid orange",
                                         }}
                                         className="mb-3"
                                     />
 
                                     <div
                                         style={{
-                                            backgroundColor: "#28a745",
+                                            backgroundColor: "orange",
                                             color: "#fff",
                                             fontWeight: "bold",
                                             padding: "6px 0",
@@ -92,7 +92,7 @@ const PlacedStudent = () => {
 
                                     <div
                                         style={{
-                                            color: "#28a745",
+                                            color: "blue",
                                             fontWeight: "bold",
                                             fontSize: "1.1rem",
                                             textTransform: "uppercase",
@@ -102,9 +102,16 @@ const PlacedStudent = () => {
                                         {s.name}
                                     </div>
 
-                                    <div style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000" }}>
-                                        {s.package} LPA PACKAGE
-                                    </div>
+                                    <img
+                                        src={`data:image/jpeg;base64,${s.companyLogo}`}
+                                        alt={s.name}
+                                        style={{
+                                            width: "100%",
+                                            height: "100px",
+                                            objectFit: "cover",
+                                        }}
+                                        className="mb-3"
+                                    />
                                 </motion.div>
                             </div>
                         </SwiperSlide>
