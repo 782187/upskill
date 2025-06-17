@@ -73,6 +73,7 @@ const PlacedStudent = () => {
                       border: "3px solid #0d6efd",
                     }}
                   />
+                  <p className="p-2 bg-secondary text-center">{s.position}</p>
 
                   <div
                     className="badge bg-light text-primary mb-2 px-3 py-2"
