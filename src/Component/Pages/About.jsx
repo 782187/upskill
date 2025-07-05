@@ -8,10 +8,10 @@ const AboutUs = () => {
             <section className="bg-dark text-white py-5">
                 <div className="container text-center">
                     <h1 className="display-4 fw-bold mb-3">
-                        Contact <span style={{ color: "#F97316" }}>Upskill</span> IT Training & Placement
+                        Contact <span style={{ color: "#F97316" }}>AvisTech</span> IT Training & Placement
                     </h1>
                     <p className="lead mb-4">
-                        Ready to start your tech career? Have questions about our courses? Reach out — we’re here to guide you.
+                        Ready to start your tech career? Have questions about our courses? Reach out — we're here to guide you.
                     </p>
                     <a href="#mission" className="btn btn-warning fw-semibold px-4 py-2">
                         Explore Our Journey

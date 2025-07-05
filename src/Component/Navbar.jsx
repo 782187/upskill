@@ -15,10 +15,10 @@ function Navbar() {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg bg-light fw-bold sticky-top shadow-sm p-3">
+        <nav className="navbar navbar-expand-lg bg-light fw-bold sticky-top shadow-sm py-1 px-3">
             <div className="container-fluid">
                 <Link className="navbar-brand d-flex align-items-center" to="/">
-                    <img src="/logo.png" alt="Logo" style={{ width: '200px' }} className="me-2" />
+                    <img src="/logo.png" alt="Logo" style={{ width: '150px',filter: "drop-shadow(1px 2px 1px black)" }} className="me-2" />
                 </Link>
 
                 <button
@@ -61,7 +61,7 @@ function Navbar() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="dropdown-item" to="#" onClick={handleClick}>
+                                    <Link className="dropdown-item" to="/team" onClick={handleClick}>
                                         <i className="fas fa-users me-2 text-info"></i>Team
                                     </Link>
                                 </li>

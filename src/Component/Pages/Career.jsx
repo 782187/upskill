@@ -23,7 +23,7 @@ const Hero = () => {
           <div className="row align-items-center">
             <div className="col-md-6 mb-4 mb-md-0">
               <h1 className="display-4 fw-bold mb-3">
-                Elevate Your Tech Career with <span className="text-primary">UpSkill</span>
+                Elevate Your Tech Career with <span className="text-primary">AvisTech</span>
               </h1>
               <p className="lead text-muted mb-4">
                 Expert-led training in Fullstack Java, Python, Software Testing, and Web Development designed to transform your career path.
@@ -81,7 +81,7 @@ const Hero = () => {
 
       <section id="apply" className="py-5 bg-white border-top">
         <div className="container px-4">
-          <h2 className="text-center mb-3 fw-bold text-primary">Apply Now to Join UpSkill</h2>
+          <h2 className="text-center mb-3 fw-bold text-primary">Apply Now to Join AvisTech</h2>
           <p className="text-center text-muted mb-5">Your journey to becoming job-ready in tech starts here 🚀</p>
 
           <div className="row shadow-lg rounded-4 overflow-hidden">
@@ -92,16 +92,16 @@ const Hero = () => {
               }}
             >
               <h4 className="fw-bold mb-3">Contact Information</h4>
-              <p>We’re excited to guide your career path. Fill in your details and we’ll reach out soon!</p>
+              <p>We're excited to guide your career path. Fill in your details and we'll reach out soon!</p>
               <ul className="list-unstyled mt-4">
                 <li className="mb-3 d-flex align-items-center">
-                  <Mail size={18} className="me-2" /> contact@upskilltraining.com
+                  <Mail size={18} className="me-2" /> ajs.ind2@gmail.com
                 </li>
                 <li className="mb-3 d-flex align-items-center">
-                  <Phone size={18} className="me-2" /> +91 78218 79681
+                  <Phone size={18} className="me-2" /> +91 7821879681
                 </li>
                 <li className="d-flex align-items-center">
-                  <Clock size={18} className="me-2" /> Mon – Sat: 10AM – 7PM
+                  <Clock size={18} className="me-2" /> Mon - Sat: 10AM - 7PM
                 </li>
               </ul>
             </div>

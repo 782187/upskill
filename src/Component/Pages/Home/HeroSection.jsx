@@ -25,11 +25,11 @@ const HeroSection = () => {
         className="col-12 col-md-6 d-flex flex-column justify-content-center hero-section-content px-5 py-4"
         style={{ zIndex: 1 }}
       >
-        <h1 className="display-5 fw-bold mb-3" style={{ color: '#002c5f' }}>
-          Pune's <span style={{ color: 'orange' }}>No.1</span> IT Training and Placement Institute
+        <h1 className="display-6 fw-bold mb-3" style={{ color: '#002c5f' }}>
+          Pune’s <span style={{ color: 'orange' }}>No.1</span> Website Development & IT Training Hub
         </h1>
         <p className="lead mb-4" style={{ color: '#444' }}>
-          UpSkill is a leading IT Training Institute in Pune, dedicated to providing high-quality education and skill development in the field of Information Technology. Join our vibrant community of tech enthusiasts and leverage our state-of-the-art facilities to unlock your potential and transform your career.
+          AvisTech is a leading Website Development and IT Training Hub in Pune, committed to delivering high-quality education and cutting-edge web solutions. Whether you're looking to build a stunning website or gain in-demand tech skills, join our vibrant community of developers and learners.
         </p>
         <div className="d-flex align-items-center gap-2 mb-3 justify-content-center justify-content-md-start">
           <div className="rating-stars">{'★'.repeat(5)}</div>

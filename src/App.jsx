@@ -11,6 +11,7 @@ import BlogDetail from './Component/Pages/Blog/BlogDetail';
 import Home from './Component/Pages/Home/Home';
 import About from './Component/Pages/About';
 import Courses from './Component/Pages/Home/Course';
+import Team from './Component/Pages/Team';
 import CourseDetail from './Component/Pages/CourseDetail';
 import CorporateTraining from './Component/Pages/Corporate';
 import Blogs from './Component/Pages/Blog/Blog';
@@ -45,6 +46,7 @@ function App() {
         <Route path="studentzone/testimonials" element={<Testimonials/>}/>
         <Route path="/hire" element={<HireFromUs />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/team" element={<Team/>} />
         <Route path="/career" element={<Career />} />
         <Route path="/courses/java-full-stack" element={<FullStackJava />} />
         <Route path="/courses/python-full-stack" element={<FullStackPython />} />
