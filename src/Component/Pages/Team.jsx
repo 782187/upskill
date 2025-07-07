@@ -33,7 +33,8 @@ const Team = () => {
                         <p>
                             I specialize in building modern web applications and mentoring aspiring developers.
                             With expertise in Java, React, and MySQL, I deliver scalable solutions and empower learners
-                            through hands-on training sessions at AvisTech.
+                            through hands-on training sessions at AvisTech. <br/>
+                            If you're interested in collaborating on a project or discussing anything related to web development, feel free to reach out! Let's connect and turn ideas into reality.
                         </p>
                         <ul className="list-unstyled">
                             <li><strong>Email:</strong> ajs.ind2@gmail.com</li>

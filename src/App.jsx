@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -24,51 +24,57 @@ import SoftwareTesting from './Component/Pages/Courses/Testing';
 import WebDevelopment from './Component/Pages/Courses/WebDevelopment';
 import ContactUs from './Component/Pages/ContactUs';
 import Testimonials from './Component/Pages/Testimonials';
+import PlacedStudents from './Component/Pages/PlacedStudents';
 
 function App() {
+
   useEffect(() => {
     AOS.init();
-    fetch("https://upskill-server.onrender.com/incrementVisit", { method: "POST" });
+    fetch('https://upskill-server.onrender.com/incrementVisit', {
+      method: 'POST',
+    });
   }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/courses/:slug" element={<CourseDetail />} />
-        <Route path="/blogs/:slug" element={<BlogDetail />} />
-        <Route path="/corporate-training" element={<CorporateTraining />} />
-        <Route path="studentzone/blogs" element={<Blogs />} />
-        <Route path="studentzone/testimonials" element={<Testimonials/>}/>
-        <Route path="/hire" element={<HireFromUs />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/team" element={<Team/>} />
-        <Route path="/career" element={<Career />} />
-        <Route path="/courses/java-full-stack" element={<FullStackJava />} />
-        <Route path="/courses/python-full-stack" element={<FullStackPython />} />
-        <Route path="/courses/software-testing" element={<SoftwareTesting />} />
-        <Route path="/courses/web-development" element={<WebDevelopment />} />
-        <Route path="/contactus" element={<ContactUs />} />
-      </Routes>
-      <Footer />
-
-      <a
-        href="https://wa.me/7821879681?text=I'm%20inquiring%20about%20the%20Website%20Design%20"
-        className="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-          alt="WhatsApp"
-          className="whatsapp-icon"
-        />
-      </a>
-    </Router>
+    <>
+      <Router>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:slug" element={<CourseDetail />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
+          <Route path="/corporate-training" element={<CorporateTraining />} />
+          <Route path="/studentzone/blogs" element={<Blogs />} />
+          <Route path="/studentzone/testimonials" element={<Testimonials />} />
+          <Route path="/hire" element={<HireFromUs />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/courses/java-full-stack" element={<FullStackJava />} />
+          <Route path="/courses/python-full-stack" element={<FullStackPython />} />
+          <Route path="/courses/software-testing" element={<SoftwareTesting />} />
+          <Route path="/courses/web-development" element={<WebDevelopment />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/placed" element={<PlacedStudents />} />
+        </Routes>
+        <Footer />
+        <a
+          href="https://wa.me/7821879681?text=I'm%20inquiring%20about%20the%20Website%20Design%20"
+          className="whatsapp-float"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+            alt="WhatsApp"
+            className="whatsapp-icon"
+          />
+        </a>
+      </Router>
+    </>
   );
 }
 

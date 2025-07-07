@@ -26,7 +26,7 @@ const stats = [
     },
     {
         id: 3,
-        label: "Courses Available",
+        label: "Website Build",
         value: 50,
         suffix: "+",
         icon: BookOpen,
