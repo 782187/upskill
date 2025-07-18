@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 
 const PlacedStudent = () => {
   const [placements, setPlacements] = useState([]);
@@ -92,19 +91,9 @@ const PlacedStudent = () => {
                     </p>
                   </blockquote>
                 </div>
-                <div className="card-footer bg-transparent border-top text-muted small">
-                  <i className="bi bi-person-vcard me-2 text-primary"></i>
-                  Batch: {student.batch || "2023"}
-                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-5">
-          <button className="btn btn-primary btn-lg px-4 py-2 shadow">
-            View More Success Stories
-          </button>
         </div>
       </div>
     </section>
