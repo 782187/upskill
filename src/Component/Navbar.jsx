@@ -206,7 +206,7 @@ function Navbar() {
                         <div className="modal-content rounded-4 shadow">
 
                             <div className="modal-header bg-light border-0">
-                                <h5 className="modal-title text-primary fw-bold">Welcome To AvisTech</h5>
+                                <h5 className="modal-title text-primary fw-bold">Welcome To AvisTech. Developers Communiety.</h5>
                                 <button
                                     type="button"
                                     className="btn-close"
