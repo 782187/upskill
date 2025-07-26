@@ -13,12 +13,10 @@ function Events() {
           throw new Error('Failed to fetch events');
         }
         const data = await response.json();
-        
         const formattedEvents = data.map(event => ({
           ...event,
           photoUrl: event.photo ? `data:image/jpeg;base64,${event.photo}` : null
         }));
-        
         setEvents(formattedEvents);
         setLoading(false);
       } catch (err) {
@@ -65,23 +63,18 @@ function Events() {
 
   return (
     <div className="events-page pb-5">
-      {/* Header Section */}
-      <header className="bg-white shadow-sm py-4 mb-5">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col">
-              <h1 className="h3 mb-0 fw-bold text-primary">Our Events</h1>
-            </div>
-            <div className="col-auto">
-              <p className="text-muted mb-0 small">
-                {events.length} {events.length === 1 ? 'event' : 'events'} found
-              </p>
-            </div>
-          </div>
+      {/* Stylish Header Section */}
+      <header className="event-header mb-5 position-relative text-white">
+        <div className="overlay"></div>
+        <div className="container py-5 position-relative z-2">
+          <h1 className="display-5 fw-bold">Explore Our Events</h1>
+          <p className="lead">Discover how we celebrate knowledge, innovation, and creativity.</p>
+          <p className="small">
+            Total Events: <strong>{events.length}</strong>
+          </p>
         </div>
       </header>
 
-      {/* Events Grid */}
       <div className="container">
         <div className="row g-4">
           {events.map((event) => (
@@ -89,22 +82,19 @@ function Events() {
               <div className="event-card card border-0 shadow-sm h-100 overflow-hidden transition-all">
                 {event.photoUrl && (
                   <div className="event-image-container overflow-hidden position-relative">
-                    <img 
-                      src={event.photoUrl} 
-                      className="img-fluid w-100" 
+                    <img
+                      src={event.photoUrl}
+                      className="img-fluid w-100"
                       alt={event.title}
                       style={{ height: '200px', objectFit: 'cover' }}
                     />
-                    <div className="event-date-badge bg-primary text-white position-absolute top-0 end-0 m-3 px-2 py-1 rounded small">
-                      {event.date || 'Upskill'}
-                    </div>
                   </div>
                 )}
                 <div className="card-body">
                   <h3 className="h5 fw-bold mb-2">{event.title}</h3>
                   <p className="text-muted small mb-2">
                     <i className="bi bi-geo-alt-fill me-1 text-primary"></i>
-                    {event.location || 'Upskill Headquarters'}
+                    Upskill
                   </p>
                   {event.description && (
                     <p className="small text-muted mb-0 line-clamp-2">
@@ -112,18 +102,12 @@ function Events() {
                     </p>
                   )}
                 </div>
-                <div className="card-footer bg-transparent border-top-0">
-                  <button className="btn btn-sm btn-outline-primary">
-                    View Details
-                  </button>
-                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Footer Note */}
       {events.length > 6 && (
         <div className="container mt-5 text-center">
           <p className="text-muted">
@@ -132,7 +116,6 @@ function Events() {
         </div>
       )}
 
-      {/* Add some CSS for effects */}
       <style jsx>{`
         .event-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -155,8 +138,23 @@ function Events() {
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
-        .event-date-badge {
-          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        .event-header {
+          background: url('/events-bg.jpg') center/cover no-repeat;
+          min-height: 300px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+        .event-header .overlay {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 1;
+        }
+        .event-header .container {
+          z-index: 2;
+          position: relative;
         }
       `}</style>
     </div>
