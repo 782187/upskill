@@ -13,10 +13,12 @@ function Events() {
           throw new Error('Failed to fetch events');
         }
         const data = await response.json();
+        
         const formattedEvents = data.map(event => ({
           ...event,
           photoUrl: event.photo ? `data:image/jpeg;base64,${event.photo}` : null
         }));
+        
         setEvents(formattedEvents);
         setLoading(false);
       } catch (err) {
@@ -63,17 +65,27 @@ function Events() {
 
   return (
     <div className="events-page pb-5">
-      <header className="event-header mb-5 position-relative text-white">
-        <div className="overlay"></div>
-        <div className="container py-5 position-relative z-2">
-          <h1 className="display-5 fw-bold">Explore Our Events</h1>
-          <p className="lead">Discover how we celebrate knowledge, innovation, and creativity.</p>
-          <p className="small">
-            Total Events: <strong>{events.length}</strong>
-          </p>
+      {/* Attractive Header Section */}
+      <header className="events-header py-4 py-md-5 mb-4 mb-md-5">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-10 col-xl-8 text-center">
+              <h1 className="display-5 fw-bold mb-3 text-gradient">Festivals @ Itvedant</h1>
+              <div className="header-divider mx-auto my-3"></div>
+              <p className="lead mb-4">
+                Itvedant is a Software Training Institute and here we display all the memories created by the learners, 
+                faculty, and staff members of the institute. Keep checking this page for updates on all the happenings 
+                at Itvedant - code-a-thons, Hack-a-thons, Celebrations & much more...!
+              </p>
+              <div className="event-counter badge rounded-pill bg-primary px-3 py-2">
+                {events.length} {events.length === 1 ? 'Memory' : 'Memories'} Captured
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
+      {/* Events Grid */}
       <div className="container">
         <div className="row g-4">
           {events.map((event) => (
@@ -81,19 +93,22 @@ function Events() {
               <div className="event-card card border-0 shadow-sm h-100 overflow-hidden transition-all">
                 {event.photoUrl && (
                   <div className="event-image-container overflow-hidden position-relative">
-                    <img
-                      src={event.photoUrl}
-                      className="img-fluid w-100"
+                    <img 
+                      src={event.photoUrl} 
+                      className="img-fluid w-100" 
                       alt={event.title}
                       style={{ height: '200px', objectFit: 'cover' }}
                     />
+                    <div className="event-date-badge bg-primary text-white position-absolute top-0 end-0 m-3 px-2 py-1 rounded small">
+                      {event.date || 'Itvedant'}
+                    </div>
                   </div>
                 )}
                 <div className="card-body">
                   <h3 className="h5 fw-bold mb-2">{event.title}</h3>
                   <p className="text-muted small mb-2">
                     <i className="bi bi-geo-alt-fill me-1 text-primary"></i>
-                    Upskill
+                    {event.location || 'Itvedant Headquarters'}
                   </p>
                   {event.description && (
                     <p className="small text-muted mb-0 line-clamp-2">
@@ -101,12 +116,18 @@ function Events() {
                     </p>
                   )}
                 </div>
+                <div className="card-footer bg-transparent border-top-0">
+                  <button className="btn btn-sm btn-outline-primary">
+                    View Details
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
+      {/* Footer Note */}
       {events.length > 6 && (
         <div className="container mt-5 text-center">
           <p className="text-muted">
@@ -115,7 +136,31 @@ function Events() {
         </div>
       )}
 
+      {/* CSS Styles */}
       <style jsx>{`
+        .events-header {
+          position: relative;
+          background-color: #f8f9fa;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .text-gradient {
+          background: linear-gradient(45deg, #3a7bd5, #00d2ff);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          display: inline-block;
+        }
+        .header-divider {
+          width: 80px;
+          height: 4px;
+          background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+          border-radius: 2px;
+        }
+        .event-counter {
+          font-size: 0.9rem;
+          font-weight: 500;
+          box-shadow: 0 2px 10px rgba(58, 123, 213, 0.3);
+        }
         .event-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           border-radius: 8px;
@@ -137,23 +182,8 @@ function Events() {
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
-        .event-header {
-          background: url('/diwali1.jpg') center/cover no-repeat;
-          min-height: 300px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-        }
-        .event-header .overlay {
-          position: absolute;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background: rgba(0, 0, 0, 0.5);
-          z-index: 1;
-        }
-        .event-header .container {
-          z-index: 2;
-          position: relative;
+        .event-date-badge {
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
       `}</style>
     </div>
