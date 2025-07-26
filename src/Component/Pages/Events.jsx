@@ -65,17 +65,16 @@ function Events() {
 
   return (
     <div className="events-page pb-5">
-      {/* Attractive Header Section */}
       <header className="events-header py-4 py-md-5 mb-4 mb-md-5">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10 col-xl-8 text-center">
-              <h1 className="display-5 fw-bold mb-3 text-gradient">Festivals @ Itvedant</h1>
+              <h1 className="display-5 fw-bold mb-3 text-gradient">Festivals @ Upskill</h1>
               <div className="header-divider mx-auto my-3"></div>
               <p className="lead mb-4">
-                Itvedant is a Software Training Institute and here we display all the memories created by the learners, 
+                Upskill is a Software Training Institute and here we display all the memories created by the learners, 
                 faculty, and staff members of the institute. Keep checking this page for updates on all the happenings 
-                at Itvedant - code-a-thons, Hack-a-thons, Celebrations & much more...!
+                at Upskill - code-a-thons, Hack-a-thons, Celebrations & much more...!
               </p>
               <div className="event-counter badge rounded-pill bg-primary px-3 py-2">
                 {events.length} {events.length === 1 ? 'Memory' : 'Memories'} Captured
@@ -85,7 +84,6 @@ function Events() {
         </div>
       </header>
 
-      {/* Events Grid */}
       <div className="container">
         <div className="row g-4">
           {events.map((event) => (
@@ -99,27 +97,14 @@ function Events() {
                       alt={event.title}
                       style={{ height: '200px', objectFit: 'cover' }}
                     />
-                    <div className="event-date-badge bg-primary text-white position-absolute top-0 end-0 m-3 px-2 py-1 rounded small">
-                      {event.date || 'Itvedant'}
-                    </div>
                   </div>
                 )}
                 <div className="card-body">
                   <h3 className="h5 fw-bold mb-2">{event.title}</h3>
                   <p className="text-muted small mb-2">
                     <i className="bi bi-geo-alt-fill me-1 text-primary"></i>
-                    {event.location || 'Itvedant Headquarters'}
+                      Upskill
                   </p>
-                  {event.description && (
-                    <p className="small text-muted mb-0 line-clamp-2">
-                      {event.description}
-                    </p>
-                  )}
-                </div>
-                <div className="card-footer bg-transparent border-top-0">
-                  <button className="btn btn-sm btn-outline-primary">
-                    View Details
-                  </button>
                 </div>
               </div>
             </div>
@@ -127,7 +112,6 @@ function Events() {
         </div>
       </div>
 
-      {/* Footer Note */}
       {events.length > 6 && (
         <div className="container mt-5 text-center">
           <p className="text-muted">
@@ -136,7 +120,6 @@ function Events() {
         </div>
       )}
 
-      {/* CSS Styles */}
       <style jsx>{`
         .events-header {
           position: relative;
