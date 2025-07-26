@@ -63,7 +63,6 @@ function Events() {
 
   return (
     <div className="events-page pb-5">
-      {/* Stylish Header Section */}
       <header className="event-header mb-5 position-relative text-white">
         <div className="overlay"></div>
         <div className="container py-5 position-relative z-2">
@@ -139,7 +138,7 @@ function Events() {
           overflow: hidden;
         }
         .event-header {
-          background: url('/events-bg.jpg') center/cover no-repeat;
+          background: url('/diwali1.jpg') center/cover no-repeat;
           min-height: 300px;
           display: flex;
           align-items: center;
