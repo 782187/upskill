@@ -87,11 +87,11 @@ function Navbar() {
                                             <i className="fas fa-bullseye me-2 text-primary"></i>Mission & Vision
                                         </Link>
                                     </li>
-                                    {/* <li>
+                                    <li>
                                         <Link className="dropdown-item" to="/events" onClick={handleClick}>
                                             <i className="fas fa-calendar-alt me-2 text-success"></i>Events
                                         </Link>
-                                    </li> */}
+                                    </li>
                                     <li>
                                         <Link className="dropdown-item" to="/team" onClick={handleClick}>
                                             <i className="fas fa-users me-2 text-info"></i>Team
