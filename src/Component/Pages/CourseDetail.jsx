@@ -33,7 +33,7 @@ const CourseDetail = () => {
 
   if (loading) return (
     <div className="d-flex justify-content-center align-items-center vh-100">
-      <div className="spinner-border text-primary" style={{width: '3rem', height: '3rem'}} role="status">
+      <div className="spinner-border text-primary" style={{ width: '3rem', height: '3rem' }} role="status">
         <span className="visually-hidden">Loading...</span>
       </div>
     </div>
@@ -141,22 +141,24 @@ const CourseDetail = () => {
                 />
               </div>
               <div className="mt-4 d-flex justify-content-center gap-3">
-                <button className="btn btn-outline-primary">
-                  <FaRegFilePdf className="me-2" /> Download Syllabus
-                </button>
-                <button className="btn btn-outline-success">
-                  <FaRegFilePdf className="me-2" /> Course Brochure
-                </button>
+                <a
+                  href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
+                  className="btn btn-outline-success"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaRegFilePdf className="me-2" /> Download Brochure
+                </a>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="ps-lg-4">
                 <h2 className="fw-bold mb-4 text-gradient">About This Course</h2>
-                <div 
+                <div
                   className="course-description fs-5 text-muted mb-4"
                   dangerouslySetInnerHTML={{ __html: course.description }}
                 ></div>
-                
+
                 <div className="course-features mb-4">
                   <h5 className="fw-bold mb-3">Key Features:</h5>
                   <ul className="list-unstyled row g-3">
@@ -178,7 +180,7 @@ const CourseDetail = () => {
                     </li>
                   </ul>
                 </div>
-                
+
                 <div className="mt-4">
                   <a href="#enquiry" className="btn btn-primary px-4 py-3 fw-semibold me-3">
                     Enroll Now
@@ -206,7 +208,7 @@ const CourseDetail = () => {
                   <h5 className="mb-0">What You'll Learn</h5>
                 </div>
                 <div className="card-body">
-                  <div 
+                  <div
                     className="course-topics"
                     dangerouslySetInnerHTML={{ __html: course.description }}
                   ></div>
@@ -219,7 +221,7 @@ const CourseDetail = () => {
                   <h5 className="mb-0">Detailed Syllabus</h5>
                 </div>
                 <div className="card-body">
-                  <div 
+                  <div
                     className="course-topics"
                     dangerouslySetInnerHTML={{ __html: course.topics }}
                   ></div>
@@ -345,7 +347,7 @@ const CourseDetail = () => {
               <div className="pe-lg-4">
                 <h2 className="fw-bold mb-4">Have Questions About This Course?</h2>
                 <p className="lead text-muted mb-4">Our team is here to help you choose the right learning path.</p>
-                
+
                 <div className="mb-4">
                   <h5 className="fw-bold mb-3">Course Advisor Available</h5>
                   <ul className="list-unstyled">
@@ -367,7 +369,7 @@ const CourseDetail = () => {
                     </li>
                   </ul>
                 </div>
-                
+
                 <div className="contact-info bg-white p-4 rounded-3 shadow-sm">
                   <h5 className="fw-bold mb-3">Contact Information</h5>
                   <p className="mb-2"><strong>Email:</strong> info@upskill.com</p>
