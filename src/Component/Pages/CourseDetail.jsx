@@ -151,24 +151,25 @@ const CourseDetail = () => {
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="fw-bold">Course Curriculum</h2>
-            <p className="lead text-muted">Comprehensive learning path to master {course.technology}</p>
+            <p className="lead text-muted">
+              Comprehensive learning path to master {course.technology}
+            </p>
           </div>
-          <div className="row align-items-center g-5">
-            <div className="col-lg-6">
-              <div className="card border-0 shadow-sm h-100">
-                <div className="card-header bg-primary text-white py-3">
-                  <h5 className="mb-0">Course Topics</h5>
-                </div>
-                <div className="card-body">
-                  <div
-                    className="course-topics"
-                    dangerouslySetInnerHTML={{ __html: course.topics }}
-                  />
-                </div>
+          <div className="row g-5 align-items-start">
+            {/* Course Topics */}
+            <div className="col-lg-6 d-flex flex-column justify-content-start">
+              <div className="h-100">
+                <h2 className="fw-bold mb-4 text-gradient">Course Topics</h2>
+                <div
+                  className="course-topics fs-5 text-muted"
+                  dangerouslySetInnerHTML={{ __html: course.topics }}
+                />
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="ps-lg-4">
+
+            {/* About This Course */}
+            <div className="col-lg-6 d-flex flex-column justify-content-start">
+              <div className="h-100">
                 <h2 className="fw-bold mb-4 text-gradient">About This Course</h2>
                 <div
                   className="course-description fs-5 text-muted mb-4"
@@ -178,19 +179,27 @@ const CourseDetail = () => {
                   <h5 className="fw-bold mb-3">Key Features:</h5>
                   <ul className="list-unstyled row g-3">
                     <li className="col-md-6 d-flex align-items-center">
-                      <span className="me-2 text-primary"><GiGraduateCap size={20} /></span>
+                      <span className="me-2 text-primary">
+                        <GiGraduateCap size={20} />
+                      </span>
                       Industry-recognized certification
                     </li>
                     <li className="col-md-6 d-flex align-items-center">
-                      <span className="me-2 text-primary"><MdWorkspacesOutline size={20} /></span>
+                      <span className="me-2 text-primary">
+                        <MdWorkspacesOutline size={20} />
+                      </span>
                       Hands-on projects
                     </li>
                     <li className="col-md-6 d-flex align-items-center">
-                      <span className="me-2 text-primary"><FaUserTie size={20} /></span>
+                      <span className="me-2 text-primary">
+                        <FaUserTie size={20} />
+                      </span>
                       Career guidance
                     </li>
                     <li className="col-md-6 d-flex align-items-center">
-                      <span className="me-2 text-primary"><MdOutlineSupportAgent size={20} /></span>
+                      <span className="me-2 text-primary">
+                        <MdOutlineSupportAgent size={20} />
+                      </span>
                       Lifetime support
                     </li>
                   </ul>
@@ -208,6 +217,7 @@ const CourseDetail = () => {
           </div>
         </div>
       </section>
+
 
       <section className="py-5 bg-white">
         <div className="container">
