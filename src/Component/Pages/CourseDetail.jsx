@@ -9,7 +9,6 @@ import { FaLaptop, FaChalkboardTeacher, FaAward, FaClock, FaUserTie, FaRegFilePd
 import { IoMdSchool, IoIosPeople } from 'react-icons/io'
 import { GiSkills, GiGraduateCap } from 'react-icons/gi'
 import { MdOutlineSupportAgent, MdWorkspacesOutline } from 'react-icons/md'
-import { RiLiveLine } from 'react-icons/ri'
 
 const CourseDetail = () => {
   const { slug } = useParams()
@@ -164,11 +163,7 @@ const CourseDetail = () => {
             <div className="col-lg-6">
               <div className="ps-lg-4">
                 <h2 className="fw-bold mb-4 text-gradient">About This Course</h2>
-                <div
-                  className="course-description fs-5 text-muted mb-4"
-                  dangerouslySetInnerHTML={{ __html: course.description }}
-                ></div>
-
+                <div className="course-description fs-5 text-muted mb-4">{course.description}</div>
                 <div className="course-features mb-4">
                   <h5 className="fw-bold mb-3">Key Features:</h5>
                   <ul className="list-unstyled row g-3">
@@ -190,7 +185,6 @@ const CourseDetail = () => {
                     </li>
                   </ul>
                 </div>
-
                 <div className="mt-4">
                   <a href="#enquiry" className="btn btn-primary px-4 py-3 fw-semibold me-3">
                     Enroll Now
@@ -211,8 +205,8 @@ const CourseDetail = () => {
             <h2 className="fw-bold">Course Curriculum</h2>
             <p className="lead text-muted">Comprehensive learning path to master {course.technology}</p>
           </div>
-          <div className="row g-4">
-            <div className="col-lg-6">
+          <div className="row g-4 justify-content-center">
+            <div className="col-lg-8">
               <div className="card border-0 shadow-sm h-100">
                 <div className="card-header bg-primary text-white py-3">
                   <h5 className="mb-0">Course Topics</h5>
@@ -227,19 +221,6 @@ const CourseDetail = () => {
                       )
                     ))}
                   </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="card border-0 shadow-sm h-100">
-                <div className="card-header bg-success text-white py-3">
-                  <h5 className="mb-0">Course Description</h5>
-                </div>
-                <div className="card-body">
-                  <div
-                    className="course-topics"
-                    dangerouslySetInnerHTML={{ __html: course.description }}
-                  ></div>
                 </div>
               </div>
             </div>
@@ -320,39 +301,11 @@ const CourseDetail = () => {
                 <p>Get resume help, interview prep, and job placement assistance with our 200+ hiring partners.</p>
               </div>
             </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
-                <div className="feature-icon bg-success bg-opacity-10 text-success mb-3">
-                  <MdOutlineSupportAgent size={28} />
-                </div>
-                <h4>Lifetime Access</h4>
-                <p>Get lifetime access to course materials, updates, and our exclusive alumni community.</p>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
-                <div className="feature-icon bg-danger bg-opacity-10 text-danger mb-3">
-                  <IoIosPeople size={28} />
-                </div>
-                <h4>Community Learning</h4>
-                <p>Join a community of 10,000+ learners for networking, collaboration, and peer support.</p>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
-                <div className="feature-icon bg-purple bg-opacity-10 text-purple mb-3">
-                  <GiGraduateCap size={28} />
-                </div>
-                <h4>Flexible Learning</h4>
-                <p>Choose from weekend batches, weekday evenings, or self-paced learning options.</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       <Review />
-
       <Course />
 
       <section className="py-5 bg-light" id="enquiry">
@@ -362,7 +315,6 @@ const CourseDetail = () => {
               <div className="pe-lg-4">
                 <h2 className="fw-bold mb-4">Have Questions About This Course?</h2>
                 <p className="lead text-muted mb-4">Our team is here to help you choose the right learning path.</p>
-
                 <div className="mb-4">
                   <h5 className="fw-bold mb-3">Course Advisor Available</h5>
                   <ul className="list-unstyled">
@@ -384,7 +336,6 @@ const CourseDetail = () => {
                     </li>
                   </ul>
                 </div>
-
                 <div className="contact-info bg-white p-4 rounded-3 shadow-sm">
                   <h5 className="fw-bold mb-3">Contact Information</h5>
                   <p className="mb-2"><strong>Email:</strong> info@upskill.com</p>
