@@ -14,7 +14,6 @@ function Navbar() {
   const toggleNavbar = () => setIsNavbarOpen(prev => !prev);
   const popupForm = () => setShowModal(true);
 
-  // ✅ Fetch dynamic courses
   useEffect(() => {
     axios.get('https://upskill-server.onrender.com/get-courses')
       .then(res => setCourses(res.data))
@@ -67,7 +66,6 @@ function Navbar() {
                 <Link className="nav-link text-primary" to="/" onClick={handleClick}>Home</Link>
               </li>
 
-              {/* About Dropdown */}
               <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle text-dark" to="#" role="button" data-bs-toggle="dropdown">
                   About Us
@@ -80,7 +78,6 @@ function Navbar() {
                 </ul>
               </li>
 
-              {/* ✅ Dynamic Courses Dropdown */}
               <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle text-dark" to="#" role="button" data-bs-toggle="dropdown">
                   Courses
@@ -100,7 +97,6 @@ function Navbar() {
                 </ul>
               </li>
 
-              {/* Student Zone Dropdown */}
               <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle text-dark" to="#" role="button" data-bs-toggle="dropdown">
                   Student Zone
@@ -125,7 +121,6 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Modal Form */}
       {showModal && (
         <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
           <div className="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
