@@ -57,7 +57,7 @@ const CourseDetail = () => {
         <div className="hero-overlay"></div>
         <div className="container position-relative z-index-1 py-5">
           <div className="row min-vh-50 align-items-center py-5">
-            <div className="col-lg-8">
+            <div className="col-lg-7">
               <div className="hero-content text-white p-4 p-lg-5 rounded-3 bg-dark bg-opacity-75">
                 <h1 className="display-4 fw-bold mb-3">{course.title}</h1>
                 <p className="lead mb-4">
@@ -71,6 +71,16 @@ const CourseDetail = () => {
                     View Curriculum
                   </a>
                 </div>
+              </div>
+            </div>
+            <div className="col-lg-5 d-none d-lg-block">
+              <div className="hero-image-container">
+                <img
+                  src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
+                  className="img-fluid rounded-4 shadow-lg"
+                  alt={course.title}
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -201,30 +211,47 @@ const CourseDetail = () => {
             <h2 className="fw-bold">Course Curriculum</h2>
             <p className="lead text-muted">Comprehensive learning path to master {course.technology}</p>
           </div>
-          <div className="row g-4">
-            <div className="col-lg-6">
-              <div className="card border-0 shadow-sm h-100">
+          <div className="row">
+            <div className="col-12">
+              <div className="card border-0 shadow-sm">
                 <div className="card-header bg-primary text-white py-3">
-                  <h5 className="mb-0">What You'll Learn</h5>
-                </div>
-                <div className="card-body">
-                  <div
-                    className="course-topics"
-                    dangerouslySetInnerHTML={{ __html: course.description }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="card border-0 shadow-sm h-100">
-                <div className="card-header bg-success text-white py-3">
                   <h5 className="mb-0">Detailed Syllabus</h5>
                 </div>
                 <div className="card-body">
-                  <div
-                    className="course-topics"
-                    dangerouslySetInnerHTML={{ __html: course.topics }}
-                  ></div>
+                  <div className="accordion" id="curriculumAccordion">
+                    {course.topics && course.topics.split('\n').map((topic, index) => (
+                      topic.trim() && (
+                        <div className="accordion-item border-0 mb-2" key={index}>
+                          <h3 className="accordion-header" id={`heading${index}`}>
+                            <button 
+                              className="accordion-button collapsed bg-light" 
+                              type="button" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target={`#collapse${index}`}
+                              aria-expanded="false" 
+                              aria-controls={`collapse${index}`}
+                            >
+                              {topic.replace(':', '').trim()}
+                            </button>
+                          </h3>
+                          <div 
+                            id={`collapse${index}`} 
+                            className="accordion-collapse collapse" 
+                            aria-labelledby={`heading${index}`} 
+                            data-bs-parent="#curriculumAccordion"
+                          >
+                            <div className="accordion-body bg-white">
+                              <ul className="list-unstyled">
+                                {course.description && course.description.split('\n').map((point, i) => (
+                                  point.trim() && <li key={i} className="mb-2">• {point.trim()}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      )
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
