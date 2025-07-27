@@ -149,21 +149,31 @@ const CourseDetail = () => {
 
       <section className="py-5" id="overview">
         <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="fw-bold">Course Curriculum</h2>
+            <p className="lead text-muted">Comprehensive learning path to master {course.technology}</p>
+          </div>
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
-              <div className="course-image-container rounded-4 overflow-hidden shadow-lg">
-                <img
-                  src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
-                  className="img-fluid w-100"
-                  alt={course.title}
-                  loading="lazy"
-                />
+              <div className="card border-0 shadow-sm h-100">
+                <div className="card-header bg-primary text-white py-3">
+                  <h5 className="mb-0">Course Topics</h5>
+                </div>
+                <div className="card-body">
+                  <div
+                    className="course-topics"
+                    dangerouslySetInnerHTML={{ __html: course.topics }}
+                  />
+                </div>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="ps-lg-4">
                 <h2 className="fw-bold mb-4 text-gradient">About This Course</h2>
-                <div className="course-description fs-5 text-muted mb-4">{course.description}</div>
+                <div
+                  className="course-description fs-5 text-muted mb-4"
+                  dangerouslySetInnerHTML={{ __html: course.description }}
+                />
                 <div className="course-features mb-4">
                   <h5 className="fw-bold mb-3">Key Features:</h5>
                   <ul className="list-unstyled row g-3">
@@ -192,35 +202,6 @@ const CourseDetail = () => {
                   <a href="#curriculum" className="btn btn-outline-secondary px-4 py-3 fw-semibold">
                     View Syllabus
                   </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-5 bg-light" id="curriculum">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2 className="fw-bold">Course Curriculum</h2>
-            <p className="lead text-muted">Comprehensive learning path to master {course.technology}</p>
-          </div>
-          <div className="row g-4 justify-content-center">
-            <div className="col-lg-8">
-              <div className="card border-0 shadow-sm h-100">
-                <div className="card-header bg-primary text-white py-3">
-                  <h5 className="mb-0">Course Topics</h5>
-                </div>
-                <div className="card-body">
-                  <ul className="list-unstyled">
-                    {course.topics && course.topics.split('\n').map((topic, index) => (
-                      topic.trim() && (
-                        <li key={index} className="mb-3 pb-3 border-bottom">
-                          <h6 className="fw-bold">{topic.replace(':', '').trim()}</h6>
-                        </li>
-                      )
-                    ))}
-                  </ul>
                 </div>
               </div>
             </div>
