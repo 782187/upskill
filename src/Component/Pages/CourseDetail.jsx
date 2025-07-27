@@ -81,6 +81,16 @@ const CourseDetail = () => {
                   alt={course.title}
                   loading="lazy"
                 />
+                <div className="mt-3 text-center">
+                  <a
+                    href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
+                    className="btn btn-outline-light btn-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaRegFilePdf className="me-2" /> Download Brochure
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -141,7 +151,7 @@ const CourseDetail = () => {
       <section className="py-5" id="overview">
         <div className="container">
           <div className="row align-items-center g-5">
-            <div className="col-lg-6 order-lg-1">
+            <div className="col-lg-6">
               <div className="course-image-container rounded-4 overflow-hidden shadow-lg">
                 <img
                   src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
@@ -149,16 +159,6 @@ const CourseDetail = () => {
                   alt={course.title}
                   loading="lazy"
                 />
-              </div>
-              <div className="mt-4 d-flex justify-content-center gap-3">
-                <a
-                  href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
-                  className="btn btn-outline-success"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaRegFilePdf className="me-2" /> Download Brochure
-                </a>
               </div>
             </div>
             <div className="col-lg-6">
@@ -211,47 +211,35 @@ const CourseDetail = () => {
             <h2 className="fw-bold">Course Curriculum</h2>
             <p className="lead text-muted">Comprehensive learning path to master {course.technology}</p>
           </div>
-          <div className="row">
-            <div className="col-12">
-              <div className="card border-0 shadow-sm">
+          <div className="row g-4">
+            <div className="col-lg-6">
+              <div className="card border-0 shadow-sm h-100">
                 <div className="card-header bg-primary text-white py-3">
-                  <h5 className="mb-0">Detailed Syllabus</h5>
+                  <h5 className="mb-0">Course Topics</h5>
                 </div>
                 <div className="card-body">
-                  <div className="accordion" id="curriculumAccordion">
+                  <ul className="list-unstyled">
                     {course.topics && course.topics.split('\n').map((topic, index) => (
                       topic.trim() && (
-                        <div className="accordion-item border-0 mb-2" key={index}>
-                          <h3 className="accordion-header" id={`heading${index}`}>
-                            <button 
-                              className="accordion-button collapsed bg-light" 
-                              type="button" 
-                              data-bs-toggle="collapse" 
-                              data-bs-target={`#collapse${index}`}
-                              aria-expanded="false" 
-                              aria-controls={`collapse${index}`}
-                            >
-                              {topic.replace(':', '').trim()}
-                            </button>
-                          </h3>
-                          <div 
-                            id={`collapse${index}`} 
-                            className="accordion-collapse collapse" 
-                            aria-labelledby={`heading${index}`} 
-                            data-bs-parent="#curriculumAccordion"
-                          >
-                            <div className="accordion-body bg-white">
-                              <ul className="list-unstyled">
-                                {course.description && course.description.split('\n').map((point, i) => (
-                                  point.trim() && <li key={i} className="mb-2">• {point.trim()}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                        <li key={index} className="mb-3 pb-3 border-bottom">
+                          <h6 className="fw-bold">{topic.replace(':', '').trim()}</h6>
+                        </li>
                       )
                     ))}
-                  </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="card border-0 shadow-sm h-100">
+                <div className="card-header bg-success text-white py-3">
+                  <h5 className="mb-0">Course Description</h5>
+                </div>
+                <div className="card-body">
+                  <div
+                    className="course-topics"
+                    dangerouslySetInnerHTML={{ __html: course.description }}
+                  ></div>
                 </div>
               </div>
             </div>
