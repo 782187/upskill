@@ -83,7 +83,7 @@ const CourseDetail = () => {
                 <div className="mt-3 text-center">
                   <a
                     href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
-                    className="btn btn-outline-light btn-sm"
+                    className="btn btn-outline-light btn-lg"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
