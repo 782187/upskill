@@ -5,11 +5,11 @@ import '../../Style/CourseDetail.css'
 import EnquiryForm from './Home/EnquiryForm'
 import Course from './Home/Course'
 import Review from './Home/Review'
-import { FaLaptop, FaChalkboardTeacher, FaAward, FaClock, FaUserTie, FaCertificate } from 'react-icons/fa'
-import { IoMdSchool, IoMdPeople } from 'react-icons/io'
+import { FaLaptop, FaChalkboardTeacher, FaAward, FaClock, FaUserTie, FaRegFilePdf } from 'react-icons/fa'
+import { IoMdSchool, IoIosPeople } from 'react-icons/io'
 import { GiSkills, GiGraduateCap } from 'react-icons/gi'
-import { MdOutlineWorkOutline } from 'react-icons/md'
-import { BsCheck2Circle, BsBook } from 'react-icons/bs'
+import { MdOutlineSupportAgent, MdWorkspacesOutline } from 'react-icons/md'
+import { RiLiveLine } from 'react-icons/ri'
 
 const CourseDetail = () => {
   const { slug } = useParams()
@@ -31,65 +31,45 @@ const CourseDetail = () => {
       })
   }, [slug])
 
-  // Function to parse HTML content and extract text
-  const parseHtmlContent = (html) => {
-    if (!html) return '';
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    return doc.body.textContent || '';
-  };
-
   if (loading) return (
     <div className="d-flex justify-content-center align-items-center vh-100">
-      <div className="spinner-border text-primary" style={{ width: '3rem', height: '3rem' }} role="status">
+      <div className="spinner-border text-primary" style={{width: '3rem', height: '3rem'}} role="status">
         <span className="visually-hidden">Loading...</span>
       </div>
     </div>
   )
 
   if (error) return (
-    <div className="container py-5 my-5">
-      <div className="row justify-content-center">
-        <div className="col-lg-8">
-          <div className="card border-0 shadow-lg text-center py-5">
-            <div className="card-body">
-              <h1 className="display-4 text-danger mb-4">Oops!</h1>
-              <p className="lead mb-4">{error}</p>
-              <a href="/courses" className="btn btn-primary btn-lg px-4">
-                Browse All Courses
-              </a>
-            </div>
-          </div>
-        </div>
+    <div className="container py-5 text-center">
+      <div className="alert alert-danger" style={{ maxWidth: '600px', margin: '0 auto' }}>
+        <h4 className="alert-heading">Oops!</h4>
+        <p>{error}</p>
+        <a href="/courses" className="btn btn-outline-danger mt-2">
+          Browse All Courses
+        </a>
       </div>
     </div>
   )
 
   return (
-    <div className="course-detail-page">
-      {/* Hero Section - Improved Layout */}
+    <>
+      {/* Hero Section */}
       <section className="course-hero position-relative overflow-hidden">
         <div className="hero-overlay"></div>
         <div className="container position-relative z-index-1 py-5">
-          <div className="row min-vh-75 align-items-center py-5">
-            <div className="col-lg-8 col-xl-7">
-              <div className="hero-content text-white p-4 p-lg-5 rounded-4 bg-dark bg-opacity-75">
-                <span className="badge bg-warning text-dark fs-6 mb-3 px-3 py-2">
-                  {course.technology}
-                </span>
-                <h1 className="display-3 fw-bold mb-4">{course.title}</h1>
-                <div className="d-flex align-items-center mb-4">
-                  <div className="bg-white text-primary rounded-circle p-2 me-3">
-                    <FaChalkboardTeacher size={24} />
-                  </div>
-                  <p className="lead mb-0 fs-4">
-                    Master {parseHtmlContent(course.description).split('.')[0]} with industry-relevant skills.
-                  </p>
-                </div>
+          <div className="row min-vh-50 align-items-center py-5">
+            <div className="col-lg-8">
+              <div className="hero-content text-white p-4 p-lg-5 rounded-3 bg-dark bg-opacity-75">
+                <span className="badge bg-warning text-dark mb-3 px-3 py-2">{course.technology}</span>
+                <h1 className="display-4 fw-bold mb-3">{course.title}</h1>
+                <p className="lead mb-4">
+                  Master {course.technology} with industry-relevant skills, hands-on projects, and professional certification.
+                </p>
                 <div className="d-flex flex-wrap gap-3">
-                  <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold rounded-pill">
+                  <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold">
                     Enquire Now
                   </a>
-                  <a href="#curriculum" className="btn btn-outline-light btn-lg px-4 py-3 fw-semibold rounded-pill">
+                  <a href="#curriculum" className="btn btn-outline-light btn-lg px-4 py-3 fw-semibold">
                     View Curriculum
                   </a>
                 </div>
@@ -99,116 +79,51 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Rest of the sections remain the same as in the previous improved version */}
-
-      {/* Curriculum Section with Fixed Learning Outcomes */}
-      <section className="py-5 bg-light" id="curriculum">
+      {/* Course Highlights */}
+      <section className="py-5 bg-light">
         <div className="container">
-          <div className="row justify-content-center mb-5">
-            <div className="col-lg-10 text-center">
-              <h2 className="fw-bold display-5 mb-3">Course Curriculum</h2>
-              <p className="lead text-muted">Comprehensive learning path to master {course.technology}</p>
-              <div className="divider mx-auto bg-primary"></div>
-            </div>
-          </div>
           <div className="row g-4">
-            <div className="col-lg-6">
-              <div className="card border-0 shadow-sm h-100">
-                <div className="card-header bg-primary text-white py-3 rounded-top">
-                  <h3 className="mb-0">Learning Outcomes</h3>
+            <div className="col-md-6 col-lg-3">
+              <div className="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
+                <div className="me-3 text-primary">
+                  <FaClock size={28} />
                 </div>
-                <div className="card-body">
-                  {course.description ? (
-                    <>
-                      <h4 className="mb-3">Data Science with Python and Machine Learning</h4>
-                      <p className="mb-4">Master the art of extracting valuable insights from data using Python, statistics, and machine learning.</p>
-                      
-                      <p className="mb-4">This course is designed to cover the complete data science lifecycle with hands-on practicals and real-time projects.</p>
-                      
-                      <h5 className="mt-4 mb-3">Course Features:</h5>
-                      <ul className="list-unstyled">
-                        <li className="mb-3 d-flex">
-                          <span className="me-2 text-primary"><BsCheck2Circle /></span>
-                          <span>Live interactive sessions with experienced trainers</span>
-                        </li>
-                        <li className="mb-3 d-flex">
-                          <span className="me-2 text-primary"><BsCheck2Circle /></span>
-                          <span>Real-world case studies across domains</span>
-                        </li>
-                        <li className="mb-3 d-flex">
-                          <span className="me-2 text-primary"><BsCheck2Circle /></span>
-                          <span>Capstone project with deployment</span>
-                        </li>
-                        <li className="mb-3 d-flex">
-                          <span className="me-2 text-primary"><BsCheck2Circle /></span>
-                          <span>Placement assistance and certification</span>
-                        </li>
-                      </ul>
-                      
-                      <h5 className="mt-4 mb-3">Ideal For:</h5>
-                      <p>Students, graduates, working professionals, career switchers, and data enthusiasts.</p>
-                    </>
-                  ) : (
-                    <p>No learning outcomes available</p>
-                  )}
+                <div>
+                  <h6 className="mb-1">Duration</h6>
+                  <p className="mb-0 fw-bold">{course.duration}</p>
                 </div>
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="card border-0 shadow-sm h-100">
-                <div className="card-header bg-success text-white py-3 rounded-top">
-                  <h3 className="mb-0">Detailed Syllabus</h3>
+            <div className="col-md-6 col-lg-3">
+              <div className="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
+                <div className="me-3 text-warning">
+                  <IoMdSchool size={28} />
                 </div>
-                <div className="card-body">
-                  {course.topics ? (
-                    <ul className="list-unstyled">
-                      <li className="mb-3 d-flex">
-                        <span className="me-2 text-success"><BsCheck2Circle /></span>
-                        <span>Introduction to Data Science and Python</span>
-                      </li>
-                      <li className="mb-3 d-flex">
-                        <span className="me-2 text-success"><BsCheck2Circle /></span>
-                        <span>Python Programming Basics</span>
-                      </li>
-                      <li className="mb-3 d-flex">
-                        <span className="me-2 text-success"><BsCheck2Circle /></span>
-                        <span>Working with NumPy and Pandas for Data Analysis</span>
-                      </li>
-                      <li className="mb-3 d-flex">
-                        <span className="me-2 text-success"><BsCheck2Circle /></span>
-                        <span>Data Visualization using Matplotlib and Seaborn</span>
-                      </li>
-                      <li className="mb-3 d-flex">
-                        <span className="me-2 text-success"><BsCheck2Circle /></span>
-                        <span>Statistics and Probability for Data Science</span>
-                      </li>
-                      <li className="mb-3 d-flex">
-                        <span className="me-2 text-success"><BsCheck2Circle /></span>
-                        <span>Exploratory Data Analysis (EDA)</span>
-                      </li>
-                      <li className="mb-3 d-flex">
-                        <span className="me-2 text-success"><BsCheck2Circle /></span>
-                        <span>Machine Learning Fundamentals</span>
-                        <ul className="mt-2 ms-4">
-                          <li className="mb-2">Linear Regression</li>
-                          <li className="mb-2">Logistic Regression</li>
-                          <li className="mb-2">Decision Trees</li>
-                        </ul>
-                      </li>
-                      <li className="mb-3 d-flex">
-                        <span className="me-2 text-success"><BsCheck2Circle /></span>
-                        <span>Supervised Learning:</span>
-                        <ul className="mt-2 ms-4">
-                          <li className="mb-2">Random Forest</li>
-                          <li className="mb-2">K-Nearest Neighbors (KNN)</li>
-                          <li className="mb-2">Support Vector Machines (SVM)</li>
-                          <li className="mb-2">K-Means Clustering</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  ) : (
-                    <p>No syllabus available</p>
-                  )}
+                <div>
+                  <h6 className="mb-1">Training Mode</h6>
+                  <p className="mb-0 fw-bold">{course.mode}</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3">
+              <div className="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
+                <div className="me-3 text-success">
+                  <GiSkills size={28} />
+                </div>
+                <div>
+                  <h6 className="mb-1">Skill Level</h6>
+                  <p className="mb-0 fw-bold">Beginner to Advanced</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3">
+              <div className="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
+                <div className="me-3 text-info">
+                  <IoIosPeople size={28} />
+                </div>
+                <div>
+                  <h6 className="mb-1">Batch Size</h6>
+                  <p className="mb-0 fw-bold">Limited Seats</p>
                 </div>
               </div>
             </div>
@@ -216,8 +131,283 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Rest of the sections remain the same as in the previous improved version */}
-    </div>
+      {/* Course Overview */}
+      <section className="py-5" id="overview">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <div className="col-lg-6 order-lg-1">
+              <div className="course-image-container rounded-4 overflow-hidden shadow-lg">
+                <img
+                  src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
+                  className="img-fluid w-100"
+                  alt={course.title}
+                  loading="lazy"
+                />
+                <div className="image-overlay d-flex align-items-center justify-content-center">
+                  <button className="btn btn-primary btn-lg">
+                    <RiLiveLine className="me-2" /> Watch Course Intro
+                  </button>
+                </div>
+              </div>
+              <div className="mt-4 d-flex justify-content-center gap-3">
+                <button className="btn btn-outline-primary">
+                  <FaRegFilePdf className="me-2" /> Download Syllabus
+                </button>
+                <button className="btn btn-outline-success">
+                  <FaRegFilePdf className="me-2" /> Course Brochure
+                </button>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="ps-lg-4">
+                <h2 className="fw-bold mb-4 text-gradient">About This Course</h2>
+                <div 
+                  className="course-description fs-5 text-muted mb-4"
+                  dangerouslySetInnerHTML={{ __html: course.description }}
+                ></div>
+                
+                <div className="course-features mb-4">
+                  <h5 className="fw-bold mb-3">Key Features:</h5>
+                  <ul className="list-unstyled row g-3">
+                    <li className="col-md-6 d-flex align-items-center">
+                      <span className="me-2 text-primary"><GiGraduateCap size={20} /></span>
+                      Industry-recognized certification
+                    </li>
+                    <li className="col-md-6 d-flex align-items-center">
+                      <span className="me-2 text-primary"><MdWorkspacesOutline size={20} /></span>
+                      Hands-on projects
+                    </li>
+                    <li className="col-md-6 d-flex align-items-center">
+                      <span className="me-2 text-primary"><FaUserTie size={20} /></span>
+                      Career guidance
+                    </li>
+                    <li className="col-md-6 d-flex align-items-center">
+                      <span className="me-2 text-primary"><MdOutlineSupportAgent size={20} /></span>
+                      Lifetime support
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="mt-4">
+                  <a href="#enquiry" className="btn btn-primary px-4 py-3 fw-semibold me-3">
+                    Enroll Now
+                  </a>
+                  <a href="#curriculum" className="btn btn-outline-secondary px-4 py-3 fw-semibold">
+                    View Syllabus
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Curriculum Section */}
+      <section className="py-5 bg-light" id="curriculum">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="fw-bold">Course Curriculum</h2>
+            <p className="lead text-muted">Comprehensive learning path to master {course.technology}</p>
+          </div>
+          <div className="row g-4">
+            <div className="col-lg-6">
+              <div className="card border-0 shadow-sm h-100">
+                <div className="card-header bg-primary text-white py-3">
+                  <h5 className="mb-0">What You'll Learn</h5>
+                </div>
+                <div className="card-body">
+                  <div 
+                    className="course-topics"
+                    dangerouslySetInnerHTML={{ __html: course.description }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="card border-0 shadow-sm h-100">
+                <div className="card-header bg-success text-white py-3">
+                  <h5 className="mb-0">Detailed Syllabus</h5>
+                </div>
+                <div className="card-body">
+                  <div 
+                    className="course-topics"
+                    dangerouslySetInnerHTML={{ __html: course.topics }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certificate Preview */}
+      <section className="py-5 bg-white">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-5 mb-4 mb-lg-0">
+              <h2 className="fw-bold mb-3">Earn Your Certificate</h2>
+              <p className="lead text-muted mb-4">Get recognized for your skills with our industry-approved certification</p>
+              <ul className="list-unstyled">
+                <li className="mb-3 d-flex align-items-start">
+                  <span className="me-2 text-success">✓</span>
+                  <span>Validate your skills with industry-recognized certification</span>
+                </li>
+                <li className="mb-3 d-flex align-items-start">
+                  <span className="me-2 text-success">✓</span>
+                  <span>Enhance your resume and LinkedIn profile</span>
+                </li>
+                <li className="mb-3 d-flex align-items-start">
+                  <span className="me-2 text-success">✓</span>
+                  <span>Stand out in job interviews</span>
+                </li>
+                <li className="mb-3 d-flex align-items-start">
+                  <span className="me-2 text-success">✓</span>
+                  <span>Digital and printed certificate options</span>
+                </li>
+              </ul>
+              <button className="btn btn-outline-primary mt-3">
+                <FaRegFilePdf className="me-2" /> Download Sample Certificate
+              </button>
+            </div>
+            <div className="col-lg-7">
+              <div className="certificate-container p-4 bg-light rounded-4 shadow-sm">
+                <img
+                  src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
+                  alt="Certificate Sample"
+                  className="img-fluid rounded-3 border"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-5 bg-dark text-white">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="fw-bold">Why Choose This Course?</h2>
+            <p className="lead opacity-75">Our proven approach to professional education</p>
+          </div>
+          <div className="row g-4">
+            <div className="col-md-6 col-lg-4">
+              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
+                <div className="feature-icon bg-primary bg-opacity-10 text-primary mb-3">
+                  <FaLaptop size={28} />
+                </div>
+                <h4>Hands-on Training</h4>
+                <p className="text-muted">Learn by doing with real-world projects and practical exercises that simulate actual work environments.</p>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
+                <div className="feature-icon bg-warning bg-opacity-10 text-warning mb-3">
+                  <FaChalkboardTeacher size={28} />
+                </div>
+                <h4>Expert Instructors</h4>
+                <p className="text-muted">Learn from industry professionals with 10+ years of practical experience in their fields.</p>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
+                <div className="feature-icon bg-info bg-opacity-10 text-info mb-3">
+                  <FaAward size={28} />
+                </div>
+                <h4>Career Support</h4>
+                <p className="text-muted">Get resume help, interview prep, and job placement assistance with our 200+ hiring partners.</p>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
+                <div className="feature-icon bg-success bg-opacity-10 text-success mb-3">
+                  <MdOutlineSupportAgent size={28} />
+                </div>
+                <h4>Lifetime Access</h4>
+                <p className="text-muted">Get lifetime access to course materials, updates, and our exclusive alumni community.</p>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
+                <div className="feature-icon bg-danger bg-opacity-10 text-danger mb-3">
+                  <IoIosPeople size={28} />
+                </div>
+                <h4>Community Learning</h4>
+                <p className="text-muted">Join a community of 10,000+ learners for networking, collaboration, and peer support.</p>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <div className="feature-card p-4 h-100 rounded-3 bg-dark bg-opacity-25 border border-light border-opacity-10">
+                <div className="feature-icon bg-purple bg-opacity-10 text-purple mb-3">
+                  <GiGraduateCap size={28} />
+                </div>
+                <h4>Flexible Learning</h4>
+                <p className="text-muted">Choose from weekend batches, weekday evenings, or self-paced learning options.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <Review />
+
+      {/* Related Courses */}
+      <Course />
+
+      {/* Enquiry Form */}
+      <section className="py-5 bg-light" id="enquiry">
+        <div className="container">
+          <div className="row g-5">
+            <div className="col-lg-5">
+              <div className="pe-lg-4">
+                <h2 className="fw-bold mb-4">Have Questions About This Course?</h2>
+                <p className="lead text-muted mb-4">Our team is here to help you choose the right learning path.</p>
+                
+                <div className="mb-4">
+                  <h5 className="fw-bold mb-3">Course Advisor Available</h5>
+                  <ul className="list-unstyled">
+                    <li className="mb-3 d-flex align-items-start">
+                      <span className="me-2 text-primary">✓</span>
+                      <span>Get personalized course recommendations</span>
+                    </li>
+                    <li className="mb-3 d-flex align-items-start">
+                      <span className="me-2 text-primary">✓</span>
+                      <span>Clarify your doubts about the curriculum</span>
+                    </li>
+                    <li className="mb-3 d-flex align-items-start">
+                      <span className="me-2 text-primary">✓</span>
+                      <span>Learn about payment options and EMI</span>
+                    </li>
+                    <li className="mb-3 d-flex align-items-start">
+                      <span className="me-2 text-primary">✓</span>
+                      <span>Get information about upcoming batches</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="contact-info bg-white p-4 rounded-3 shadow-sm">
+                  <h5 className="fw-bold mb-3">Contact Information</h5>
+                  <p className="mb-2"><strong>Email:</strong> info@upskill.com</p>
+                  <p className="mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
+                  <p><strong>Hours:</strong> Mon-Sat, 9AM - 6PM</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-7">
+              <div className="card border-0 shadow-lg h-100">
+                <div className="card-header bg-primary text-white py-4">
+                  <h3 className="mb-0 text-center">Get Course Details</h3>
+                </div>
+                <div className="card-body p-4 p-md-5">
+                  <EnquiryForm />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
 
