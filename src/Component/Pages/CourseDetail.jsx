@@ -53,14 +53,12 @@ const CourseDetail = () => {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="course-hero position-relative overflow-hidden">
         <div className="hero-overlay"></div>
         <div className="container position-relative z-index-1 py-5">
           <div className="row min-vh-50 align-items-center py-5">
             <div className="col-lg-8">
               <div className="hero-content text-white p-4 p-lg-5 rounded-3 bg-dark bg-opacity-75">
-                <span className="badge bg-warning text-dark mb-3 px-3 py-2">{course.technology}</span>
                 <h1 className="display-4 fw-bold mb-3">{course.title}</h1>
                 <p className="lead mb-4">
                   Master {course.technology} with industry-relevant skills, hands-on projects, and professional certification.
@@ -79,7 +77,6 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Course Highlights */}
       <section className="py-5 bg-light">
         <div className="container">
           <div className="row g-4">
@@ -131,7 +128,6 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Course Overview */}
       <section className="py-5" id="overview">
         <div className="container">
           <div className="row align-items-center g-5">
@@ -143,11 +139,6 @@ const CourseDetail = () => {
                   alt={course.title}
                   loading="lazy"
                 />
-                <div className="image-overlay d-flex align-items-center justify-content-center">
-                  <button className="btn btn-primary btn-lg">
-                    <RiLiveLine className="me-2" /> Watch Course Intro
-                  </button>
-                </div>
               </div>
               <div className="mt-4 d-flex justify-content-center gap-3">
                 <button className="btn btn-outline-primary">
@@ -202,7 +193,6 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Curriculum Section */}
       <section className="py-5 bg-light" id="curriculum">
         <div className="container">
           <div className="text-center mb-5">
@@ -240,7 +230,6 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Certificate Preview */}
       <section className="py-5 bg-white">
         <div className="container">
           <div className="row align-items-center">
@@ -265,9 +254,6 @@ const CourseDetail = () => {
                   <span>Digital and printed certificate options</span>
                 </li>
               </ul>
-              <button className="btn btn-outline-primary mt-3">
-                <FaRegFilePdf className="me-2" /> Download Sample Certificate
-              </button>
             </div>
             <div className="col-lg-7">
               <div className="certificate-container p-4 bg-light rounded-4 shadow-sm">
@@ -283,7 +269,6 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-5 bg-dark text-white">
         <div className="container">
           <div className="text-center mb-5">
@@ -297,7 +282,7 @@ const CourseDetail = () => {
                   <FaLaptop size={28} />
                 </div>
                 <h4>Hands-on Training</h4>
-                <p className="text-muted">Learn by doing with real-world projects and practical exercises that simulate actual work environments.</p>
+                <p>Learn by doing with real-world projects and practical exercises that simulate actual work environments.</p>
               </div>
             </div>
             <div className="col-md-6 col-lg-4">
@@ -306,7 +291,7 @@ const CourseDetail = () => {
                   <FaChalkboardTeacher size={28} />
                 </div>
                 <h4>Expert Instructors</h4>
-                <p className="text-muted">Learn from industry professionals with 10+ years of practical experience in their fields.</p>
+                <p>Learn from industry professionals with 10+ years of practical experience in their fields.</p>
               </div>
             </div>
             <div className="col-md-6 col-lg-4">
@@ -315,7 +300,7 @@ const CourseDetail = () => {
                   <FaAward size={28} />
                 </div>
                 <h4>Career Support</h4>
-                <p className="text-muted">Get resume help, interview prep, and job placement assistance with our 200+ hiring partners.</p>
+                <p>Get resume help, interview prep, and job placement assistance with our 200+ hiring partners.</p>
               </div>
             </div>
             <div className="col-md-6 col-lg-4">
@@ -324,7 +309,7 @@ const CourseDetail = () => {
                   <MdOutlineSupportAgent size={28} />
                 </div>
                 <h4>Lifetime Access</h4>
-                <p className="text-muted">Get lifetime access to course materials, updates, and our exclusive alumni community.</p>
+                <p>Get lifetime access to course materials, updates, and our exclusive alumni community.</p>
               </div>
             </div>
             <div className="col-md-6 col-lg-4">
@@ -333,7 +318,7 @@ const CourseDetail = () => {
                   <IoIosPeople size={28} />
                 </div>
                 <h4>Community Learning</h4>
-                <p className="text-muted">Join a community of 10,000+ learners for networking, collaboration, and peer support.</p>
+                <p>Join a community of 10,000+ learners for networking, collaboration, and peer support.</p>
               </div>
             </div>
             <div className="col-md-6 col-lg-4">
@@ -342,20 +327,17 @@ const CourseDetail = () => {
                   <GiGraduateCap size={28} />
                 </div>
                 <h4>Flexible Learning</h4>
-                <p className="text-muted">Choose from weekend batches, weekday evenings, or self-paced learning options.</p>
+                <p>Choose from weekend batches, weekday evenings, or self-paced learning options.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
       <Review />
 
-      {/* Related Courses */}
       <Course />
 
-      {/* Enquiry Form */}
       <section className="py-5 bg-light" id="enquiry">
         <div className="container">
           <div className="row g-5">
