@@ -1,15 +1,32 @@
-/* ========== HERO SECTION (LIGHT THEME) ========== */
+/* ========== HERO SECTION (GLAMOROUS & RESPONSIVE) ========== */
 .course-hero {
-  background: linear-gradient(135deg, aliceblue, #ffffff);
-  color: #333;
+  background: linear-gradient(145deg, #1d3557, #457b9d, #a8dadc);
+  color: #fff;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  padding: 80px 5%;
+}
+
+.course-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.08;
+  z-index: 0;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
 .hero-content {
@@ -19,14 +36,29 @@
 }
 
 .hero-content h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .hero-content p {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
   line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-content .btn {
+  padding: 0.75rem 1.75rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.hero-content .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .hero-image-container {
@@ -40,46 +72,34 @@
   max-width: 100%;
   height: auto;
   border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease;
 }
 
 .hero-image-container:hover img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* ========== COURSE DESCRIPTION ========== */
-.course-description {
-  padding: 2rem 5%;
-}
-
-.course-description p,
-.course-description ul {
+/* ========== SECTION HEADINGS (UNIFORM LOOK) ========== */
+section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
   margin-bottom: 1rem;
-  color: #444;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: #2c3e50;
 }
 
-.course-description ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-/* ========== COURSE TOPICS SECTION ========== */
+/* ========== COURSE DESCRIPTION & TOPICS ========== */
+.course-description,
 .course-topics {
   padding: 2rem 5%;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #444;
 }
 
+.course-description ul,
 .course-topics ul {
-  list-style-type: disc;
   padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.course-topics li {
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  list-style-type: disc;
 }
 
 .course-topics strong {
@@ -93,29 +113,29 @@
 /* ========== CERTIFICATE SECTION ========== */
 .certificate-container {
   border: 1px solid #eee;
-  transition: all 0.3s ease;
   background-color: #fff;
-  padding: 1.5rem;
+  padding: 2rem;
   margin: 1rem 5%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .certificate-container:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* ========== FEATURE CARDS ========== */
 .feature-card {
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   transition: transform 0.3s ease;
   padding: 2rem;
   border: 1px solid #eee;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
 }
 
 .feature-icon {
@@ -125,15 +145,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f8ff;
+  margin-bottom: 1rem;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 992px) {
   .course-hero {
     flex-direction: column;
-    padding: 60px 5%;
     text-align: center;
+    padding: 60px 2rem;
   }
 
   .hero-content, .hero-image-container {
@@ -141,14 +161,15 @@
     padding: 1rem 0;
   }
 
-  .feature-card {
-    padding: 1.5rem;
+  .hero-content .btn {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
 
 @media (max-width: 576px) {
   .hero-content h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .hero-content p,
