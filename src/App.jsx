@@ -18,10 +18,6 @@ import Blogs from './Component/Pages/Blog/Blog';
 import Career from './Component/Pages/Career';
 import Events from './Component/Pages/Events';
 import HireFromUs from './Component/Pages/HireFromUs';
-import FullStackJava from './Component/Pages/Courses/FullStackJava';
-import FullStackPython from './Component/Pages/Courses/FullStackPython';
-import SoftwareTesting from './Component/Pages/Courses/Testing';
-import WebDevelopment from './Component/Pages/Courses/WebDevelopment';
 import ContactUs from './Component/Pages/ContactUs';
 import Testimonials from './Component/Pages/Testimonials';
 import PlacedStudents from './Component/Pages/PlacedStudents';
@@ -53,10 +49,6 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/team" element={<Team />} />
           <Route path="/career" element={<Career />} />
-          <Route path="/courses/java-full-stack" element={<FullStackJava />} />
-          <Route path="/courses/python-full-stack" element={<FullStackPython />} />
-          <Route path="/courses/software-testing" element={<SoftwareTesting />} />
-          <Route path="/courses/web-development" element={<WebDevelopment />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/placed" element={<PlacedStudents />} />
         </Routes>
