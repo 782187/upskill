@@ -54,21 +54,28 @@ const CourseDetail = () => {
     <>
       <section className="course-hero position-relative overflow-hidden">
         <div className="hero-overlay"></div>
-        <div className="container position-relative z-index-1 py-2">
-          <div className="row min-vh-50 align-items-center py-5">
-            <div className="col-lg-7">
-              <div className="hero-content text-white p-4 p-lg-5 rounded-3 bg-dark bg-opacity-75">
-                <h1 className="display-4 fw-bold mb-3">{course.title}</h1>
+        <div className="container position-relative z-index-1 py-5">
+          <div className="row align-items-center g-5">
+            <div className="col-lg-6 order-lg-1 order-2">
+              <div className="hero-content text-white p-4 p-lg-5 rounded-4 bg-dark bg-opacity-75 shadow-lg">
+                <h1 className="display-3 fw-bold mb-4">{course.title}</h1>
+                <div className="d-flex flex-wrap gap-2 mb-4">
+                  {course.technology.split(',').map((tech, index) => (
+                    <span key={index} className="badge bg-primary bg-opacity-25 text-white fw-normal">
+                      {tech.trim()}
+                    </span>
+                  ))}
+                </div>
                 <p className="lead mb-4">
-                  Master {course.technology} with industry-relevant skills, hands-on projects, and professional certification.
+                  Master in-demand skills with industry-relevant projects, hands-on training, and professional certification.
                 </p>
                 <div className="d-flex flex-wrap gap-3">
-                  <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold">
+                  <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold rounded-pill">
                     Enquire Now
                   </a>
                   <a
                     href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
-                    className="btn btn-success btn-lg px-4 py-3 fw-semibold"
+                    className="btn btn-outline-light btn-lg px-4 py-3 fw-semibold rounded-pill"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -77,14 +84,15 @@ const CourseDetail = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-5 d-lg-block">
-              <div className="hero-image-container">
+            <div className="col-lg-6 order-lg-2 order-1">
+              <div className="hero-image-container position-relative">
                 <img
                   src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
                   className="img-fluid rounded-4 shadow-lg"
                   alt={course.title}
                   loading="lazy"
                 />
+                <div className="position-absolute top-0 start-0 w-100 h-100 rounded-4 overlay-gradient"></div>
               </div>
             </div>
           </div>
