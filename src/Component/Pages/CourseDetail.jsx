@@ -53,56 +53,54 @@ const CourseDetail = () => {
   return (
     <>
       <section className="course-hero position-relative overflow-hidden bg-white">
-        {/* Animated decorative elements */}
-        <div className="position-absolute top-0 end-0 w-25 h-25">
+        {/* Animated Decorative Blobs */}
+        <div className="position-absolute top-0 end-0">
           <div className="animated-blob blue-blob"></div>
         </div>
-        <div className="position-absolute bottom-0 start-0 w-25 h-25">
+        <div className="position-absolute bottom-0 start-0">
           <div className="animated-blob orange-blob"></div>
         </div>
 
-        <div className="container-fluid px-0">
-          <div className="hero-content text-center py-5">
-            <div className="container py-5">
-              <h1 className="display-3 fw-bold mb-4 text-gradient-blue-orange">{course.title}</h1>
+        <div className="container py-5 text-center hero-content">
+          <h1 className="display-3 fw-bold mb-4 text-gradient-blue-orange">
+            {course.title}
+          </h1>
 
-              <div className="tech-cloud mb-5 mx-auto">
-                {course.technology.split(',').map((tech, index) => (
-                  <span
-                    key={index}
-                    className={`tech-badge ${index % 2 === 0 ? 'bg-primary' : 'bg-orange'}`}
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                      transform: `rotate(${index * 5}deg)`
-                    }}
-                  >
-                    {tech.trim()}
-                  </span>
-                ))}
-              </div>
+          <div className="tech-cloud mb-5 mx-auto">
+            {course.technology.split(',').map((tech, index) => (
+              <span
+                key={index}
+                className={`tech-badge ${index % 2 === 0 ? 'bg-primary' : 'bg-orange'}`}
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  '--rotation': `${(Math.random() * 10 - 5).toFixed(2)}deg`,
+                }}
+              >
+                {tech.trim()}
+              </span>
+            ))}
+          </div>
 
-              <p className="lead mb-4 text-muted mx-auto" style={{ maxWidth: "700px" }}>
-                Master in-demand skills with industry-relevant projects, hands-on training, and professional certification.
-              </p>
+          <p className="lead mb-4 text-muted mx-auto" style={{ maxWidth: '720px' }}>
+            Master in-demand skills with industry-relevant projects, hands-on training, and professional certification.
+          </p>
 
-              <div className="d-flex justify-content-center gap-3">
-                <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold btn-hover-grow">
-                  Enquire Now
-                </a>
-                <a
-                  href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
-                  className="btn btn-orange btn-lg px-4 py-3 fw-semibold btn-hover-grow"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaRegFilePdf className="me-2" /> Download Brochure
-                </a>
-              </div>
-            </div>
+          <div className="d-flex justify-content-center flex-wrap gap-3">
+            <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold btn-hover-grow">
+              Enquire Now
+            </a>
+            <a
+              href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
+              className="btn btn-orange btn-lg px-4 py-3 fw-semibold btn-hover-grow"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaRegFilePdf className="me-2" /> Download Brochure
+            </a>
           </div>
         </div>
       </section>
-
+      
       <section className="py-5 bg-light">
         <div className="container">
           <div className="row g-1 g-lg-4">

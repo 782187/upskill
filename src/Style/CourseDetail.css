@@ -4,13 +4,14 @@
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
-/* Animated blobs */
+/* Decorative Blobs */
 .animated-blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(60px);
   opacity: 0.2;
   animation: float 15s ease-in-out infinite;
+  z-index: 0;
 }
 
 .blue-blob {
@@ -41,7 +42,7 @@
   }
 }
 
-/* Text gradient */
+/* Text Gradient */
 .text-gradient-blue-orange {
   background: linear-gradient(45deg, #3498db, #e67e22);
   -webkit-background-clip: text;
@@ -49,30 +50,32 @@
   color: transparent;
 }
 
-/* Tech cloud */
+/* Tech Tags (Floating Badges) */
 .tech-cloud {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  max-width: 800px;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .tech-badge {
-  padding: 0.5em 1em;
+  padding: 0.5em 1.1em;
   border-radius: 50px;
   color: white;
   font-size: 0.9rem;
   font-weight: 500;
   display: inline-block;
   animation: float-up 3s ease-in-out infinite alternate;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .tech-badge:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes float-up {
@@ -85,10 +88,11 @@
   }
 }
 
-/* Buttons */
+/* Button Styling */
 .btn-primary {
   background-color: #3498db;
   border: none;
+  color: white;
 }
 
 .btn-orange {
@@ -106,7 +110,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
   .hero-content {
     padding: 2rem 1rem !important;
@@ -118,7 +122,7 @@
 
   .tech-badge {
     font-size: 0.8rem;
-    padding: 0.4em 0.8em;
+    padding: 0.4em 0.9em;
   }
 
   .blue-blob {
@@ -130,7 +134,13 @@
     width: 250px;
     height: 250px;
   }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
+
 
 section h2 {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
