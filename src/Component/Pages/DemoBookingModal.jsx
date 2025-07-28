@@ -36,7 +36,11 @@ const DemoBookingModal = () => {
     setValidated(true);
     setLoading(true);
 
-    axios.post("https://upskill-server.onrender.com/submit-demo-booking", formData)
+    axios.post("https://upskill-server.onrender.com/submit-demo-booking", formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
       .then(res => {
         alert("Demo booked successfully!");
         setFormData({ name: "", contact: "", email: "", course: "" });
