@@ -54,7 +54,7 @@ const CourseDetail = () => {
     <>
       <section className="course-hero position-relative overflow-hidden">
         <div className="hero-overlay"></div>
-        <div className="container position-relative z-index-1 py-5">
+        <div className="container position-relative z-index-1 py-2">
           <div className="row min-vh-50 align-items-center py-5">
             <div className="col-lg-7">
               <div className="hero-content text-white p-4 p-lg-5 rounded-3 bg-dark bg-opacity-75">
@@ -83,7 +83,7 @@ const CourseDetail = () => {
                 <div className="mt-3 text-center">
                   <a
                     href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
-                    className="btn btn-outline-light btn-lg"
+                    className="btn btn-success btn-lg"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
