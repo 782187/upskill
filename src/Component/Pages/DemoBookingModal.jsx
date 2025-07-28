@@ -1,15 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const DemoBookingModal = () => {
   const [validated, setValidated] = useState(false);
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    contact: "",
+    email: "",
+    course: ""
+  });
+
+  useEffect(() => {
+    axios.get("https://upskill-server.onrender.com/get-courses")
+      .then(res => setCourses(res.data))
+      .catch(err => console.error("Error loading courses:", err));
+  }, []);
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const form = e.target;
+
     if (!form.checkValidity()) {
-      e.preventDefault();
       e.stopPropagation();
+      setValidated(true);
+      return;
     }
+
     setValidated(true);
+    setLoading(true);
+
+    axios.post("https://upskill-server.onrender.com/submit-demo-booking", formData)
+      .then(res => {
+        alert("Demo booked successfully!");
+        setFormData({ name: "", contact: "", email: "", course: "" });
+        document.getElementById("demoModalCloseBtn").click();
+      })
+      .catch(err => {
+        console.error("Error submitting form:", err);
+        alert("Something went wrong!");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -32,6 +71,7 @@ const DemoBookingModal = () => {
                 className="btn-close btn-close-white"
                 data-bs-dismiss="modal"
                 aria-label="Close"
+                id="demoModalCloseBtn"
               ></button>
             </div>
 
@@ -50,6 +90,8 @@ const DemoBookingModal = () => {
                       type="text"
                       className="form-control border-primary shadow-sm"
                       id="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       required
                     />
                     <div className="invalid-feedback">Please enter your name</div>
@@ -64,11 +106,11 @@ const DemoBookingModal = () => {
                       className="form-control border-primary shadow-sm"
                       id="contact"
                       pattern="[0-9]{10}"
+                      value={formData.contact}
+                      onChange={handleChange}
                       required
                     />
-                    <div className="invalid-feedback">
-                      Enter a valid 10-digit phone number
-                    </div>
+                    <div className="invalid-feedback">Enter a valid 10-digit phone number</div>
                   </div>
 
                   <div className="col-md-6">
@@ -79,6 +121,8 @@ const DemoBookingModal = () => {
                       type="email"
                       className="form-control border-primary shadow-sm"
                       id="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                     />
                     <div className="invalid-feedback">Please enter a valid email</div>
@@ -91,13 +135,20 @@ const DemoBookingModal = () => {
                     <select
                       className="form-select border-primary shadow-sm"
                       id="course"
+                      value={formData.course}
+                      onChange={handleChange}
                       required
                     >
                       <option value="">-- Choose a Course --</option>
-                      <option>Full Stack Java</option>
-                      <option>Full Stack Python</option>
-                      <option>MERN Stack</option>
-                      <option>MEAN Stack</option>
+                      {courses.length > 0 ? (
+                        courses.map(course => (
+                          <option key={course.id} value={course.title}>
+                            {course.title}
+                          </option>
+                        ))
+                      ) : (
+                        <option disabled>Loading courses...</option>
+                      )}
                     </select>
                     <div className="invalid-feedback">Please select a course</div>
                   </div>
@@ -108,11 +159,23 @@ const DemoBookingModal = () => {
                     type="button"
                     className="btn btn-outline-primary"
                     data-bs-dismiss="modal"
+                    id="demoModalCloseBtn"
                   >
                     Close
                   </button>
-                  <button type="submit" className="btn btn-warning text-white shadow-sm">
-                    Submit
+                  <button
+                    type="submit"
+                    className="btn btn-warning text-white shadow-sm"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <>
+                        <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                        Submitting...
+                      </>
+                    ) : (
+                      "Submit"
+                    )}
                   </button>
                 </div>
               </form>
