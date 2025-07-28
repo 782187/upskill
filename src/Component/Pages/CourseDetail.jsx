@@ -52,30 +52,32 @@ const CourseDetail = () => {
 
   return (
     <>
-      <section className="course-hero position-relative overflow-hidden">
-        <div className="hero-overlay"></div>
-        <div className="container position-relative z-index-1 py-5">
+      <section className="course-hero position-relative overflow-hidden bg-light">
+        <div className="container py-5">
           <div className="row align-items-center g-5">
             <div className="col-lg-6 order-lg-1 order-2">
-              <div className="hero-content text-white p-4 p-lg-5 rounded-4 bg-dark bg-opacity-75 shadow-lg">
-                <h1 className="display-3 fw-bold mb-4">{course.title}</h1>
-                <div className="d-flex flex-wrap gap-2 mb-4">
+              <div className="hero-content p-4 p-lg-5 rounded-4 bg-white shadow-sm">
+                <h1 className="display-4 fw-bold mb-4 text-primary">{course.title}</h1>
+
+                <div className="tech-badges mb-4">
                   {course.technology.split(',').map((tech, index) => (
-                    <span key={index} className="badge bg-primary bg-opacity-25 text-white fw-normal">
+                    <span key={index} className="badge bg-light text-dark border me-2 mb-2">
                       {tech.trim()}
                     </span>
                   ))}
                 </div>
-                <p className="lead mb-4">
+
+                <p className="lead mb-4 text-muted">
                   Master in-demand skills with industry-relevant projects, hands-on training, and professional certification.
                 </p>
+
                 <div className="d-flex flex-wrap gap-3">
-                  <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold rounded-pill">
+                  <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold">
                     Enquire Now
                   </a>
                   <a
                     href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
-                    className="btn btn-outline-light btn-lg px-4 py-3 fw-semibold rounded-pill"
+                    className="btn btn-outline-secondary btn-lg px-4 py-3 fw-semibold"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -84,15 +86,16 @@ const CourseDetail = () => {
                 </div>
               </div>
             </div>
+
             <div className="col-lg-6 order-lg-2 order-1">
-              <div className="hero-image-container position-relative">
+              <div className="hero-image-container text-center">
                 <img
                   src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
-                  className="img-fluid rounded-4 shadow-lg"
+                  className="img-fluid rounded-3 shadow-sm"
                   alt={course.title}
                   loading="lazy"
+                  style={{ maxHeight: "400px", width: "auto", objectFit: "contain" }}
                 />
-                <div className="position-absolute top-0 start-0 w-100 h-100 rounded-4 overlay-gradient"></div>
               </div>
             </div>
           </div>

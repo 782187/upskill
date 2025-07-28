@@ -1,102 +1,83 @@
 .course-hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  padding: 5rem 0;
+  background-color: #f8f9fa;
+  padding: 4rem 0;
   position: relative;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://www.transparenttextures.com/patterns/dark-stripes.png');
-  opacity: 0.1;
-  z-index: 0;
 }
 
 .hero-content {
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  background: linear-gradient(to right, #fff, #a5b4fc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.tech-badges .badge {
+  font-size: 0.85rem;
+  padding: 0.5em 0.8em;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 .hero-content p {
-  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #495057;
   margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-.hero-image-container {
-  position: relative;
-  transition: all 0.3s ease;
 }
 
 .hero-image-container img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-  transition: transform 0.4s ease;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
 .hero-image-container:hover img {
   transform: scale(1.02);
 }
 
-.overlay-gradient {
-  background: linear-gradient(to right, rgba(26, 26, 46, 0.7) 0%, transparent 100%);
-}
-
 .btn {
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  border-radius: 6px;
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, #4f46e5, #7c3aed);
-  border: none;
+  background-color: #3498db;
+  border-color: #3498db;
 }
 
-.btn-outline-light:hover {
-  background: rgba(255, 255, 255, 0.1);
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-secondary {
+  border-color: #ced4da;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #adb5bd;
 }
 
 @media (max-width: 992px) {
   .course-hero {
-    padding: 3rem 0;
-  }
-
-  .hero-content {
-    margin-top: 2rem;
+    padding: 2rem 0;
   }
 
   .hero-image-container {
-    max-width: 80%;
-    margin: 0 auto;
+    margin-bottom: 2rem;
   }
 
-  .overlay-gradient {
-    background: linear-gradient(to bottom, rgba(26, 26, 46, 0.5) 0%, transparent 100%);
+  .hero-image-container img {
+    max-height: 300px;
   }
 }
 
