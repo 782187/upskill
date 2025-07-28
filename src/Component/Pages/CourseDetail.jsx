@@ -93,7 +93,7 @@ const CourseDetail = () => {
 
       <section className="py-5 bg-light">
         <div className="container">
-          <div className="row g-4">
+          <div className="row g-1 g-lg-4">
             <div className="col-md-6 col-lg-3">
               <div className="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
                 <div className="me-3 text-primary">
@@ -142,7 +142,7 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      <section className="py-5" id="overview">
+      <section className="py-3 border border-3" id="overview">
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="fw-bold">Course Curriculum</h2>
@@ -214,7 +214,7 @@ const CourseDetail = () => {
       </section>
 
 
-      <section className="py-5 bg-white">
+      <section className="py-3 bg-white">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-5 mb-4 mb-lg-0">
