@@ -239,9 +239,9 @@ nav ul li {
   .book-demo-sticker {
     top: auto;
     bottom: 10px;
-    left: auto;
-    transform: none;
-    transform-origin: initial;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center;
     background: linear-gradient(45deg, #ff6f00, #ff9800, #ff6f00);
     background-size: 400% 400%;
     animation: animatedGradient 6s ease infinite;
