@@ -1,6 +1,6 @@
 /* Hero Section */
 .course-hero {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #00c6ff 100%);
+  background: radial-gradient(circle at 30% 30%, #89cff0, #005792);
   color: white;
   position: relative;
   overflow: hidden;

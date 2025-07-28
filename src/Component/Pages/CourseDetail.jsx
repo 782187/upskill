@@ -72,7 +72,7 @@ const CourseDetail = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-5 d-none d-lg-block">
+            <div className="col-lg-5 d-lg-block">
               <div className="hero-image-container">
                 <img
                   src={`https://upskill-server.onrender.com/get-image?courseId=${course.id}`}
