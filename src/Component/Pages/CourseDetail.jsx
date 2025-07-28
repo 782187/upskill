@@ -66,8 +66,13 @@ const CourseDetail = () => {
                   <a href="#enquiry" className="btn btn-primary btn-lg px-4 py-3 fw-semibold">
                     Enquire Now
                   </a>
-                  <a href="#curriculum" className="btn btn-outline-light btn-lg px-4 py-3 fw-semibold">
-                    View Curriculum
+                  <a
+                    href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
+                    className="btn btn-success btn-lg px-4 py-3 fw-semibold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaRegFilePdf className="me-2" /> Download Brochure
                   </a>
                 </div>
               </div>
@@ -80,16 +85,6 @@ const CourseDetail = () => {
                   alt={course.title}
                   loading="lazy"
                 />
-                <div className="mt-3 text-center">
-                  <a
-                    href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
-                    className="btn btn-success btn-lg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaRegFilePdf className="me-2" /> Download Brochure
-                  </a>
-                </div>
               </div>
             </div>
           </div>
