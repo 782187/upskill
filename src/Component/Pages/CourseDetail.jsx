@@ -71,10 +71,6 @@ const CourseDetail = () => {
               <span
                 key={index}
                 className={`tech-badge ${index % 2 === 0 ? 'bg-primary' : 'bg-orange'}`}
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  '--rotation': `${(Math.random() * 10 - 5).toFixed(2)}deg`,
-                }}
               >
                 {tech.trim()}
               </span>
@@ -100,7 +96,7 @@ const CourseDetail = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="py-5 bg-light">
         <div className="container">
           <div className="row g-1 g-lg-4">

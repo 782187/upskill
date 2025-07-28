@@ -8,7 +8,7 @@
 .animated-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
+  /* filter: blur(60px); */
   opacity: 0.2;
   animation: float 15s ease-in-out infinite;
   z-index: 0;
@@ -20,6 +20,10 @@
   background: #3498db;
   right: -100px;
   top: -100px;
+}
+
+.bg-orange{
+  background-color: orange;
 }
 
 .orange-blob {
