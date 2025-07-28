@@ -203,8 +203,13 @@ const CourseDetail = () => {
                   <a href="#enquiry" className="btn btn-primary px-4 py-3 fw-semibold me-3">
                     Enroll Now
                   </a>
-                  <a href="#curriculum" className="btn btn-outline-secondary px-4 py-3 fw-semibold">
-                    View Syllabus
+                  <a
+                    href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
+                    className="btn btn-success btn-lg px-4 py-3 fw-semibold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaRegFilePdf className="me-2" /> Download Brochure
                   </a>
                 </div>
               </div>
