@@ -7,7 +7,6 @@ import 'swiper/css';
 
 function Course() {
     const [dynamicCourses, setDynamicCourses] = useState([]);
-    const [staticCourses, setStaticCourses] = useState([]);
     const [error, setError] = useState(null);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
@@ -15,14 +14,10 @@ function Course() {
     useEffect(() => {
         axios.get('https://upskill-server.onrender.com/get-courses')
             .then(res => setDynamicCourses(res.data))
-            .catch(err => console.error("Dynamic Error:", err));
-
-        axios.get('/course.json')
-            .then(res => setStaticCourses(res.data))
             .catch(err => setError(err));
     }, []);
 
-    const allCourses = [...staticCourses, ...dynamicCourses];
+    const allCourses = [...dynamicCourses];
 
     return (
         <div style={{ backgroundColor: "#f8f9fa", padding: "3rem 0" }}>
