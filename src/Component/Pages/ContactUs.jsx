@@ -13,7 +13,7 @@ const ContactUs = () => {
           <div className="row align-items-center justify-content-between">
             <div className="col-md-6">
               <h1 className="display-4 fw-bold mb-3">
-                Contact <span style={{ color: "orange" }}>AvisTech</span> IT Training & Placement
+                Contact <span style={{ color: "orange" }}>UpSkill</span> IT Training & Placement
               </h1>
               <p className="lead fs-5 text-secondary" style={{textShadow: "1px 1px 1px gray"}}>
                 Ready to start your tech career? Have questions about our courses? Reach out — we're here to guide you.
@@ -42,8 +42,8 @@ const ContactUs = () => {
                     <Phone className="text-primary me-3 mt-1" />
                     <div>
                       <h6 className="mb-1">Call Us</h6>
-                      <a href="tel:+917821879681" className="text-decoration-none text-dark">
-                        +91 7821879681
+                      <a href="tel:+918484833677" className="text-decoration-none text-dark">
+                        +91 8484833677
                       </a>
                     </div>
                   </li>
@@ -51,8 +51,8 @@ const ContactUs = () => {
                     <Mail className="text-primary me-3 mt-1" />
                     <div>
                       <h6 className="mb-1">Email</h6>
-                      <a href="mailto:ajs.ind2@gmail.com" className="text-decoration-none text-dark">
-                        ajs.ind2@gmail.com
+                      <a href="mailto:hiring@upskilll.com" className="text-decoration-none text-dark">
+                        hiring@upskilll.com
                       </a>
                     </div>
                   </li>

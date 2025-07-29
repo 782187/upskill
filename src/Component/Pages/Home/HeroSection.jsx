@@ -26,10 +26,12 @@ const HeroSection = () => {
         style={{ zIndex: 1 }}
       >
         <h1 className="display-6 fw-bold mb-3" style={{ color: '#002c5f' }}>
-          Pune’s <span style={{ color: 'orange' }}>No.1</span> Website Development & IT Training Hub
+          Pune's <span style={{ color: 'orange' }}>No.1</span> IT Training & Placement Institute
         </h1>
         <p className="lead mb-4" style={{ color: '#444' }}>
-          AvisTech is a leading Website Development and IT Training Hub in Pune, committed to delivering high-quality education and cutting-edge web solutions. Whether you're looking to build a stunning website or gain in-demand tech skills, join our vibrant community of developers and learners.
+          We provide high-quality education and practical training in Web Development, Java, Python, and more.
+          Our expert-led courses are designed to build in-demand tech skills.
+          Join our vibrant community and take your career to the next level.
         </p>
         <div className="d-flex align-items-center gap-2 mb-3 justify-content-center justify-content-md-start">
           <div className="rating-stars">{'★'.repeat(5)}</div>

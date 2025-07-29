@@ -8,7 +8,7 @@ const AboutUs = () => {
             <section className="bg-dark text-white py-5">
                 <div className="container text-center">
                     <h1 className="display-4 fw-bold mb-3">
-                        Contact <span style={{ color: "#F97316" }}>AvisTech</span> IT Training & Placement
+                        Contact <span style={{ color: "#F97316" }}>UpSkill</span> IT Training & Placement
                     </h1>
                     <p className="lead mb-4">
                         Ready to start your tech career? Have questions about our courses? Reach out — we're here to guide you.
@@ -63,10 +63,7 @@ const AboutUs = () => {
                                 <h2 className="text-primary mb-3">Our Vision</h2>
                                 <div className="section-underline bg-primary mb-3"></div>
                                 <p className="lead mb-3">
-                                    We envision a future where every student has the opportunity to thrive in the IT industry.
-                                </p>
-                                <p className="text-muted">
-                                    Through innovation and quality education, we aim to set global standards in IT training.
+                                    We envision a future where every student has the opportunity to achieve their full potential in the IT field. By fostering a culture of continuous learning and innovation, we aim to be a leading institution that produces highly competent and industry-ready professionals.
                                 </p>
                             </div>
                         </div>

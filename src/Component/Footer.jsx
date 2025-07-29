@@ -113,7 +113,7 @@ const Footer = () => {
           <hr className="border-secondary mt-5" />
 
           <div className="text-center small">
-            &copy; {currentYear} AvisTech Website Development and Learning Platform. All Rights Reserved.
+            &copy; {currentYear} UpSkill Website Development and Learning Platform. All Rights Reserved.
           </div>
         </div>
       </footer>
