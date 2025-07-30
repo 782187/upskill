@@ -43,10 +43,10 @@ function Navbar() {
         .spark3 { top: 80%; left: 25%; animation-delay: 2s; }
       `}</style>
 
-      <nav className="navbar navbar-expand-lg bg-light fw-bold sticky-top shadow-sm py-1 px-3">
+      <nav className="navbar navbar-expand-lg bg-light fw-bold sticky-top shadow-sm py-2 px-3">
         <div className="container-fluid">
           <Link className="navbar-brand d-flex align-items-center" to="/">
-            <img src="/logo.png" alt="Logo" style={{ width: '150px', filter: "drop-shadow(1px 2px 1px black)" }} className="me-2" />
+            <img src="/logo.png" alt="Logo" style={{ width: '250px'}} className="me-2" />
           </Link>
 
           <button
@@ -126,7 +126,7 @@ function Navbar() {
           <div className="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
             <div className="modal-content rounded-4 shadow">
               <div className="modal-header bg-light border-0">
-                <h5 className="modal-title text-primary fw-bold">Welcome To AvisTech. Developers Community.</h5>
+                <h5 className="modal-title text-primary fw-bold">Empowering Your IT Career with Expert Training.</h5>
                 <button type="button" className="btn-close" onClick={() => setShowModal(false)} aria-label="Close"></button>
               </div>
               <div className="modal-body d-flex flex-column flex-md-row align-items-center gap-4 p-4">

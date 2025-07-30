@@ -62,13 +62,13 @@ const Footer = () => {
                 Near Kothrud Post Office, Pune - 411038
               </p>
               <div className="d-flex gap-3 mt-3">
-                <a href="#" className="social-icon text-success" aria-label="WhatsApp">
+                <a href="" className="social-icon text-success" aria-label="WhatsApp">
                   <MessageCircle size={20} />
                 </a>
-                <a href="#" className="social-icon text-info" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/upskill-it-training-placement/posts/?feedView=all" className="social-icon text-info" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="social-icon text-danger" aria-label="Instagram">
+                <a href="https://www.instagram.com/upskill_pune" className="social-icon text-danger" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
               </div>
