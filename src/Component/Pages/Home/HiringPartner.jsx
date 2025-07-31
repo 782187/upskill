@@ -59,7 +59,7 @@ export default function HiringPartner() {
 
   return (
     <div className="bg-dark w-100" style={{ minHeight: "30vh" }}>
-      <h2 className="text-center fw-bold" style={{color: "orange"}}>Hiring Partners</h2>
+      <h2 className="text-center fw-bold py-3" style={{color: "orange"}}>Hiring Partners</h2>
 
       <div
         className="overflow-hidden"
