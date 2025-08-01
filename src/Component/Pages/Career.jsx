@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from "react-router-dom";
+import { Link, Route, Router, Routes } from "react-router-dom";
+import Course from "./Home/Course";
 
 const Hero = () => {
   const [formData, setFormData] = useState({
@@ -69,6 +70,11 @@ const Hero = () => {
 
   return (
     <>
+    <Router>
+      <Routes>
+        <Route path="/courses" element={Course}/>
+      </Routes>
+    </Router>
       <ToastContainer />
       <section id="home" className="p-5 d-flex align-items-center position-relative bg-light">
         <div className="container position-relative py-3">
