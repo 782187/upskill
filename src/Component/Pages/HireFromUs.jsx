@@ -15,35 +15,65 @@ import {
 } from "lucide-react";
 
 const HireFromUs = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
-        name: "",
-        address: "",
-        phone: "",
-        jobRole: "",
-        additionalInfo: ""
+        name: '',
+        email: '',
+        phone: '',
+        location: '',
+        position: '',
+        resume: null
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        const { name, value, files } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: files ? files[0] : value
+        }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        setTimeout(() => {
-            alert("Request Submitted! We'll contact you within 24 hours to discuss your hiring needs.");
-            setIsSubmitting(false);
-            setFormData({
-                name: "",
-                address: "",
-                phone: "",
-                jobRole: "",
-                additionalInfo: ""
+        try {
+            const formPayload = new FormData();
+            for (const key in formData) {
+                formPayload.append(key, formData[key]);
+            }
+
+            await axios.post('https://upskill-server.onrender.com/submit-career-application', formPayload, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
             });
-        }, 1500);
+
+            toast.success('Application submitted successfully! We will contact you soon.', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                location: '',
+                position: '',
+                resume: null
+            });
+        } catch (error) {
+            toast.error('Failed to submit application. Please try again.', {
+                position: "top-center",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -60,104 +90,129 @@ const HireFromUs = () => {
                             </div>
                             <div className="card shadow-lg">
                                 <div className="card-body p-4">
-                                    <form onSubmit={handleSubmit}>
-                                        <div className="mb-3">
-                                            <label htmlFor="name" className="form-label d-flex align-items-center">
-                                                <User className="me-2" size={16} />
-                                                Full Name
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="name"
-                                                name="name"
-                                                value={formData.name}
-                                                onChange={handleChange}
-                                                placeholder="Enter your full name"
-                                                required
-                                            />
+                                    <form className="row g-3" onSubmit={handleSubmit}>
+                                        <div className="col-12 col-md-6">
+                                            <div className="form-floating">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="name"
+                                                    name="name"
+                                                    placeholder="Full Name"
+                                                    value={formData.name}
+                                                    onChange={handleChange}
+                                                    required
+                                                />
+                                                <label htmlFor="name">Full Name</label>
+                                            </div>
                                         </div>
 
-                                        <div className="mb-3">
-                                            <label htmlFor="address" className="form-label d-flex align-items-center">
-                                                <MapPin className="me-2" size={16} />
-                                                Company Address
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="address"
-                                                name="address"
-                                                value={formData.address}
-                                                onChange={handleChange}
-                                                placeholder="Enter your company address"
-                                                required
-                                            />
+                                        <div className="col-12 col-md-6">
+                                            <div className="form-floating">
+                                                <input
+                                                    type="email"
+                                                    className="form-control"
+                                                    id="email"
+                                                    name="email"
+                                                    placeholder="Email Address"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    required
+                                                />
+                                                <label htmlFor="email">Email Address</label>
+                                            </div>
                                         </div>
 
-                                        <div className="mb-3">
-                                            <label htmlFor="phone" className="form-label d-flex align-items-center">
-                                                <Phone className="me-2" size={16} />
-                                                Phone Number
-                                            </label>
-                                            <input
-                                                type="tel"
-                                                className="form-control"
-                                                id="phone"
-                                                name="phone"
-                                                value={formData.phone}
-                                                onChange={handleChange}
-                                                placeholder="Enter your phone number"
-                                                required
-                                            />
+                                        <div className="col-12 col-md-6">
+                                            <div className="form-floating">
+                                                <input
+                                                    type="tel"
+                                                    className="form-control"
+                                                    id="phone"
+                                                    name="phone"
+                                                    placeholder="Phone Number"
+                                                    value={formData.phone}
+                                                    onChange={handleChange}
+                                                    required
+                                                />
+                                                <label htmlFor="phone">Phone Number</label>
+                                            </div>
                                         </div>
 
-                                        <div className="mb-3">
-                                            <label htmlFor="jobRole" className="form-label d-flex align-items-center">
-                                                <Briefcase className="me-2" size={16} />
-                                                Job Role Hiring For
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="jobRole"
-                                                name="jobRole"
-                                                value={formData.jobRole}
-                                                onChange={handleChange}
-                                                placeholder="e.g. Frontend Developer, UX Designer"
-                                                required
-                                            />
+                                        <div className="col-12 col-md-6">
+                                            <div className="form-floating">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="location"
+                                                    name="location"
+                                                    placeholder="City / Location"
+                                                    value={formData.location}
+                                                    onChange={handleChange}
+                                                    required
+                                                />
+                                                <label htmlFor="location">City / Location</label>
+                                            </div>
                                         </div>
 
-                                        <div className="mb-4">
-                                            <label htmlFor="additionalInfo" className="form-label">
-                                                Additional Requirements (Optional)
-                                            </label>
-                                            <textarea
-                                                className="form-control"
-                                                id="additionalInfo"
-                                                name="additionalInfo"
-                                                value={formData.additionalInfo}
-                                                onChange={handleChange}
-                                                placeholder="Tell us more about what you're looking for..."
-                                                rows={3}
-                                            />
+                                        <div className="col-12">
+                                            <div className="form-floating">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="position"
+                                                    name="position"
+                                                    placeholder="Position Applying For"
+                                                    value={formData.position}
+                                                    onChange={handleChange}
+                                                    required
+                                                />
+                                                <label htmlFor="position">Position Applying For</label>
+                                            </div>
                                         </div>
 
-                                        <button
-                                            type="submit"
-                                            className="btn btn-primary w-100"
-                                            disabled={isSubmitting}
-                                        >
-                                            {isSubmitting ? "Submitting..." : "Submit Hiring Request"}
-                                        </button>
+                                        <div className="col-12">
+                                            <div className="form-floating">
+                                                <input
+                                                    type="file"
+                                                    className="form-control"
+                                                    id="resume"
+                                                    name="resume"
+                                                    accept=".pdf,.doc,.docx"
+                                                    onChange={handleChange}
+                                                    required
+                                                />
+                                                <label htmlFor="resume">Upload Resume (PDF/DOC)</label>
+                                            </div>
+                                        </div>
+
+                                        <div className="col-12 d-grid mt-3">
+                                            <button
+                                                type="submit"
+                                                className="btn btn-lg text-white fw-semibold shadow py-3"
+                                                style={{
+                                                    background: "linear-gradient(to right, #06b6d4, #9333ea)",
+                                                    border: "none",
+                                                    borderRadius: "12px",
+                                                }}
+                                                disabled={isSubmitting}
+                                            >
+                                                {isSubmitting ? (
+                                                    <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                                ) : (
+                                                    <>
+                                                        Submit Application <Send size={18} className="ms-2" />
+                                                    </>
+                                                )}
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
 
                         <div className="col-lg-6 d-flex align-items-center justify-content-center">
-                            <div className="position-relative w-100" style={{ maxWidth: "570px",marginTop:"150px"}}>
+                            <div className="position-relative w-100" style={{ maxWidth: "570px", marginTop: "150px" }}>
                                 <img
                                     src="/developer.gif"
                                     alt="Hiring process illustration"
@@ -172,8 +227,8 @@ const HireFromUs = () => {
             <section className="py-5 bg-dark text-white">
                 <div className="container">
                     <div className="text-center mb-5">
-                        <h2 className="display-6 fw-bold mb-3" style={{color:"orange"}}>Why Choose Us</h2>
-                        <p className="lead text-white mx-auto" style={{ maxWidth: "800px"}}>
+                        <h2 className="display-6 fw-bold mb-3" style={{ color: "orange" }}>Why Choose Us</h2>
+                        <p className="lead text-white mx-auto" style={{ maxWidth: "800px" }}>
                             Our graduates are equipped with both theoretical knowledge and hands-on experience,
                             making them ready to contribute to your projects from day one.
                         </p>
