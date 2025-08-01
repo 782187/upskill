@@ -3,10 +3,9 @@ import axios from 'axios';
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const {slug} = useParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -86,7 +85,7 @@ const Hero = () => {
                   <span>Get Started</span>
                   <ArrowRight size={18} />
                 </a>
-                <Link to={`courses/${slug}`} className="btn btn-outline-primary">
+                <Link to={`courses`} className="btn btn-outline-primary">
                   Explore Courses
                 </Link>
               </div>
