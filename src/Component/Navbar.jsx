@@ -45,7 +45,7 @@ function Navbar() {
 
       <nav className="navbar navbar-expand-lg bg-light fw-bold sticky-top shadow-sm py-2 px-3">
         <div className="container-fluid">
-          <Link className="navbar-brand d-flex align-items-center" to="/">
+          <Link className="navbar-brand d-flex align-items-center border border-3 rounded border-warning" to="/">
             <img src="/logo.png" alt="Logo" style={{ width: '200px'}} className="me-2" />
           </Link>
 
