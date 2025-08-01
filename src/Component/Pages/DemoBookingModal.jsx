@@ -42,19 +42,30 @@ const DemoBookingModal = () => {
       }
     })
       .then(res => {
-        alert("Demo booked successfully!");
+        showToast("Demo booked successfully!", "success");
         setFormData({ name: "", contact: "", email: "", course: "" });
         document.getElementById("demoModalCloseBtn").click();
       })
       .catch(err => {
         console.error("Error submitting form:", err);
-        alert("Something went wrong!");
+        showToast("Something went wrong!", "danger");
       })
       .finally(() => {
         setLoading(false);
       });
   };
 
+  const showToast = (message, type = "success") => {
+    const toastEl = document.getElementById("toastMessage");
+    const toastBody = document.getElementById("toastMessageBody");
+
+    toastEl.classList.remove("bg-success", "bg-danger", "bg-warning");
+    toastEl.classList.add(`bg-${type}`);
+    toastBody.textContent = message;
+
+    const toast = new window.bootstrap.Toast(toastEl);
+    toast.show();
+  };
   return (
     <>
       <div
@@ -184,6 +195,29 @@ const DemoBookingModal = () => {
                 </div>
               </form>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Toast Container */}
+      <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 9999 }}>
+        <div
+          id="toastMessage"
+          className="toast align-items-center text-white bg-success border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div className="d-flex">
+            <div className="toast-body" id="toastMessageBody">
+              Message goes here
+            </div>
+            <button
+              type="button"
+              className="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
           </div>
         </div>
       </div>
