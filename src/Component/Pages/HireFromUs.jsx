@@ -74,15 +74,16 @@ const HireFromUs = () => {
 
     return (
         <div className="container-fluid bg-light">
+            <h1 className="display-5 fw-bold mb-2 text-primary text-center">Hire From Us</h1>
+            <p className="lead text-muted mb-4 text-center">
+                Access top talent trained with cutting-edge skills and industry best practices.
+            </p>
             <section className="py-5">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 d-flex flex-column justify-content-center mb-5 mb-lg-0">
-                            <div className="mb-4">
-                                <h1 className="display-5 fw-bold mb-2 text-primary">Hire From Us</h1>
-                                <p className="lead text-muted mb-4">
-                                    Access top talent trained with cutting-edge skills and industry best practices.
-                                </p>
+                            <div className="mb-2">
+                                <h5 style={{color:"orange"}} className="fw-b">Get Hire From Us</h5>
                             </div>
                             <div className="card shadow-lg">
                                 <div className="card-body p-4">
