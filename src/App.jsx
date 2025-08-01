@@ -49,6 +49,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/team" element={<Team />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/career/:slug" element={<Courses />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/placed" element={<PlacedStudents />} />
         </Routes>
