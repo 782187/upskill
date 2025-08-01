@@ -84,9 +84,9 @@ const Hero = () => {
                   <span>Get Started</span>
                   <ArrowRight size={18} />
                 </a>
-                <a href="#courses" className="btn btn-outline-primary">
+                <Link to="\courses" className="btn btn-outline-primary">
                   Explore Courses
-                </a>
+                </Link>
               </div>
             </div>
 
