@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-    User,
-    MapPin,
-    Phone,
-    Briefcase,
+    Send,
     Users,
     Star,
     Award,
     GraduationCap,
     LightbulbIcon,
-    ShieldCheck,
-    BookOpen
+    ShieldCheck
 } from "lucide-react";
 
 const HireFromUs = () => {
