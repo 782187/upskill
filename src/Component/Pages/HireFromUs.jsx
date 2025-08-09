@@ -78,7 +78,7 @@ const HireFromUs = () => {
             <p className="lead text-muted mb-4 text-center">
                 Access top talent trained with cutting-edge skills and industry best practices.
             </p>
-            <section className="py-5">
+            <section className="py-1">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 d-flex flex-column justify-content-center mb-5 mb-lg-0">

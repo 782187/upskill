@@ -56,7 +56,7 @@ const Footer = () => {
         <div className="container">
           <div className="row gy-5">
             <div className="col-lg-4 col-md-6">
-              <img src="/logo.png" alt="Upskill Logo" style={{ height: 50 }} className="mb-3" />
+              <img src="/logoupskill.png" alt="Upskill Logo" style={{ height: 50 }} className="mb-3" />
               <p className="mb-2">
                 103, B Junction, Behind Karve Statue,<br />
                 Near Kothrud Post Office, Pune - 411038
@@ -78,8 +78,8 @@ const Footer = () => {
               <div className="footer-section mb-4 mb-sm-0">
                 <h5 className="footer-title">Quick Links</h5>
                 <ul className="list-unstyled d-flex flex-column gap-2">
-                  <li><a href="#" className="footer-link">Terms & Conditions</a></li>
-                  <li><a href="#" className="footer-link">Privacy Policy</a></li>
+                  <li><Link to="/terms-and-conditions" className="footer-link">Terms & Conditions</Link></li>
+                  <li><Link to="#" className="footer-link">Privacy Policy</Link></li>
                 </ul>
               </div>
 

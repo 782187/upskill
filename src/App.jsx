@@ -21,6 +21,7 @@ import HireFromUs from './Component/Pages/HireFromUs';
 import ContactUs from './Component/Pages/ContactUs';
 import Testimonials from './Component/Pages/Testimonials';
 import PlacedStudents from './Component/Pages/PlacedStudents';
+import TermsAndConditions from './Component/Pages/TermsAndConditions';
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
           <Route path="/career/:slug" element={<Courses />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/placed" element={<PlacedStudents />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         </Routes>
         <Footer />
         <a

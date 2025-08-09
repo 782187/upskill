@@ -267,8 +267,8 @@ const CourseDetail = () => {
       <section className="py-5 bg-dark text-white">
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="fw-bold">Why Choose This Course?</h2>
-            <p className="lead opacity-75">Our proven approach to professional education</p>
+            <h2 className="fw-bold text-white">Why Choose This Course?</h2>
+            <p className="lead opacity-75 text-white">Our proven approach to professional education</p>
           </div>
           <div className="row g-4">
             <div className="col-md-6 col-lg-4">
