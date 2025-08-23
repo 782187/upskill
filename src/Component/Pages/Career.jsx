@@ -5,6 +5,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Hero = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -35,7 +37,7 @@ const Hero = () => {
         formPayload.append(key, formData[key]);
       }
 
-      await axios.post('https://upskill-server.onrender.com/submit-career-application', formPayload, {
+      await axios.post(`${API_URL}/submit-career-application`, formPayload, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

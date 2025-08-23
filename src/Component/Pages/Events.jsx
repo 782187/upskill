@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Events() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -8,7 +10,7 @@ function Events() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('https://upskill-server.onrender.com/getEvents');
+        const response = await fetch(`${API_URL}/getEvents`);
         if (!response.ok) {
           throw new Error('Failed to fetch events');
         }

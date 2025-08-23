@@ -6,6 +6,8 @@ import bgImg from "../../../assets/blogbg.png";
 import EnquiryForm from "../Home/EnquiryForm";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Blog() {
   const [showModal, setShowModal] = useState(false);
   const [blogs, setBlogs] = useState([]);
@@ -22,7 +24,7 @@ function Blog() {
 
   const fetchBlog = async () => {
     try {
-      const res = await axios.get("https://upskill-server.onrender.com/getblog");
+      const res = await axios.get(`${API_URL}/getblog`);
       setBlogs(res.data);
     } catch (err) {
       console.error("Cannot fetch blogs", err);

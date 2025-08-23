@@ -10,6 +10,8 @@ import { IoMdSchool, IoIosPeople } from 'react-icons/io'
 import { GiSkills, GiGraduateCap } from 'react-icons/gi'
 import { MdOutlineSupportAgent, MdWorkspacesOutline } from 'react-icons/md'
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const CourseDetail = () => {
   const { slug } = useParams()
   const [course, setCourse] = useState(null)
@@ -19,7 +21,7 @@ const CourseDetail = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get(`https://upskill-server.onrender.com/get-course-detail?slug=${slug}`)
+      .get(`${API_URL}/get-course-detail?slug=${slug}`)
       .then((response) => {
         setCourse(response.data)
         setLoading(false)
@@ -86,7 +88,7 @@ const CourseDetail = () => {
               Enquire Now
             </a>
             <a
-              href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
+              href={`${API_URL}/get-pdf?courseId=${course.id}`}
               className="btn btn-orange btn-lg px-4 py-3 fw-semibold btn-hover-grow"
               target="_blank"
               rel="noopener noreferrer"
@@ -210,7 +212,7 @@ const CourseDetail = () => {
                     Enroll Now
                   </a>
                   <a
-                    href={`https://upskill-server.onrender.com/get-pdf?courseId=${course.id}`}
+                    href={`${API_URL}/get-pdf?courseId=${course.id}`}
                     className="btn btn-success btn-lg px-4 py-3 fw-semibold"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -253,7 +255,7 @@ const CourseDetail = () => {
             <div className="col-lg-7">
               <div className="certificate-container p-4 bg-light rounded-4 shadow-sm">
                 <img
-                  src={`https://upskill-server.onrender.com/get-certificate-image?courseId=${course.id}`}
+                  src={`${API_URL}/get-certificate-image?courseId=${course.id}`}
                   alt="Certificate Sample"
                   className="img-fluid rounded-3 border"
                   loading="lazy"

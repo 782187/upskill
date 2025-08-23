@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const PlacedStudent = () => {
   const [placements, setPlacements] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +9,7 @@ const PlacedStudent = () => {
   useEffect(() => {
     const fetchPlacement = async () => {
       try {
-        const res = await axios.get("https://upskill-server.onrender.com/getplacement");
+        const res = await axios.get(`${API_URL}/getplacement`);
         setPlacements(res.data);
       } catch (error) {
         console.error("Error fetching placements:", error);

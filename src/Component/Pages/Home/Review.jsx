@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const StarRating = ({ rating }) => (
   <div className="d-flex gap-1 justify-content-center mb-2">
     {[...Array(5)].map((_, index) => (
@@ -25,7 +27,7 @@ const Review = () => {
 
   const fetchReviews = async () => {
     try {
-      const res = await axios.get("https://upskill-server.onrender.com/FetchFeedbackServlet");
+      const res = await axios.get(`${API_URL}/FetchFeedbackServlet`);
       setReviews(res.data);
     } catch (error) {
       console.error("Error fetching reviews:", error);

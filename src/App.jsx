@@ -22,12 +22,12 @@ import ContactUs from './Component/Pages/ContactUs';
 import Testimonials from './Component/Pages/Testimonials';
 import PlacedStudents from './Component/Pages/PlacedStudents';
 import TermsAndConditions from './Component/Pages/TermsAndConditions';
-
+const API_URL = import.meta.env.VITE_API_URL;
 function App() {
 
   useEffect(() => {
     AOS.init();
-    fetch('https://upskill-server.onrender.com/incrementVisit', {
+    fetch(`${API_URL}/incrementVisit`, {
       method: 'POST',
     });
   }, []);

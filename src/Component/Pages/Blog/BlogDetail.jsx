@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function BlogDetail() {
     const { slug } = useParams();
     const [blog, setBlog] = useState(null);
@@ -10,7 +12,7 @@ function BlogDetail() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://upskill-server.onrender.com/detail-blog?slug=${slug}`)
+        axios.get(`${API_URL}/detail-blog?slug=${slug}`)
             .then((response) => {
                 setBlog(response.data);
                 setLoading(false);

@@ -5,6 +5,8 @@ import 'animate.css';
 import "../Style/HeroSection.css";
 import EnquiryForm from './Pages/Home/EnquiryForm';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Navbar() {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -15,7 +17,7 @@ function Navbar() {
   const popupForm = () => setShowModal(true);
 
   useEffect(() => {
-    axios.get('https://upskill-server.onrender.com/get-courses')
+    axios.get(`${API_URL}/get-courses`)
       .then(res => setCourses(res.data))
       .catch(err => console.error("Error loading courses:", err));
   }, []);

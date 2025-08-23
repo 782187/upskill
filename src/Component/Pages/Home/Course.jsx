@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Course() {
     const [dynamicCourses, setDynamicCourses] = useState([]);
     const [error, setError] = useState(null);
@@ -12,7 +14,7 @@ function Course() {
     const nextRef = useRef(null);
 
     useEffect(() => {
-        axios.get('https://upskill-server.onrender.com/get-courses')
+        axios.get(`${API_URL}/get-courses`)
             .then(res => setDynamicCourses(res.data))
             .catch(err => setError(err));
     }, []);
@@ -59,7 +61,7 @@ function Course() {
                             const isStatic = !!course.Image;
                             const imageUrl = isStatic
                                 ? course.Image
-                                : `https://upskill-server.onrender.com/get-image?courseId=${course.id}`;
+                                : `${API_URL}/get-image?courseId=${course.id}`;
 
                             return (
                                 <SwiperSlide key={index}>

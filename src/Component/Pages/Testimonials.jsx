@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Star } from 'lucide-react';
 import Course from './Home/Course';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const StarRating = ({ rating }) => (
     <div className="d-flex gap-1 justify-content-start mt-1">
         {[...Array(5)].map((_, index) => (
@@ -22,7 +24,7 @@ function Testimonials() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("https://upskill-server.onrender.com/FetchFeedbackServlet")
+        axios.get(`${API_URL}/FetchFeedbackServlet`)
             .then(res => {
                 updateReview(res.data);
                 setLoading(false);

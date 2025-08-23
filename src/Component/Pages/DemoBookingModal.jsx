@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const DemoBookingModal = () => {
   const [validated, setValidated] = useState(false);
   const [courses, setCourses] = useState([]);
@@ -13,7 +15,7 @@ const DemoBookingModal = () => {
   });
 
   useEffect(() => {
-    axios.get("https://upskill-server.onrender.com/get-courses")
+    axios.get(`${API_URL}/get-courses`)
       .then(res => setCourses(res.data))
       .catch(err => console.error("Error loading courses:", err));
   }, []);
@@ -36,7 +38,7 @@ const DemoBookingModal = () => {
     setValidated(true);
     setLoading(true);
 
-    axios.post("https://upskill-server.onrender.com/submit-demo-booking", formData, {
+    axios.post(`${API_URL}/submit-demo-booking`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

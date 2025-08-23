@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const EnquiryForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -43,7 +45,7 @@ const EnquiryForm = () => {
 
     try {
       const response = await axios.post(
-        'https://upskill-server.onrender.com/submit-enquiry',
+        `${API_URL}/submit-enquiry`,
         data,
         {
           headers: {
