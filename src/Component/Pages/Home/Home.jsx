@@ -9,6 +9,7 @@ import PlacedStudent from './PlacedStudent';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { CheckCircle } from 'lucide-react';
+import { color } from 'framer-motion';
 
 function Home() {
   useEffect(() => {
@@ -18,7 +19,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <Course /> 
+      <Course />
       <UpskillUPS />
       <HiringPartner />
       <Review />
@@ -65,7 +66,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <PlacedStudent/>
+      <PlacedStudent />
     </div>
   );
 }

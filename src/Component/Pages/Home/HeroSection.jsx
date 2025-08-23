@@ -10,7 +10,7 @@ const HeroSection = () => {
       className="d-flex flex-wrap position-relative"
       style={{
         minHeight: '90vh',
-        background: 'linear-gradient(to bottom right, #f0f9ff, #ffffff)',
+        background: 'linear-gradient(to bottom right, #cce3f4ff, #ffffff)',
         overflow: 'hidden'
       }}
     >
