@@ -22,6 +22,7 @@ import ContactUs from './Component/Pages/ContactUs';
 import Testimonials from './Component/Pages/Testimonials';
 import PlacedStudents from './Component/Pages/PlacedStudents';
 import TermsAndConditions from './Component/Pages/TermsAndConditions';
+import Privacy from './Component/Pages/Privacy';
 const API_URL = import.meta.env.VITE_API_URL;
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/placed" element={<PlacedStudents />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
         </Routes>
         <Footer />
         <a

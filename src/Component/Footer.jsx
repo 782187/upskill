@@ -79,7 +79,7 @@ const Footer = () => {
                 <h5 className="footer-title">Quick Links</h5>
                 <ul className="list-unstyled d-flex flex-column gap-2">
                   <li><Link to="/terms-and-conditions" className="footer-link">Terms & Conditions</Link></li>
-                  <li><Link to="#" className="footer-link">Privacy Policy</Link></li>
+                  <li><Link to="/privacy-policy" className="footer-link">Privacy Policy</Link></li>
                 </ul>
               </div>
 
