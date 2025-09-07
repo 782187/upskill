@@ -360,7 +360,7 @@ const HireFromUs = () => {
                     <div className="icon-wrapper bg-primary-soft rounded-circle mx-auto mb-4">
                       <item.icon size={28} className="text-primary" />
                     </div>
-                    <h3 className="h5 fw-bold mb-3">{item.title}</h3>
+                    <h3 className="h5 fw-bold mb-3 text-white">{item.title}</h3>
                     <p className="card-text text-light-emphasis">{item.description}</p>
                   </div>
                 </div>

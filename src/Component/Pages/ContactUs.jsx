@@ -45,14 +45,14 @@ const ContactUs = () => {
       </section>
 
       {/* Contact Cards Section */}
-      <section className="py-5">
+      <section className="p-5" style={{backgroundColor: '#f9b9432e'}}>
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text-center mb-1">
             <h2 className="fw-bold">Get in Touch</h2>
             <p className="text-muted">Choose your preferred method of communication</p>
           </div>
           
-          <div className="row g-4">
+          <div className="row p-3 bg-dark border border-1">
             <div className="col-md-4">
               <div className="contact-card card h-100 border-0 shadow-lg">
                 <div className="card-body p-4">
@@ -105,8 +105,8 @@ const ContactUs = () => {
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="py-5 bg-light">
-        <div className="container">
+      <section className="py-5" style={{backgroundColor: 'white'}}>
+        <div className="p-3 container">
           <div className="row g-5">
             <div className="col-lg-7">
               <div className="card border-0 shadow-lg">
@@ -222,7 +222,7 @@ const ContactUs = () => {
       </div>
 
       {/* FAQ Section */}
-      <section className="py-5">
+      <section className="py-5" style={{backgroundColor: '#f9b9432e'}}>
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="fw-bold">Frequently Asked Questions</h2>
