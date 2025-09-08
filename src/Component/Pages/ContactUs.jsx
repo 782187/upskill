@@ -45,14 +45,14 @@ const ContactUs = () => {
       </section>
 
       {/* Contact Cards Section */}
-      <section className="p-5" style={{backgroundColor: '#f9b9432e'}}>
+      <section className="py-5">
         <div className="container">
           <div className="text-center mb-1">
             <h2 className="fw-bold">Get in Touch</h2>
             <p className="text-muted">Choose your preferred method of communication</p>
           </div>
           
-          <div className="row p-3 bg-dark border border-1">
+          <div className="row py-3 g-3 border border-1" style={{borderRadius: '15px', backgroundImage: 'linear-gradient(135deg, #482df746 0%, #fb7f264f 100%)'}}>
             <div className="col-md-4">
               <div className="contact-card card h-100 border-0 shadow-lg">
                 <div className="card-body p-4">
@@ -105,7 +105,7 @@ const ContactUs = () => {
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="py-5" style={{backgroundColor: 'white'}}>
+      <section className="py-5" style={{backgroundColor: 'rgba(4, 104, 255, 0.1)'}}>
         <div className="p-3 container">
           <div className="row g-5">
             <div className="col-lg-7">
@@ -222,7 +222,7 @@ const ContactUs = () => {
       </div>
 
       {/* FAQ Section */}
-      <section className="py-5" style={{backgroundColor: '#f9b9432e'}}>
+      <section className="py-5">
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="fw-bold">Frequently Asked Questions</h2>
@@ -299,7 +299,9 @@ const ContactUs = () => {
         </div>
       </footer>
       
-      <Course/>
+      <div style={{backgroundColor: 'rgba(4, 104, 255, 0.1)'}}>
+        <Course />
+      </div>
     </div>
   );
 };

@@ -139,10 +139,13 @@ const CorporateTrainingPage = () => {
         </div>
       </div>
 
-      <div className="py-3 bg-white" data-aos="fade-up">
+      <div className="py-3" style={{
+        background: "linear-gradient(to right, #d0e8f4, #b3d7f1, #a0c3ea)",
+        color: "#333",
+      }} data-aos="fade-up">
         <div className="container">
           <h2 className="text-center fw-bold mb-5 display-6 text-primary">Corporate Training Highlights</h2>
-          <div className="row py-5 g-4">
+          <div className="row py-2 g-4">
             {infoItems.map((item, i) => (
               <div className="col-md-4" key={i}>
                 <div className="card h-100 border-0 shadow p-4 rounded-4">
@@ -182,9 +185,10 @@ const CorporateTrainingPage = () => {
       </div>
 
       <div
-        className="py-5 text-white"
+        className="py-5"
         style={{
-          background: "linear-gradient(to bottom right, #1e3a8a, #3b82f6)",
+          background: "linear-gradient(to right, #d0e8f4, #b3d7f1, #a0c3ea)",
+          color: "#333",
         }}
         data-aos="fade-up"
       >
@@ -192,9 +196,9 @@ const CorporateTrainingPage = () => {
           <h2 className="text-center fw-bold mb-5 display-6">Why Choose Us</h2>
           <div className="row g-4">
             {reasons.map((reason, i) => (
-              <div className="col-md-6" key={i}>
+              <div className="col-md-6 g-3" key={i} style={{backgroundColor: 'rgba(82, 128, 255, 0.2)',border: '1px solid rgba(255, 255, 255, 0.3)', borderRadius: '15px'}}>
                 <div
-                  className="card h-100 text-white border-0"
+                  className="card h-100 border-0 text-muted"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.1)",
                     backdropFilter: "blur(10px)",
@@ -202,7 +206,7 @@ const CorporateTrainingPage = () => {
                 >
                   <div className="card-body">
                     <h5 className="card-title fw-semibold">{reason.title}</h5>
-                    <p className="card-text text-white-50">{reason.description}</p>
+                    <p className="card-text text-dark-50">{reason.description}</p>
                   </div>
                 </div>
               </div>

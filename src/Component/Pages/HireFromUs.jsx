@@ -118,7 +118,7 @@ const HireFromUs = () => {
       <section className="py-5 bg-primary-gradient" style={{ 
         background: "linear-gradient(135deg, #06b6d4 0%, #9333ea 100%)" 
       }}>
-        <div className="container py-5">
+        <div className="container p3-5">
           <div className="row align-items-center">
             <div className="col-lg-7 text-center text-lg-start text-white">
               <h1 className="display-4 fw-bold mb-3">Hire From Us</h1>
@@ -336,7 +336,7 @@ const HireFromUs = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-5 bg-dark text-white">
+      <section className="py-5" style={{backgroundColor: 'rgba(4, 104, 255, 0.1)'}}>
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold mb-3" style={{ color: "orange" }}>Why Hire Our Graduates</h2>
@@ -413,7 +413,7 @@ const HireFromUs = () => {
       </section>
 
       {/* Training Resources Section */}
-      <section className="py-5">
+      <section className="py-5" style={{backgroundColor: 'rgba(4, 104, 255, 0.1)'}}>
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold mb-3">Our Training Methodology</h2>
@@ -442,9 +442,7 @@ const HireFromUs = () => {
       </section>
 
       {/* Testimonial Section */}
-      <section className="py-5 bg-primary-gradient text-white" style={{
-        background: "linear-gradient(135deg, #06b6d4 0%, #9333ea 100%)"
-      }}>
+      <section className="py-5 bg-primary-gradient">
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold mb-3">What Employers Say</h2>
