@@ -1,0 +1,20 @@
+.text-orange {
+    color: orange;
+}
+
+.card-hover {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 10px;
+}
+
+.card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

@@ -1,0 +1,36 @@
+.text-orange {
+    color: #F97316;
+}
+
+.section-underline {
+    height: 4px;
+    width: 60px;
+    border-radius: 10px;
+}
+
+.icon-box {
+    background-color: rgba(240, 240, 255, 0.7);
+    padding: 12px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 767px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+}

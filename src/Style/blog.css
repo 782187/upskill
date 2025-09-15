@@ -1,0 +1,25 @@
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.image-wrapper {
+  height: 160px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.blog-card .btn-warning:hover {
+  background-color: #e69500;
+}
+
+
+@media (max-width: 768px) {
+  .display-5 {
+    font-size: 2rem;
+  }
+}

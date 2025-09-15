@@ -1,0 +1,45 @@
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    scroll-behavior: auto !important;
+}
+
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.blog-animation{
+    animation: border-anm 2s linear infinite;
+}
+
+@keyframes border-anm{
+    0%{
+        border: 1px solid blue;
+        filter: drop-shadow(2px 3px 5px blue);
+    }
+    50%{
+        border: 1px solid orange;
+        filter: drop-shadow(2px 3px 5px orange);
+    }
+    100%{
+        border: 1px solid purple;
+        filter: drop-shadow(2px 3px 5px purple);
+    }
+}
+
+.bg-contact{
+    background: linear-gradient(45deg,rgba(92, 123, 128, 0.2),rgba(168, 224, 247, 0.1));
+}

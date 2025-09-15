@@ -1,0 +1,63 @@
+.spiral-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.spiral-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  transition: transform 0.3s ease;
+  background-color: #f9f9f9; 
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spiral-card:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spiral-card:nth-child(odd) {
+  background-color: #ffc107; 
+  transform: rotate(-5deg) translateY(20px);
+}
+
+.spiral-card:nth-child(even) {
+  background-color: #007bff; 
+  transform: rotate(5deg) translateY(20px);
+}
+
+.spiral-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  background-color: #333;
+  z-index: -1;
+  transform-origin: top left;
+  transform: rotate(45deg);
+  animation: spiralAnimation 6s infinite linear;
+}
+
+@keyframes spiralAnimation {
+  0% {
+    width: 0;
+    transform: rotate(45deg);
+  }
+  100% {
+    width: 200%; 
+    transform: rotate(720deg);
+  }
+}
