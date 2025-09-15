@@ -401,7 +401,7 @@ function Navbar() {
                   <div className="spark spark1"></div>
                   <div className="spark spark2"></div>
                   <div className="spark spark3"></div>
-                  <img src="/logo.png" className="img-fluid" alt="AvisTech Logo" />
+                  <img src="/upskill_baner.jpg" className="img-fluid" alt="AvisTech Logo" />
                 </div>
                 <div className="w-100 w-md-50">
                   <EnquiryForm />
