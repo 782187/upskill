@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import "../../Style/PlacedStudent.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -32,7 +33,7 @@ const PlacedStudent = () => {
 
   if (loading) {
     return (
-      <section className="py-5 bg-light">
+      <section className="py-5 bg-light position-relative overflow-hidden">
         <div className="container text-center">
           <div className="spinner-border text-primary" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -44,127 +45,168 @@ const PlacedStudent = () => {
   }
 
   return (
-    <section className="py-5 bg-light position-relative overflow-hidden">
-      <div
-        className="position-absolute top-0 start-0 bg-primary rounded-circle opacity-10"
-        style={{ width: "120px", height: "120px", transform: "translate(-40px, -40px)" }}
-      ></div>
-      <div
-        className="position-absolute bottom-0 end-0 bg-warning rounded-circle opacity-10"
-        style={{ width: "160px", height: "160px", transform: "translate(40px, 40px)" }}
-      ></div>
-
+    <section className="py-5 position-relative overflow-hidden placed-students-section">
+      {/* Background elements */}
+      <div className="floating-shape shape-1"></div>
+      <div className="floating-shape shape-2"></div>
+      <div className="floating-shape shape-3"></div>
+      
       <div className="container position-relative text-center px-3 px-md-5">
-        <span className="text-warning fw-semibold text-uppercase small">Success Stories</span>
-        <h2 className="display-6 fw-bold mt-2 mb-3">
-          Our Placed <span className="text-primary">Students</span>
+        <span className="text-warning fw-semibold text-uppercase small section-subtitle">Success Stories</span>
+        <h2 className="display-6 fw-bold mt-2 mb-3 section-title">
+          Our <span className="text-primary">Placed</span> Students
         </h2>
-        <div className="mx-auto bg-primary" style={{ width: "60px", height: "3px" }}></div>
-        <p className="text-muted mt-3 mx-auto" style={{ maxWidth: "600px" }}>
+        <div className="mx-auto bg-primary section-divider"></div>
+        <p className="text-muted mt-3 mx-auto section-description">
           Our alumni are making waves in top companies worldwide. Here are some of their inspiring journeys.
         </p>
 
-        <div className="mt-5">
+        <div className="mt-5 position-relative">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView="auto"
             coverflowEffect={{
-              rotate: 10,
+              rotate: 0,
               stretch: 0,
               depth: 100,
-              modifier: 2,
-              slideShadows: true,
+              modifier: 2.5,
+              slideShadows: false,
             }}
+            slidesPerView={3}
             pagination={{
               clickable: true,
               dynamicBullets: true,
+              el: '.custom-pagination',
             }}
-            navigation={true}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
             autoplay={{
               delay: 4000,
               disableOnInteraction: false,
             }}
             loop={true}
-            spaceBetween={20}
+            spaceBetween={30}
             breakpoints={{
-              320: {
+              0: {
                 slidesPerView: 1,
-                spaceBetween: 15,
-              },
-              640: {
-                slidesPerView: 2,
                 spaceBetween: 20,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 50,
+                  modifier: 1,
+                }
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 25,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 75,
+                  modifier: 1.5,
+                }
               },
               1024: {
                 slidesPerView: 3,
-                spaceBetween: 25,
-              },
-              1200: {
-                slidesPerView: 3,
                 spaceBetween: 30,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 2.5,
+                }
               },
             }}
             className="pb-5"
-            style={{ paddingTop: "20px", paddingBottom: "50px" }}
           >
             {Array.isArray(placements) && placements.map((student, index) => (
               <SwiperSlide key={index}>
-                <div className="d-flex justify-content-center">
-                  <div className="card h-100 shadow border-0 rounded-4 overflow-hidden" style={{ width: "100%", maxWidth: "300px" }}>
-                    <div className="position-relative" style={{ height: "220px" }}>
-                      {student.image ? (
-                        <img
-                          loading="lazy"
-                          src={`data:image/jpeg;base64,${student.image}`}
-                          alt={student.name}
-                          className="w-100 h-100"
-                          style={{
-                            objectFit: "cover",
-                          }}
-                        />
-                      ) : (
-                        <div className="w-100 h-100 bg-secondary d-flex align-items-center justify-content-center">
-                          <i className="bi bi-person-circle text-white" style={{ fontSize: "4rem" }}></i>
-                        </div>
-                      )}
-                      <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-20"></div>
-                      <div
-                        className="position-absolute bottom-0 start-0 w-100 p-3 text-white"
-                        style={{
-                          background: "linear-gradient(transparent, rgba(0,0,0,0.8))",
-                        }}
-                      >
-                        <h5 className="card-title mb-1 fw-bold text-truncate">{student.name}</h5>
-                        <small className="text-warning fw-semibold d-block text-truncate">{student.position}</small>
+                <div className="student-card-wrapper">
+                  <div className="student-card">
+                    <div className="card-border-top"></div>
+                    
+                    <div className="student-image-container">
+                      <div className="image-wrapper">
+                        {student.image ? (
+                          <img
+                            loading="lazy"
+                            src={`data:image/jpeg;base64,${student.image}`}
+                            alt={student.name}
+                            className="student-image"
+                          />
+                        ) : (
+                          <div className="student-image-placeholder">
+                            <i className="bi bi-person"></i>
+                          </div>
+                        )}
                       </div>
+                      <div className="placement-badge">Placed</div>
                     </div>
-
-                    <div className="card-body p-4 d-flex flex-column" style={{ minHeight: "180px" }}>
-                      <div className="d-flex align-items-center justify-content-between mb-3">
-                        <div className="d-flex align-items-center flex-grow-1 me-2">
-                          {student.companyLogo ? (
+                    
+                    <div className="student-info">
+                      <h5 className="student-name">{student.name}</h5>
+                      <p className="student-position">{student.position}</p>
+                      
+                      <div className="company-info">
+                        {student.companyLogo ? (
+                          <div className="company-logo-wrapper">
                             <img
                               loading="lazy"
                               src={`data:image/jpeg;base64,${student.companyLogo}`}
                               alt={student.companyName}
-                              className="me-2"
-                              style={{ maxHeight: "28px", maxWidth: "80px", objectFit: "contain" }}
+                              className="company-logo"
                             />
-                          ) : (
-                            <i className="bi bi-building me-2 text-primary"></i>
-                          )}
-                          <span className="text-muted small text-truncate">{student.companyName}</span>
-                        </div>
+                            <span className="company-name">{student.companyName}</span>
+                          </div>
+                        ) : (
+                          <div className="company-logo-wrapper">
+                            <i className="bi bi-building"></i>
+                            <span className="company-name">{student.companyName || "Company"}</span>
+                          </div>
+                        )}
                       </div>
+                      
+                      {(student.offerDetails || student.location) && (
+                        <div className="offer-details">
+                          {student.offerDetails && (
+                            <div className="detail-item">
+                              <i className="bi bi-briefcase"></i>
+                              <span>{student.offerDetails}</span>
+                            </div>
+                          )}
+                          {student.location && (
+                            <div className="detail-item">
+                              <i className="bi bi-geo-alt"></i>
+                              <span>{student.location}</span>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
+                    
+                    <div className="card-shine"></div>
+                    <div className="card-corner"></div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+          
+          {/* Custom pagination */}
+          <div className="custom-pagination"></div>
+          
+          {/* Custom navigation */}
+          <div className="swiper-button-prev-custom">
+            <i className="bi bi-chevron-left"></i>
+          </div>
+          <div className="swiper-button-next-custom">
+            <i className="bi bi-chevron-right"></i>
+          </div>
         </div>
       </div>
     </section>

@@ -120,7 +120,7 @@ const PlacedStudent = () => {
             {Array.isArray(placements) && placements.length > 0 ? (
               placements.map((student, index) => (
                 <SwiperSlide key={index} className="d-flex justify-content-center">
-                  <div className="card h-100 shadow border-0 rounded-4 overflow-hidden" style={{ width: "100%", maxWidth: "320px" }}>
+                  <div className="card h-100 border-0 rounded-4 overflow-hidden" style={{ width: "100%", maxWidth: "320px" }}>
                     <div className="position-relative" style={{ height: "220px", overflow: "hidden" }}>
                       {student.image ? (
                         <img
