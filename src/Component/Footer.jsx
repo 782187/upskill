@@ -56,19 +56,20 @@ const Footer = () => {
         <div className="container">
           <div className="row gy-5">
             <div className="col-lg-4 col-md-6">
-              <img src="/logoupskill.png" alt="Upskill Logo" style={{ height: 50 }} className="mb-3" />
+              <img src="/rssofttecs.jpg" alt="RsSoftecs Logo" style={{ height: 50 }} className="mb-3" />
               <p className="mb-2">
-                103, B Junction, Behind Karve Statue,<br />
-                Near Kothrud Post Office, Pune - 411038
+                Office No 29/B Wing, 4th Floor, <br/> 
+                Yashashree Park, Warje Malwadi Rd,<br/>
+                Near Karve Nagar PMT Bus Stop, Karve Nagar, Pune
               </p>
               <div className="d-flex gap-3 mt-3">
                 <a href="" className="social-icon text-success" aria-label="WhatsApp">
                   <MessageCircle size={20} />
                 </a>
-                <a href="https://www.linkedin.com/company/upskill-it-training-placement/posts/?feedView=all" className="social-icon text-info" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/rs-softtecs/?originalSubdomain=in" className="social-icon text-info" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="https://www.instagram.com/upskill_pune" className="social-icon text-danger" aria-label="Instagram">
+                <a href="https://www.instagram.com/rssofttecs/" className="social-icon text-danger" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
               </div>
@@ -99,13 +100,23 @@ const Footer = () => {
 
             <div className="col-lg-4 col-md-12">
               <h5 className="footer-title mb-3">Visit Us</h5>
-              <div className="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
-                <iframe
-                  title="Map Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31577.72940112528!2d73.8078795!3d18.506321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf90d742db7f%3A0x64f1ed5b9ff7d894!2sKothrud%2C%20Pune%2C%20Maharashtra%20411038!5e0!3m2!1sen!2sin!4v1694448477896!5m2!1sen!2sin"
-                  allowFullScreen
-                  loading="lazy"
-                ></iframe>
+              <div className="d-flex gap-3">
+                <div className="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
+                  <iframe
+                    title="Map Location First Branch"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.257718510098!2d73.8436811!3d18.5172524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9def03dcfbb%3A0x426a5a51c3a72bde!2sRSSofttecs!5e0!3m2!1sen!2sin!4v1754114818517!5m2!1sen!2sin"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div className="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
+                  <iframe
+                    title="Map Location Second Branch"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.8975032064095!2d73.81171567456519!3d18.488301370160425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf0060be0469%3A0x527943f74e396e51!2sRS%20Softtecs%20-%20Best%20Java%20Classes%20in%20Pune!5e0!3m2!1sen!2sin!4v1754115039991!5m2!1sen!2sin"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -113,7 +124,7 @@ const Footer = () => {
           <hr className="border-secondary mt-5" />
 
           <div className="text-center small">
-            &copy; {currentYear} UpSkill Website Development and Learning Platform. All Rights Reserved.
+            &copy; {currentYear} RsSoftecs Website Development and Learning Platform. All Rights Reserved.
           </div>
         </div>
       </footer>

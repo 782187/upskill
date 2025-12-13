@@ -8,7 +8,7 @@ function TermsAndConditions() {
         <Col lg={10}>
           <h2 className="mb-4 text-center text-primary">Terms and Conditions</h2>
           <p>
-            Welcome to <strong>UpSkill Institute Pvt. Ltd.</strong> These Terms and Conditions
+            Welcome to <strong>RsSofttecs Institute Pvt. Ltd.</strong> These Terms and Conditions
             outline the rules and regulations for using our website and services. By accessing or
             using our website and services, you agree to comply with and be bound by these Terms and
             Conditions.
@@ -17,7 +17,7 @@ function TermsAndConditions() {
           <section className="mb-4">
             <h5>1. Acceptance of Terms</h5>
             <p>
-              By using the UpSkill Institute website and services, you acknowledge that you have read,
+              By using the RsSofttecs Institute website and services, you acknowledge that you have read,
               understood, and agreed to these Terms and Conditions. If you do not agree with these Terms,
               please do not use our website or services.
             </p>
@@ -52,7 +52,7 @@ function TermsAndConditions() {
             <h5>5. Content and Intellectual Property</h5>
             <p>
               All website content including text, graphics, logos, and software is the property of
-              UpSkill Institute Pvt. Ltd. You may not reproduce or use content without written permission.
+              RsSofttecs Institute Pvt. Ltd. You may not reproduce or use content without written permission.
             </p>
           </section>
 
@@ -75,7 +75,7 @@ function TermsAndConditions() {
           <section className="mb-4">
             <h5>8. Limitation of Liability</h5>
             <p>
-              To the maximum extent allowed by law, UpSkill Institute Pvt. Ltd. is not liable for indirect,
+              To the maximum extent allowed by law, RsSofttecs Institute Pvt. Ltd. is not liable for indirect,
               incidental, or consequential damages. Our total liability is limited to the amount you paid
               for the service.
             </p>
@@ -84,7 +84,7 @@ function TermsAndConditions() {
           <section className="mb-4">
             <h5>9. Indemnification</h5>
             <p>
-              You agree to indemnify and hold harmless UpSkill Institute Pvt. Ltd. and its representatives
+              You agree to indemnify and hold harmless RsSofttecs Institute Pvt. Ltd. and its representatives
               against any claims or liabilities arising from your use of our services or violation of these
               terms.
             </p>
@@ -111,12 +111,11 @@ function TermsAndConditions() {
             <p>
               For questions regarding these Terms, please contact us:
               <br />
-              <strong>Email:</strong> enquiry@upskilll.com
+              <strong>Email:</strong> akshaytakale321@gmail.com
               <br />
-              <strong>Phone:</strong> +91 8484833677
+              <strong>Phone:</strong> +91 9970981875
               <br />
-              <strong>Address:</strong> B Junction 103, 1st Floor, Near Karve Statue, Next to Kothrud Post
-              Office, Kothrud, Pune-411038
+              <strong>Address:</strong> Office No 29/B Wing, 4th Floor, Yashashree Park, Warje Malwadi Rd, Near Karve Nagar PMT Bus Stop, Karve Nagar, Pune
             </p>
           </section>
 

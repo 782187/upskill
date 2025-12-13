@@ -59,7 +59,7 @@ function App() {
         </Routes>
         <Footer />
         <a
-          href="https://wa.me/7821879681?text=I'm%20inquiring%20about%20the%20Website%20Design%20"
+          href="https://wa.me/9970981875?text=I'm%20inquiring%20about%20the%20Website%20Design%20"
           className="whatsapp-float"
           target="_blank"
           rel="noopener noreferrer"

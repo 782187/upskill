@@ -85,8 +85,228 @@ function Navbar() {
           border-radius: 2px;
         }
         
-        /* Mobile responsiveness improvements */
-        @media (max-width: 991.98px) {
+        /* Base navbar styles */
+        .navbar {
+          transition: all 0.3s ease;
+          padding: 0.75rem 1rem;
+        }
+        
+        .navbar-scrolled {
+          padding: 0.5rem 1rem;
+          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.95) !important;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Logo styles - responsive */
+        .navbar-brand {
+          padding: 0;
+          margin-right: 0.5rem;
+        }
+        
+        .navbar-brand img {
+          transition: all 0.3s ease;
+          width: 150px;
+          height: auto;
+          max-width: 100%;
+        }
+        
+        .navbar-scrolled .navbar-brand img {
+          width: 140px;
+        }
+        
+        /* Nav items spacing */
+        .navbar-nav {
+          gap: 0.5rem;
+        }
+        
+        .nav-link {
+          padding: 0.5rem 0.75rem;
+          font-size: 0.95rem;
+          white-space: nowrap;
+        }
+        
+        /* Navbar toggler */
+        .navbar-toggler {
+          padding: 0.25rem 0.5rem;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 0.375rem;
+          font-size: 1rem;
+        }
+        
+        .navbar-toggler:focus {
+          box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+        
+        /* Container fluid responsive padding */
+        .navbar .container-fluid {
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
+        }
+        
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        
+        /* Extra Small devices (phones, less than 576px) */
+        @media (max-width: 575.98px) {
+          .navbar {
+            padding: 0.5rem 0.75rem;
+          }
+          
+          .navbar-scrolled {
+            padding: 0.4rem 0.75rem;
+          }
+          
+          .navbar .container-fluid {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+          }
+          
+          .navbar-brand img {
+            width: 120px !important;
+          }
+          
+          .navbar-scrolled .navbar-brand img {
+            width: 110px !important;
+          }
+          
+          .navbar-toggler {
+            padding: 0.2rem 0.4rem;
+            font-size: 0.9rem;
+          }
+          
+          .navbar-collapse {
+            padding: 1rem 0.75rem;
+            background-color: white;
+            border-radius: 0.375rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            margin-top: 0.75rem;
+          }
+          
+          .navbar-nav {
+            gap: 0.25rem !important;
+          }
+          
+          .nav-link {
+            padding: 0.75rem 0.5rem;
+            font-size: 0.9rem;
+          }
+          
+          .dropdown-menu {
+            margin: 0.5rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 100%;
+          }
+          
+          .custom-dropdown {
+            min-width: 100%;
+            max-width: 100%;
+          }
+          
+          .dropdown-item {
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+          }
+          
+          .callback-btn-container {
+            margin-top: 0.75rem;
+            width: 100%;
+          }
+          
+          .callback-btn {
+            padding: 0.75rem 1.25rem;
+            font-size: 0.85rem;
+          }
+        }
+        
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+          .navbar {
+            padding: 0.6rem 0.875rem;
+          }
+          
+          .navbar-scrolled {
+            padding: 0.45rem 0.875rem;
+          }
+          
+          .navbar .container-fluid {
+            padding-left: 0.625rem;
+            padding-right: 0.625rem;
+          }
+          
+          .navbar-brand img {
+            width: 130px;
+          }
+          
+          .navbar-scrolled .navbar-brand img {
+            width: 120px !important;
+          }
+          
+          .navbar-collapse {
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0.375rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            margin-top: 0.75rem;
+          }
+          
+          .navbar-nav {
+            gap: 0.375rem !important;
+          }
+          
+          .nav-link {
+            padding: 0.6rem 0.625rem;
+            font-size: 0.925rem;
+          }
+          
+          .dropdown-menu {
+            margin: 0.5rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+          }
+          
+          .custom-dropdown {
+            min-width: 280px;
+          }
+          
+          .dropdown-item {
+            padding: 0.6rem 1rem;
+            font-size: 0.875rem;
+          }
+          
+          .callback-btn-container {
+            margin-top: 0.875rem;
+            width: 100%;
+          }
+          
+          .callback-btn {
+            padding: 0.6rem 1.375rem;
+            font-size: 0.875rem;
+          }
+        }
+        
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+          .navbar {
+            padding: 0.65rem 0.9375rem;
+          }
+          
+          .navbar-scrolled {
+            padding: 0.5rem 0.9375rem;
+          }
+          
+          .navbar .container-fluid {
+            padding-left: 0.6875rem;
+            padding-right: 0.6875rem;
+          }
+          
+          .navbar-brand img {
+            width: 140px;
+          }
+          
+          .navbar-scrolled .navbar-brand img {
+            width: 130px !important;
+          }
+          
           .navbar-collapse {
             padding: 1rem;
             background-color: white;
@@ -99,14 +319,189 @@ function Navbar() {
             gap: 0.5rem !important;
           }
           
+          .nav-link {
+            padding: 0.5rem 0.6875rem;
+            font-size: 0.9375rem;
+          }
+          
           .dropdown-menu {
             margin: 0.5rem 0;
             border: 1px solid rgba(0, 0, 0, 0.1);
           }
           
+          .custom-dropdown {
+            min-width: 250px;
+          }
+          
+          .dropdown-item {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+          }
+          
           .callback-btn-container {
             margin-top: 1rem;
             width: 100%;
+          }
+          
+          .callback-btn {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+          }
+        }
+        
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+          .navbar {
+            padding: 0.7rem 1rem;
+          }
+          
+          .navbar-scrolled {
+            padding: 0.5rem 1rem;
+          }
+          
+          .navbar .container-fluid {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+          }
+          
+          .navbar-brand img {
+            width: 150px;
+          }
+          
+          .navbar-scrolled .navbar-brand img {
+            width: 140px !important;
+          }
+          
+          .navbar-nav {
+            gap: 0.5rem;
+          }
+          
+          .nav-link {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.95rem;
+          }
+          
+          .custom-dropdown {
+            min-width: 250px;
+          }
+          
+          .dropdown-item {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+          }
+          
+          .callback-btn-container {
+            width: auto;
+            min-width: 180px;
+          }
+          
+          .callback-btn {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+          }
+        }
+        
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) and (max-width: 1399.98px) {
+          .navbar {
+            padding: 0.75rem 1.25rem;
+          }
+          
+          .navbar-scrolled {
+            padding: 0.5rem 1.25rem;
+          }
+          
+          .navbar .container-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          
+          .navbar-brand img {
+            width: 150px;
+          }
+          
+          .navbar-scrolled .navbar-brand img {
+            width: 145px !important;
+          }
+          
+          .navbar-nav {
+            gap: 0.625rem;
+          }
+          
+          .nav-link {
+            padding: 0.5rem 0.875rem;
+            font-size: 0.95rem;
+          }
+          
+          .custom-dropdown {
+            min-width: 260px;
+          }
+          
+          .dropdown-item {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+          }
+          
+          .callback-btn-container {
+            width: auto;
+            min-width: 190px;
+          }
+          
+          .callback-btn {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+          }
+        }
+        
+        /* XXL devices (extra large desktops, 1400px and up) */
+        @media (min-width: 1400px) {
+          .navbar {
+            padding: 0.75rem 1.5rem;
+          }
+          
+          .navbar-scrolled {
+            padding: 0.5rem 1.5rem;
+          }
+          
+          .navbar .container-fluid {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+          }
+          
+          .navbar-brand img {
+            width: 150px;
+          }
+          
+          .navbar-scrolled .navbar-brand img {
+            width: 160px !important;
+          }
+          
+          .navbar-nav {
+            gap: 0.75rem;
+          }
+          
+          .nav-link {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+          }
+          
+          .custom-dropdown {
+            min-width: 280px;
+          }
+          
+          .dropdown-item {
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+          }
+          
+          .callback-btn-container {
+            width: auto;
+            min-width: 200px;
+          }
+          
+          .callback-btn {
+            padding: 0.5rem 1.75rem;
+            font-size: 0.95rem;
           }
         }
         
@@ -179,33 +574,12 @@ function Navbar() {
           animation: none;
         }
         
-        /* Navbar scroll effect */
-        .navbar {
-          transition: all 0.3s ease;
-          padding: 0.5rem 1rem;
-        }
-        
-        .navbar-scrolled {
-          padding: 0.25rem 1rem;
-          backdrop-filter: blur(10px);
-          background: rgba(255, 255, 255, 0.95) !important;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Logo transition */
-        .navbar-brand img {
-          transition: all 0.3s ease;
-        }
-        
-        .navbar-scrolled .navbar-brand img {
-          width: 160px !important;
-        }
       `}</style>
 
-      <nav className={`navbar navbar-expand-lg bg-light fw-bold sticky-top shadow-sm py-2 px-3 ${isScrolled ? 'navbar-scrolled' : ''}`}>
+      <nav className={`navbar navbar-expand-lg bg-light fw-bold sticky-top shadow-sm ${isScrolled ? 'navbar-scrolled' : ''}`}>
         <div className="container-fluid">
           <Link className="navbar-brand d-flex align-items-center" to="/" onClick={handleClick}>
-            <img src="/logo.png" alt="Logo" style={{ width: '200px'}} className="me-2" />
+            <img src="/logo.png" alt="Logo" className="me-2" />
           </Link>
 
           <button
@@ -218,7 +592,7 @@ function Navbar() {
           </button>
 
           <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarNavDropdown">
-            <ul className="navbar-nav ms-auto d-flex align-items-lg-center gap-3">
+            <ul className="navbar-nav ms-auto d-flex align-items-lg-center">
               <li className="nav-item">
                 <Link 
                   className={`nav-link ${isActive('/', true) ? 'active text-primary' : 'text-dark'}`} 
@@ -401,7 +775,7 @@ function Navbar() {
                   <div className="spark spark1"></div>
                   <div className="spark spark2"></div>
                   <div className="spark spark3"></div>
-                  <img src="/upskill_baner.jpg" className="img-fluid" alt="AvisTech Logo" />
+                  <img src="/java_baner.jpg" className="img-fluid" alt="RsSofttecs Logo" />
                 </div>
                 <div className="w-100 w-md-50">
                   <EnquiryForm />

@@ -115,7 +115,7 @@ const Team = () => {
                                 Meet Our <span style={{ color: colors.primary }}>Leadership</span> Team
                             </h1>
                             <p className="lead" style={{ color: colors.secondary, marginBottom: '2rem', lineHeight: '1.6', fontSize: '1.1rem' }}>
-                                The passionate professionals behind UPSKILL IT who are dedicated to transforming careers and bridging the gap between education and employment in the IT industry.
+                                The passionate professionals behind RSSOFTTECS IT who are dedicated to transforming careers and bridging the gap between education and employment in the IT industry.
                             </p>
                             <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
                                 <Button
@@ -211,7 +211,7 @@ const Team = () => {
             </section>
 
             {/* Team Members Section */}
-            <section style={{ padding: '80px 0' }}>
+            <section style={{ padding: '40px 0' }}>
                 <Container>
                     <Row>
                         <Col className="mb-5">
@@ -220,7 +220,7 @@ const Team = () => {
                                 <div style={sectionTitleAfter}></div>
                             </div>
                             <p className="text-center mx-auto" style={{ maxWidth: '800px', color: colors.secondary, lineHeight: '1.6', fontSize: '1.1rem' }}>
-                                Meet the visionary leaders behind UPSKILL IT who are dedicated to bridging the gap between
+                                Meet the visionary leaders behind RSSOFTTECS IT who are dedicated to bridging the gap between
                                 education and employment in the IT industry through innovative training and placement solutions.
                             </p>
                         </Col>
@@ -231,8 +231,8 @@ const Team = () => {
                         <Col lg={5} className="mb-4 mb-lg-0">
                             <div style={photoContainerStyle}>
                                 <img
-                                    src="/rutuja_mam.jpg"
-                                    alt="Rutuja Bhutada"
+                                    src="/rahoul_salunke.png"
+                                    alt="Rahoul Salunkay"
                                     style={photoStyle}
                                     onError={(e) => {
                                         e.target.src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80';
@@ -255,7 +255,7 @@ const Team = () => {
                                 }}
                             >
                                 <Card.Body className="p-2 p-md-3">
-                                    <h3 style={{ color: colors.dark, fontWeight: '700', marginBottom: '0.5rem' }}>Rutuja Bhutada</h3>
+                                    <h3 style={{ color: colors.dark, fontWeight: '700', marginBottom: '0.5rem' }}>Rahoul Salunkay</h3>
                                     <p className="mb-3 mb-md-4" style={{ color: colors.primary, fontSize: '1.1rem', fontWeight: '600' }}>Founder & Director</p>
 
                                     <div className="mb-3 mb-md-4">
@@ -285,12 +285,8 @@ const Team = () => {
 
                                     <div className="mt-4 pt-3" style={{ borderTop: '1px solid #f1f1f1' }}>
                                         <p className="mb-2">
-                                            <i className="bi bi-envelope-fill" style={iconStyle}></i>
-                                            <span style={{ color: colors.secondary }}>rutujaborse77@gmail.com</span>
-                                        </p>
-                                        <p className="mb-2">
                                             <i className="bi bi-linkedin" style={iconStyle}></i>
-                                            <span style={{ color: colors.secondary }}>linkedin.com/in/rutuja-borse</span>
+                                            <span style={{ color: colors.secondary }}>https://www.linkedin.com/in/rahoul-salunkay-89a439118</span>
                                         </p>
                                         <p className="mb-0">
                                             <i className="bi bi-geo-alt-fill" style={iconStyle}></i>
@@ -307,8 +303,8 @@ const Team = () => {
                         <Col lg={5} className="order-lg-2 mb-4 mb-lg-0">
                             <div style={photoContainerStyle}>
                                 <img
-                                    src="/kamesh_sir.jpg"
-                                    alt="Kamesh Bhutada"
+                                    src="/akshay_sir.png"
+                                    alt="Akshay Takale"
                                     style={photoStyle}
                                     onError={(e) => {
                                         e.target.src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80';
@@ -331,9 +327,7 @@ const Team = () => {
                                 }}
                             >
                                 <Card.Body className="p-2 p-md-3">
-                                    <h3 style={{ color: colors.dark, fontWeight: '700', marginBottom: '0.5rem' }}>Kamesh Bhutada</h3>
-                                    <p className="mb-3 mb-md-4" style={{ color: colors.primary, fontSize: '1.1rem', fontWeight: '600' }}>Co-Founder & Business Head</p>
-
+                                    <h3 style={{ color: colors.dark, fontWeight: '700', marginBottom: '0.5rem' }}>Akshay Takale</h3>
                                     <div className="mb-3 mb-md-4">
                                         <Badge style={badgeStyle}>Business Development</Badge>
                                         <Badge style={badgeStyle}>IT Services</Badge>
@@ -346,85 +340,13 @@ const Team = () => {
                                     </Card.Text>
 
                                     <Card.Text style={{ color: colors.secondary, lineHeight: '1.7', fontSize: '1rem' }}>
-                                        With a background in managing IT service delivery for enterprise clients, Kamesh ensures that
-                                        UPSKILL IT's programs remain aligned with industry needs and hiring trends.
+                                        Experienced Salesforce Developer with 6+ years of hands-on expertise in designing, developing, and deploying custom solutions on the Salesforce platform. Adept at translating business requirements into technical designs and implementing scalable solutions to drive productivity and enhance customer experiences. Skilled in Apex, Lightning Web Components, and Salesforce integrations. Seeking new opportunities to contribute to the success of an organisation as a Salesforce Developer
                                     </Card.Text>
 
                                     <div className="mt-4 pt-3" style={{ borderTop: '1px solid #f1f1f1' }}>
                                         <p className="mb-2">
-                                            <i className="bi bi-envelope-fill" style={iconStyle}></i>
-                                            <span style={{ color: colors.secondary }}>kameshbhutada10@gmail.com</span>
-                                        </p>
-                                        <p className="mb-2">
                                             <i className="bi bi-linkedin" style={iconStyle}></i>
-                                            <span style={{ color: colors.secondary }}>linkedin.com/in/kamesh-bhutada-814754b4</span>
-                                        </p>
-                                        <p className="mb-0">
-                                            <i className="bi bi-geo-alt-fill" style={iconStyle}></i>
-                                            <span style={{ color: colors.secondary }}>Pune, India</span>
-                                        </p>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-
-                    {/* Team Member 3 */}
-                    <Row className="align-items-center mb-5 mb-lg-10">
-                        <Col lg={5} className="mb-4 mb-lg-0">
-                            <div style={photoContainerStyle}>
-                                <img
-                                    src="/darpan_sir.jpg"
-                                    alt="Darpan Bhutada"
-                                    style={photoStyle}
-                                    onError={(e) => {
-                                        e.target.src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80';
-                                    }}
-                                    className="img-fluid"
-                                />
-                            </div>
-                        </Col>
-                        <Col lg={7}>
-                            <Card
-                                style={cardStyle}
-                                className="team-card p-3 p-md-4"
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = cardHoverStyle.transform;
-                                    e.currentTarget.style.boxShadow = cardHoverStyle.boxShadow;
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = cardStyle.boxShadow;
-                                }}
-                            >
-                                <Card.Body className="p-2 p-md-3">
-                                    <h3 style={{ color: colors.dark, fontWeight: '700', marginBottom: '0.5rem' }}>Darpan Bhutada</h3>
-                                    <p className="mb-3 mb-md-4" style={{ color: colors.primary, fontSize: '1.1rem', fontWeight: '600' }}>Co-Founder & Head of Mentorship</p>
-
-                                    <div className="mb-3 mb-md-4">
-                                        <Badge style={badgeStyle}>Career Empowerment</Badge>
-                                        <Badge style={badgeStyle}>Education Innovation</Badge>
-                                        <Badge style={badgeStyle}>Mentorship</Badge>
-                                        <Badge style={badgeStyle}>Curriculum Development</Badge>
-                                    </div>
-
-                                    <Card.Text style={{ color: colors.secondary, lineHeight: '1.7', fontSize: '1rem' }}>
-                                        I am passionate about empowering individuals to unlock their full potential in the IT industry. With a mission to bridge the gap between education and employment, I have dedicated myself to creating a platform where aspiring professionals can gain the skills, knowledge, and confidence they need to excel in their careers.
-                                    </Card.Text>
-
-                                    <Card.Text style={{ color: colors.secondary, lineHeight: '1.7', fontSize: '1rem' }}>
-                                        My journey began with a vision to provide accessible, high-quality training that not only educates but also inspires.
-                                        I am driven by the belief that education is a transformative tool, and through Upskill IT, I am proud to contribute to shaping the next generation of IT professionals. Let's connect and collaborate to make a lasting impact on the future of IT education and employment.
-                                    </Card.Text>
-
-                                    <div className="mt-4 pt-3" style={{ borderTop: '1px solid #f1f1f1' }}>
-                                        <p className="mb-2">
-                                            <i className="bi bi-envelope-fill" style={iconStyle}></i>
-                                            <span style={{ color: colors.secondary }}>darpanbhutada143@gmail.com</span>
-                                        </p>
-                                        <p className="mb-2">
-                                            <i className="bi bi-linkedin" style={iconStyle}></i>
-                                            <span style={{ color: colors.secondary }}>linkedin.com/in/darpan-bhutada</span>
+                                            <span style={{ color: colors.secondary }}>https://www.linkedin.com/in/akshay-takale-akshaytakale</span>
                                         </p>
                                         <p className="mb-0">
                                             <i className="bi bi-geo-alt-fill" style={iconStyle}></i>
@@ -439,7 +361,7 @@ const Team = () => {
             </section>
 
             {/* Mission Section */}
-            <section style={{ padding: '80px 0', backgroundColor: colors.light }}>
+            <section style={{ padding: '10px 0', backgroundColor: colors.light }}>
                 <Container>
                     <Row>
                         <Col lg={10} className="mx-auto">
@@ -556,7 +478,7 @@ const Team = () => {
                 }
                 
                 .mb-10 {
-                    margin-bottom: 100px;
+                    margin-bottom: 70px;
                 }
 
                 @media (max-width: 992px) {
@@ -605,7 +527,7 @@ const Team = () => {
 
                 @media (max-width: 576px) {
                     section {
-                        padding: 60px 0 !important;
+                        padding: 40px 0 !important;
                     }
                     
                     .photo-container {

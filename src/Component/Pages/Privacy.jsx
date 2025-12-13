@@ -2,11 +2,11 @@ import React from "react";
 
 export default function Privacy({ lastUpdated = "August 24, 2025" }) {
   const org = {
-    name: "UpSkill Institute",
-    email: "enquiry@upskilll.com",
-    phone: "+91 8484833677",
+    name: "RsSofttecs Institute",
+    email: "akshaytakale321@gmail.com",
+    phone: "+91 9970981875",
     street:
-      "B Junction 103, 1st Floor, Near Karve Statue, Next to Kothrud Post Office",
+       "Office No 29/B Wing, 4th Floor, Yashashree Park, Warje Malwadi Rd, Near Karve Nagar PMT Bus Stop, Karve Nagar, Pune",
     city: "Pune",
     region: "Maharashtra",
     postal: "411038",

@@ -77,7 +77,7 @@ const Hero = () => {
           <div className="row align-items-center">
             <div className="col-md-6 mb-4 mb-md-0">
               <h1 className="display-4 fw-bold mb-3">
-                Elevate Your Tech Career with <span className="text-primary">UpSkill</span>
+                Elevate Your Tech Career with <span className="text-primary">RsSofttecs</span>
               </h1>
               <p className="lead text-muted mb-4">
                 Expert-led training in Fullstack Java, Python, Software Testing, and Web Development designed to transform your career path.
@@ -165,7 +165,7 @@ const Hero = () => {
       <section id="apply" className="py-5 bg-light border-top">
         <div className="container px-4">
           <div className="text-center mb-5">
-            <h2 className="fw-bold text-primary">Apply Now to Join UpSkill</h2>
+            <h2 className="fw-bold text-primary">Apply Now to Join RsSofttecs</h2>
             <p className="text-muted">Your journey to becoming job-ready in tech starts here 🚀</p>
           </div>
 
@@ -177,7 +177,7 @@ const Hero = () => {
               }}
             >
               <h4 className="fw-bold mb-3">Why Join Us?</h4>
-              <p>At UpSkill, we're committed to your success. Here's what makes us different:</p>
+              <p>At RsSofttecs, we're committed to your success. Here's what makes us different:</p>
               <ul className="mt-4 ps-3">
                 <li className="mb-2">Hands-on projects with real-world applications</li>
                 <li className="mb-2">1:1 mentorship sessions</li>
@@ -190,10 +190,10 @@ const Hero = () => {
                 <h5 className="fw-bold mb-3">Contact Information</h5>
                 <ul className="list-unstyled">
                   <li className="mb-3 d-flex align-items-center">
-                    <Mail size={18} className="me-2" /> hiring@upskilll.com
+                    <Mail size={18} className="me-2" /> akshaytakale321@gmail.com
                   </li>
                   <li className="mb-3 d-flex align-items-center">
-                    <Phone size={18} className="me-2" /> +91 8484833677
+                    <Phone size={18} className="me-2" /> +91 9970981875
                   </li>
                   <li className="d-flex align-items-center">
                     <Clock size={18} className="me-2" /> Mon - Sat: 10AM - 7PM

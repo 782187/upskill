@@ -649,7 +649,7 @@ const processSteps = [
 
 const testimonials = [
   {
-    quote: "The developers we hired from Upskill were productive from day one. Their training program truly prepares candidates for real-world challenges.",
+    quote: "The developers we hired from RsSofttecs were productive from day one. Their training program truly prepares candidates for real-world challenges.",
     name: "Sarah Johnson",
     position: "CTO",
     company: "TechNova",

@@ -112,7 +112,7 @@ const CorporateTrainingPage = () => {
             <div className="col-md-7 py-5">
               <h2 className="fw-bold text-primary mb-4">Corporate Training Overview</h2>
               <p className="text-muted">
-                Transform your workforce with UpSkill IT Training & Placement's comprehensive corporate training programs.
+                Transform your workforce with RsSofttecs IT Training & Placement's comprehensive corporate training programs.
                 Designed to meet the unique needs of businesses, our training solutions equip teams with essential skills
                 across a range of technologies and methodologies. Whether you're looking to enhance software development,
                 data analysis, project management, or IT infrastructure, our programs offer practical, hands-on experience
@@ -124,7 +124,7 @@ const CorporateTrainingPage = () => {
                 including on-site, virtual, and customized solutions tailored to your company's objectives and schedule.
               </p>
               <p className="text-muted">
-                At UpSkill, we focus on driving productivity, fostering innovation, and achieving measurable results. Partner
+                At RsSofttecs, we focus on driving productivity, fostering innovation, and achieving measurable results. Partner
                 with us to elevate your teams skills, improve performance, and stay ahead in today's competitive market.
                 Our commitment is to empower your workforce with the tools and knowledge needed to excel and lead in their
                 respective fields.

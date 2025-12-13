@@ -1,0 +1,917 @@
+/* Placed Student Card - Premium Professional Design */
+
+.placed-student-card {
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 400px;
+}
+
+/* Diagonal Line Texture Background */
+.placed-student-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(13, 110, 253, 0.02) 10px,
+    rgba(13, 110, 253, 0.02) 20px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.placed-student-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.placed-student-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: rgba(13, 110, 253, 0.25);
+}
+
+.placed-student-card:active {
+  transform: translateY(-3px);
+}
+
+/* Touch-friendly for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .placed-student-card:hover {
+    transform: none;
+  }
+  
+  .placed-student-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Top Accent Bar */
+.card-top-accent {
+  height: 3px;
+  background: linear-gradient(90deg, #0d6efd 0%, #0dcaf0 50%, #0d6efd 100%);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Student Photo Section - Fully Visible */
+.student-photo-section {
+  position: relative;
+  padding: 1.5rem 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
+}
+
+@media (max-width: 575.98px) {
+  .student-photo-section {
+    padding: 1.25rem 0.75rem 0.875rem;
+  }
+}
+
+.photo-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(13, 110, 253, 0.15);
+  flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+  .photo-container {
+    width: 100px;
+    height: 100px;
+    padding: 3px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .photo-container {
+    width: 130px;
+    height: 130px;
+    padding: 5px;
+  }
+}
+
+.photo-container::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d6efd, #0dcaf0, #0d6efd);
+  background-size: 200% 200%;
+  z-index: -1;
+  animation: rotateBorder 3s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes rotateBorder {
+  0% { 
+    background-position: 0% 50%;
+    transform: rotate(0deg);
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+  100% { 
+    background-position: 0% 50%;
+    transform: rotate(360deg);
+  }
+}
+
+.photo-inner-wrapper {
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.student-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.photo-placeholder i {
+  font-size: 5rem;
+  color: #dee2e6;
+}
+
+.placed-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 0.4rem 0.875rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .placed-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.65rem;
+  }
+}
+
+.placed-badge i {
+  font-size: 0.7rem;
+}
+
+/* Student Info Section */
+.student-info-section {
+  padding: 1rem 1rem 0.875rem;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+  .student-info-section {
+    padding: 0.875rem 0.75rem 0.75rem;
+  }
+}
+
+.student-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0 0 0.375rem 0;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  min-height: 2.6em;
+}
+
+@media (max-width: 575.98px) {
+  .student-name {
+    font-size: 1.05rem;
+    margin: 0 0 0.25rem 0;
+  }
+}
+
+.student-position {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0d6efd;
+  margin: 0;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  min-height: 2.24em;
+}
+
+@media (max-width: 575.98px) {
+  .student-position {
+    font-size: 0.8rem;
+  }
+}
+
+/* Company Section - Premium Design */
+.company-section {
+  padding: 1.25rem 1rem;
+  background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
+  flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+  .company-section {
+    padding: 1rem 0.75rem;
+  }
+}
+
+.company-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.company-logo-wrapper-premium {
+  width: 100%;
+  max-width: 180px;
+  height: 65px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1.5px solid #f0f0f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+@media (max-width: 575.98px) {
+  .company-logo-wrapper-premium {
+    max-width: 100%;
+    height: 55px;
+    padding: 0.625rem 0.875rem;
+  }
+}
+
+.company-logo-wrapper-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transition: left 0.5s ease;
+}
+
+.placed-student-card:hover .company-logo-wrapper-premium::before {
+  left: 100%;
+}
+
+.placed-student-card:hover .company-logo-wrapper-premium {
+  border-color: #0d6efd;
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.15);
+  transform: translateY(-2px);
+}
+
+.company-logo-premium {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.company-logo-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.company-logo-fallback i {
+  font-size: 1.75rem;
+  opacity: 0.5;
+}
+
+.company-name-container {
+  text-align: center;
+  padding-top: 0.375rem;
+}
+
+.company-name-premium {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #495057;
+  letter-spacing: 0.2px;
+  display: block;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  min-height: 2.24em;
+}
+
+/* Additional Details */
+.additional-details {
+  padding: 0 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+  .additional-details {
+    padding: 0 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+}
+
+.detail-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  background: rgba(13, 110, 253, 0.06);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: #495057;
+  font-weight: 500;
+  min-height: 2.5rem;
+  transition: all 0.2s ease;
+}
+
+.detail-badge:hover {
+  background: rgba(13, 110, 253, 0.1);
+  transform: translateX(2px);
+}
+
+.detail-badge i {
+  color: #0d6efd;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.detail-badge span {
+  margin-left: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Extra Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .placed-student-card {
+    max-width: 100%;
+    border-radius: 16px;
+    min-height: 380px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .placed-student-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-top-accent {
+    height: 3px;
+  }
+
+  .student-photo-section {
+    padding: 1.25rem 1rem 0.875rem;
+  }
+
+  .photo-container {
+    width: 110px;
+    height: 110px;
+    padding: 4px;
+  }
+
+  .photo-inner-wrapper {
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
+
+  .photo-placeholder i {
+    font-size: 3.5rem;
+  }
+
+  .placed-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.65rem;
+  }
+
+  .student-info-section {
+    padding: 1rem 1rem 0.75rem;
+  }
+
+  .student-name {
+    font-size: 1.05rem;
+    min-height: 2.52em;
+  }
+
+  .student-position {
+    font-size: 0.8rem;
+    min-height: 2.24em;
+  }
+
+  .company-section {
+    padding: 1rem;
+  }
+
+  .company-logo-wrapper-premium {
+    max-width: 100%;
+    height: 55px;
+    padding: 0.75rem;
+    border-radius: 12px;
+  }
+
+  .company-logo-fallback i {
+    font-size: 1.75rem;
+  }
+
+  .company-name-container {
+    padding-top: 0.5rem;
+  }
+
+  .company-name-premium {
+    font-size: 0.8rem;
+    min-height: 2.24em;
+  }
+
+  .additional-details {
+    padding: 0 1rem 1rem;
+    gap: 0.625rem;
+  }
+
+  .detail-badge {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.75rem;
+    min-height: 2.75rem;
+  }
+  
+  .detail-badge span {
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-align: left;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .placed-student-card {
+    max-width: 100%;
+    border-radius: 18px;
+    min-height: 390px;
+  }
+
+  .student-photo-section {
+    padding: 1.125rem 0.9375rem 0.6875rem;
+  }
+
+  .photo-container {
+    width: 110px;
+    height: 110px;
+    padding: 4px;
+  }
+
+  .photo-inner-wrapper {
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
+
+  .photo-placeholder i {
+    font-size: 3.5rem;
+  }
+
+  .placed-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.325rem 0.6875rem;
+    font-size: 0.625rem;
+  }
+
+  .student-info-section {
+    padding: 0.8125rem 0.9375rem 0.6875rem;
+  }
+
+  .student-name {
+    font-size: 1.05rem;
+  }
+
+  .student-position {
+    font-size: 0.775rem;
+  }
+
+  .company-section {
+    padding: 0.9375rem;
+  }
+
+  .company-logo-wrapper-premium {
+    max-width: 150px;
+    height: 55px;
+  }
+
+  .company-logo-fallback i {
+    font-size: 1.75rem;
+  }
+
+  .company-name-premium {
+    font-size: 0.775rem;
+  }
+
+  .additional-details {
+    padding: 0 0.9375rem 0.9375rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .placed-student-card {
+    max-width: 100%;
+    border-radius: 18px;
+    min-height: 400px;
+  }
+
+  .student-photo-section {
+    padding: 1.1875rem 0.96875rem 0.75rem;
+  }
+
+  .photo-container {
+    width: 115px;
+    height: 115px;
+    padding: 4px;
+  }
+
+  .photo-inner-wrapper {
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
+
+  .photo-placeholder i {
+    font-size: 3.75rem;
+  }
+
+  .placed-badge {
+    top: 0.8125rem;
+    right: 0.8125rem;
+  }
+
+  .student-info-section {
+    padding: 0.875rem 0.96875rem 0.75rem;
+  }
+
+  .student-name {
+    font-size: 1.1rem;
+  }
+
+  .company-section {
+    padding: 0.96875rem;
+  }
+
+  .company-logo-wrapper-premium {
+    max-width: 160px;
+    height: 60px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .placed-student-card {
+    max-width: 100%;
+    border-radius: 20px;
+    min-height: 420px;
+  }
+
+  .student-photo-section {
+    padding: 1.25rem 1rem 0.75rem;
+  }
+
+  .photo-container {
+    width: 120px;
+    height: 120px;
+    padding: 4px;
+  }
+
+  .photo-inner-wrapper {
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
+
+  .company-logo-wrapper-premium {
+    max-width: 160px;
+    height: 60px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .placed-student-card {
+    max-width: 100%;
+    border-radius: 20px;
+    min-height: 440px;
+  }
+
+  .student-photo-section {
+    padding: 1.375rem 1.125rem 0.875rem;
+  }
+
+  .photo-container {
+    width: 130px;
+    height: 130px;
+    padding: 5px;
+  }
+
+  .photo-inner-wrapper {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+  }
+
+  .photo-placeholder i {
+    font-size: 4rem;
+  }
+
+  .placed-badge {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.375rem 0.8125rem;
+    font-size: 0.675rem;
+  }
+
+  .student-info-section {
+    padding: 0.9375rem 1.125rem 0.8125rem;
+  }
+
+  .student-name {
+    font-size: 1.15rem;
+  }
+
+  .student-position {
+    font-size: 0.825rem;
+  }
+
+  .company-section {
+    padding: 1.125rem;
+  }
+
+  .company-logo-wrapper-premium {
+    max-width: 170px;
+    height: 65px;
+    padding: 0.875rem;
+  }
+
+  .company-logo-fallback i {
+    font-size: 2rem;
+  }
+
+  .company-name-premium {
+    font-size: 0.825rem;
+  }
+
+  .additional-details {
+    padding: 0 1.125rem 1.125rem;
+    gap: 0.625rem;
+  }
+
+  .detail-badge {
+    padding: 0.5rem 0.8125rem;
+    font-size: 0.775rem;
+  }
+}
+
+/* Swiper adjustments for responsive cards */
+@media (max-width: 575.98px) {
+  .swiper-slide {
+    width: 100% !important;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .placed-student-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .swiper-slide {
+    width: 100% !important;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .placed-student-card {
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .swiper-slide {
+    width: 50% !important;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .placed-student-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .swiper-slide {
+    width: 50% !important;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .placed-student-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .swiper-slide {
+    width: 33.333% !important;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .placed-student-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Accessibility improvements */
+.placed-student-card:focus-visible {
+  outline: 3px solid rgba(13, 110, 253, 0.5);
+  outline-offset: 2px;
+}
+
+/* Loading state */
+.placed-student-card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Improved image loading */
+.student-photo {
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+}
+
+.student-photo[src] {
+  background: #ffffff;
+}
+
+/* Better text contrast */
+.student-name {
+  color: #1a1a1a;
+}
+
+.student-position {
+  color: #0056b3;
+}
+
+/* Ensure card maintains proper proportions */
+.placed-student-card {
+  aspect-ratio: auto;
+}
+
+/* Better card container spacing */
+.swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.placed-student-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Smooth animations for all interactive elements */
+.photo-container,
+.company-logo-wrapper-premium,
+.detail-badge {
+  will-change: transform;
+}
+
+/* Enhanced card appearance */
+.placed-student-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Better card depth on mobile */
+@media (max-width: 575.98px) {
+  .placed-student-card {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Improved card spacing */
+.placed-student-card * {
+  box-sizing: border-box;
+}
+

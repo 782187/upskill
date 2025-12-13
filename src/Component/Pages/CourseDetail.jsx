@@ -337,8 +337,8 @@ const CourseDetail = () => {
                 </div>
                 <div className="contact-info bg-white p-4 rounded-3 shadow-sm">
                   <h5 className="fw-bold mb-3">Contact Information</h5>
-                  <p className="mb-2"><strong>Email:</strong> info@upskill.com</p>
-                  <p className="mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
+                  <p className="mb-2"><strong>Email:</strong> akshaytakale321@gmail.com</p>
+                  <p className="mb-2"><strong>Phone:</strong> +91 9970981875</p>
                   <p><strong>Hours:</strong> Mon-Sat, 9AM - 6PM</p>
                 </div>
               </div>

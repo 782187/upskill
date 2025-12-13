@@ -15,7 +15,7 @@ const ContactUs = () => {
           <div className="row align-items-center justify-content-between">
             <div className="col-lg-6">
               <h1 className="display-4 fw-bold mb-3">
-                Contact <span className="text-primary">UpSkill</span> IT Training & Placement
+                Contact <span className="text-primary">RsSofttecs</span> IT Training & Placement
               </h1>
               <p className="lead fs-5 text-muted mb-4">
                 Ready to start your tech career? Have questions about our courses? 
@@ -61,9 +61,9 @@ const ContactUs = () => {
                   </div>
                   <h3 className="h5 fw-bold mb-3">Call Us</h3>
                   <p className="text-muted mb-3">Speak directly with our training consultants</p>
-                  <a href="tel:+918484833677" className="btn btn-outline-primary w-100">
+                  <a href="tel:+919970981875" className="btn btn-outline-primary w-100">
                     <Phone size={18} className="me-2" />
-                    +91 8484833677
+                    +91 9970981875
                   </a>
                 </div>
               </div>
@@ -77,9 +77,9 @@ const ContactUs = () => {
                   </div>
                   <h3 className="h5 fw-bold mb-3">Email Us</h3>
                   <p className="text-muted mb-3">Send us your queries and we'll respond promptly</p>
-                  <a href="mailto:hiring@upskilll.com" className="btn btn-outline-primary w-100">
+                  <a href="mailto:akshaytakale321@gmail.com" className="btn btn-outline-primary w-100">
                     <Mail size={18} className="me-2" />
-                    hiring@upskilll.com
+                    akshaytakale321@gmail.com
                   </a>
                 </div>
               </div>
@@ -134,8 +134,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <h6 className="mb-1 fw-bold">Phone Number</h6>
-                      <a href="tel:+918484833677" className="text-decoration-none text-dark">
-                        +91 8484833677
+                      <a href="tel:+919970981875" className="text-decoration-none text-dark">
+                        +91 9970981875
                       </a>
                     </div>
                   </div>
@@ -146,8 +146,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <h6 className="mb-1 fw-bold">Email Address</h6>
-                      <a href="mailto:hiring@upskilll.com" className="text-decoration-none text-dark">
-                        hiring@upskilll.com
+                      <a href="mailto:akshaytakale321@gmail.com" className="text-decoration-none text-dark">
+                        akshaytakale321@gmail.com
                       </a>
                     </div>
                   </div>
@@ -159,9 +159,9 @@ const ContactUs = () => {
                     <div>
                       <h6 className="mb-1 fw-bold">Office Address</h6>
                       <p className="mb-0 text-muted">
-                        103, 1st Floor, B Junction, Behind Karve Statue,<br />
-                        Next to Kothrud Post Office, Kothrud,<br />
-                        Pune-411038, Maharashtra, India
+                        Office No 29/B Wing, 4th Floor, <br/> 
+                        Yashashree Park, Warje Malwadi Rd,<br/>
+                        Near Karve Nagar PMT Bus Stop, Karve Nagar, Pune
                       </p>
                     </div>
                   </div>
@@ -199,21 +199,22 @@ const ContactUs = () => {
             <div className="modal-body">
               <div className="ratio ratio-16x9">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.355312490479!2d73.806214075997!3d18.50838238258415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c07d13ff0e21%3A0x5f7f6e9e6f6e9e6f!2sKothrud%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1647256789019!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.257718510098!2d73.8436811!3d18.5172524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9def03dcfbb%3A0x426a5a51c3a72bde!2sRSSofttecs!5e0!3m2!1sen!2sin!4v1754114818517!5m2!1sen!2sin" 
                   width="600" 
                   height="450" 
                   style={{border:0}} 
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="UpSkill Location"
+                  title="RsSofttecs Location"
                 ></iframe>
               </div>
               <div className="mt-3">
-                <p className="mb-1 fw-bold">UpSkill IT Training & Placement</p>
+                <p className="mb-1 fw-bold">RsSofttecs IT Training & Placement</p>
                 <p className="mb-0 text-muted">
-                  103, 1st Floor, B Junction, Behind Karve Statue, Next to Kothrud Post Office, 
-                  Kothrud, Pune-411038, Maharashtra, India
+                Office No 29/B Wing, 4th Floor, <br/> 
+                Yashashree Park, Warje Malwadi Rd,<br/>
+                Near Karve Nagar PMT Bus Stop, Karve Nagar, Pune
                 </p>
               </div>
             </div>

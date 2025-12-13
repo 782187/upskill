@@ -47,7 +47,7 @@ const AboutSection = () => {
         <section className="py-5 bg-white" id="about">
             <div className="container">
                 <div className="text-center mb-5">
-                    <h2 className="display-5 fw-bold text-primary">Welcome to UpSkill</h2>
+                    <h2 className="display-5 fw-bold text-primary">Welcome to RsSofttecs</h2>
                 </div>
 
                 <div className="row align-items-center g-5">
@@ -67,7 +67,7 @@ const AboutSection = () => {
 
                     <div className="col-lg-6 col-12">
                         <p className="lead text-muted mb-4">
-                            At UpSkill Institute, we are dedicated to transforming individuals into skilled IT professionals ready to excel in the dynamic world of technology. Our institute offers comprehensive training programs and placement services designed to bridge the gap between academic knowledge and industry demands.
+                            At RsSofttecs Institute, we are dedicated to transforming individuals into skilled IT professionals ready to excel in the dynamic world of technology. Our institute offers comprehensive training programs and placement services designed to bridge the gap between academic knowledge and industry demands.
                         </p>
 
                         <div className="row g-3">

@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import "../../Style/PlacedStudent.css";
+import "../../Style/PlacedStudentCard.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -92,26 +94,58 @@ const PlacedStudent = () => {
             breakpoints={{
               320: {
                 slidesPerView: 1,
-                spaceBetween: 15,
+                spaceBetween: 20,
                 coverflowEffect: {
                   rotate: 0,
                   stretch: 0,
-                  depth: 50,
+                  depth: 30,
                   modifier: 1,
                   slideShadows: false,
                 }
               },
-              640: {
+              576: {
                 slidesPerView: 1,
-                spaceBetween: 20,
+                spaceBetween: 25,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 40,
+                  modifier: 1,
+                  slideShadows: false,
+                }
               },
               768: {
                 slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
                 spaceBetween: 25,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 60,
+                  modifier: 1,
+                  slideShadows: false,
+                }
+              },
+              992: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 80,
+                  modifier: 1,
+                  slideShadows: false,
+                }
+              },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: false,
+                }
               },
             }}
             className="pb-5"
@@ -120,73 +154,108 @@ const PlacedStudent = () => {
             {Array.isArray(placements) && placements.length > 0 ? (
               placements.map((student, index) => (
                 <SwiperSlide key={index} className="d-flex justify-content-center">
-                  <div className="card h-100 border-0 rounded-4 overflow-hidden" style={{ width: "100%", maxWidth: "320px" }}>
-                    <div className="position-relative" style={{ height: "220px", overflow: "hidden" }}>
-                      {student.image ? (
-                        <img
-                          loading="lazy"
-                          src={`data:image/jpeg;base64,${student.image}`}
-                          alt={student.name}
-                          className="w-100 h-100"
-                          style={{
-                            objectFit: "cover",
-                            objectPosition: "top",
-                          }}
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.nextSibling.style.display = 'flex';
-                          }}
-                        />
-                      ) : null}
-                      <div 
-                        className="w-100 h-100 bg-secondary d-flex align-items-center justify-content-center"
-                        style={{ display: student.image ? 'none' : 'flex' }}
-                      >
-                        <i className="bi bi-person-circle text-white" style={{ fontSize: "4rem" }}></i>
-                      </div>
-                      <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-20"></div>
-                      <div
-                        className="position-absolute bottom-0 start-0 w-100 p-3 text-white"
-                        style={{
-                          background: "linear-gradient(transparent, rgba(0,0,0,0.8))",
-                        }}
-                      >
-                        <h5 className="card-title mb-1 fw-bold text-truncate">{student.name}</h5>
-                        <small className="text-warning fw-semibold d-block text-truncate">{student.position}</small>
-                      </div>
-                    </div>
-
-                    <div className="card-body p-4 d-flex flex-column">
-                      <div className="d-flex align-items-center justify-content-between mb-3">
-                        <div className="d-flex align-items-center flex-grow-1 me-2">
-                          {student.companyLogo ? (
+                  <div 
+                    className="placed-student-card"
+                    role="article"
+                    aria-label={`Placed student: ${student.name || 'Student'}`}
+                    tabIndex={0}
+                  >
+                    <div className="card-top-accent" aria-hidden="true"></div>
+                    
+                    {/* Student Photo Section - Fully Visible */}
+                    <div className="student-photo-section">
+                      <div className="photo-container" aria-hidden="true">
+                        <div className="photo-inner-wrapper">
+                          {student.image ? (
                             <img
                               loading="lazy"
-                              src={`data:image/jpeg;base64,${student.companyLogo}`}
-                              alt={student.companyName}
-                              className="me-2"
-                              style={{ 
-                                height: "28px", 
-                                width: "auto", 
-                                maxWidth: "80px", 
-                                objectFit: "contain" 
-                              }}
+                              src={`data:image/jpeg;base64,${student.image}`}
+                              alt={`${student.name || 'Student'}'s photo`}
+                              className="student-photo"
                               onError={(e) => {
                                 e.target.style.display = 'none';
-                                e.target.nextSibling.style.display = 'inline';
+                                if (e.target.nextSibling) {
+                                  e.target.nextSibling.style.display = 'flex';
+                                }
                               }}
                             />
                           ) : null}
-                          <i 
-                            className="bi bi-building me-2 text-primary" 
-                            style={{ display: student.companyLogo ? 'none' : 'inline' }}
-                          ></i>
-                          <span className="text-muted small text-truncate">
-                            {student.companyName}
-                          </span>
+                          <div 
+                            className="photo-placeholder"
+                            style={{ display: student.image ? 'none' : 'flex' }}
+                            aria-hidden="true"
+                          >
+                            <i className="bi bi-person-circle" aria-hidden="true"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="placed-badge" aria-label="Successfully placed">
+                        <i className="bi bi-check-circle-fill me-1" aria-hidden="true"></i>
+                        <span>Placed</span>
+                      </div>
+                    </div>
+
+                    {/* Student Info Section */}
+                    <div className="student-info-section">
+                      <h5 className="student-name">{student.name || "Student Name"}</h5>
+                      <p className="student-position">{student.position || "Position"}</p>
+                    </div>
+
+                    {/* Company Logo Section - Premium Design */}
+                    <div className="company-section">
+                      <div className="company-logo-container">
+                        {student.companyLogo ? (
+                          <div className="company-logo-wrapper-premium">
+                            <img
+                              loading="lazy"
+                              src={`data:image/jpeg;base64,${student.companyLogo}`}
+                              alt={`${student.companyName || 'Company'} logo`}
+                              className="company-logo-premium"
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                                if (e.target.nextSibling) {
+                                  e.target.nextSibling.style.display = 'flex';
+                                }
+                              }}
+                            />
+                            <div 
+                              className="company-logo-fallback"
+                              style={{ display: student.companyLogo ? 'none' : 'flex' }}
+                              aria-hidden="true"
+                            >
+                              <i className="bi bi-building" aria-hidden="true"></i>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="company-logo-wrapper-premium">
+                            <div className="company-logo-fallback" aria-hidden="true">
+                              <i className="bi bi-building" aria-hidden="true"></i>
+                            </div>
+                          </div>
+                        )}
+                        <div className="company-name-container">
+                          <span className="company-name-premium">{student.companyName || "Company Name"}</span>
                         </div>
                       </div>
                     </div>
+
+                    {/* Additional Details */}
+                    {(student.offerDetails || student.location) && (
+                      <div className="additional-details" role="list">
+                        {student.offerDetails && (
+                          <div className="detail-badge" role="listitem">
+                            <i className="bi bi-briefcase-fill me-1" aria-hidden="true"></i>
+                            <span>{student.offerDetails}</span>
+                          </div>
+                        )}
+                        {student.location && (
+                          <div className="detail-badge" role="listitem">
+                            <i className="bi bi-geo-alt-fill me-1" aria-hidden="true"></i>
+                            <span>{student.location}</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </SwiperSlide>
               ))

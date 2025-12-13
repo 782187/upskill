@@ -28,10 +28,10 @@ function Home() {
         <div className="row g-5 align-items-center">
           <div className="col-md-6" data-aos="fade-right">
             <h2 className="fw-bold text-primary mb-4">
-              Why Choose <span className="text-warning">UpSkill?</span>
+              Why Choose <span className="text-warning">RsSofttecs?</span>
             </h2>
             <p className="text-muted mb-4">
-              At <strong>UpSkill</strong>, we turn ambition into achievement. With hands-on training,
+              At <strong>RsSofttecs</strong>, we turn ambition into achievement. With hands-on training,
               expert mentors, and real-world projects, we prepare you for the industry from day one.
             </p>
             <ul className="list-unstyled">

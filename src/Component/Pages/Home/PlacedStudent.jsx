@@ -8,7 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import "../../Style/PlacedStudent.css";
+import "../../../Style/PlacedStudent.css";
+import "../../../Style/PlacedStudentCard.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -78,12 +79,8 @@ const PlacedStudent = () => {
             pagination={{
               clickable: true,
               dynamicBullets: true,
-              el: '.custom-pagination',
             }}
-            navigation={{
-              nextEl: '.swiper-button-next-custom',
-              prevEl: '.swiper-button-prev-custom',
-            }}
+            navigation={true}
             autoplay={{
               delay: 4000,
               disableOnInteraction: false,
@@ -91,14 +88,26 @@ const PlacedStudent = () => {
             loop={true}
             spaceBetween={30}
             breakpoints={{
-              0: {
+              320: {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 coverflowEffect: {
                   rotate: 0,
                   stretch: 0,
-                  depth: 50,
+                  depth: 30,
                   modifier: 1,
+                  slideShadows: false,
+                }
+              },
+              576: {
+                slidesPerView: 1,
+                spaceBetween: 25,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 40,
+                  modifier: 1,
+                  slideShadows: false,
                 }
               },
               768: {
@@ -107,106 +116,153 @@ const PlacedStudent = () => {
                 coverflowEffect: {
                   rotate: 0,
                   stretch: 0,
-                  depth: 75,
-                  modifier: 1.5,
+                  depth: 60,
+                  modifier: 1,
+                  slideShadows: false,
                 }
               },
-              1024: {
+              992: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 80,
+                  modifier: 1,
+                  slideShadows: false,
+                }
+              },
+              1200: {
                 slidesPerView: 3,
                 spaceBetween: 30,
                 coverflowEffect: {
                   rotate: 0,
                   stretch: 0,
                   depth: 100,
-                  modifier: 2.5,
+                  modifier: 1,
+                  slideShadows: false,
                 }
               },
             }}
             className="pb-5"
+            style={{ paddingTop: "20px", paddingBottom: "50px" }}
           >
-            {Array.isArray(placements) && placements.map((student, index) => (
-              <SwiperSlide key={index}>
-                <div className="student-card-wrapper">
-                  <div className="student-card">
-                    <div className="card-border-top"></div>
-                    
-                    <div className="student-image-container">
-                      <div className="image-wrapper">
+            {Array.isArray(placements) && placements.length > 0 ? (
+              placements.map((student, index) => (
+              <SwiperSlide key={index} className="d-flex justify-content-center">
+                <div 
+                  className="placed-student-card"
+                  role="article"
+                  aria-label={`Placed student: ${student.name || 'Student'}`}
+                  tabIndex={0}
+                >
+                  <div className="card-top-accent" aria-hidden="true"></div>
+                  
+                  {/* Student Photo Section - Fully Visible */}
+                  <div className="student-photo-section">
+                    <div className="photo-container" aria-hidden="true">
+                      <div className="photo-inner-wrapper">
                         {student.image ? (
                           <img
                             loading="lazy"
                             src={`data:image/jpeg;base64,${student.image}`}
-                            alt={student.name}
-                            className="student-image"
+                            alt={`${student.name || 'Student'}'s photo`}
+                            className="student-photo"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              if (e.target.nextSibling) {
+                                e.target.nextSibling.style.display = 'flex';
+                              }
+                            }}
                           />
-                        ) : (
-                          <div className="student-image-placeholder">
-                            <i className="bi bi-person"></i>
-                          </div>
-                        )}
+                        ) : null}
+                        <div 
+                          className="photo-placeholder"
+                          style={{ display: student.image ? 'none' : 'flex' }}
+                          aria-hidden="true"
+                        >
+                          <i className="bi bi-person-circle" aria-hidden="true"></i>
+                        </div>
                       </div>
-                      <div className="placement-badge">Placed</div>
                     </div>
-                    
-                    <div className="student-info">
-                      <h5 className="student-name">{student.name}</h5>
-                      <p className="student-position">{student.position}</p>
-                      
-                      <div className="company-info">
-                        {student.companyLogo ? (
-                          <div className="company-logo-wrapper">
-                            <img
-                              loading="lazy"
-                              src={`data:image/jpeg;base64,${student.companyLogo}`}
-                              alt={student.companyName}
-                              className="company-logo"
-                            />
-                            <span className="company-name">{student.companyName}</span>
+                    <div className="placed-badge" aria-label="Successfully placed">
+                      <i className="bi bi-check-circle-fill me-1" aria-hidden="true"></i>
+                      <span>Placed</span>
+                    </div>
+                  </div>
+
+                  {/* Student Info Section */}
+                  <div className="student-info-section">
+                    <h5 className="student-name">{student.name || "Student Name"}</h5>
+                    <p className="student-position">{student.position || "Position"}</p>
+                  </div>
+
+                  {/* Company Logo Section - Premium Design */}
+                  <div className="company-section">
+                    <div className="company-logo-container">
+                      {student.companyLogo ? (
+                        <div className="company-logo-wrapper-premium">
+                          <img
+                            loading="lazy"
+                            src={`data:image/jpeg;base64,${student.companyLogo}`}
+                            alt={`${student.companyName || 'Company'} logo`}
+                            className="company-logo-premium"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              if (e.target.nextSibling) {
+                                e.target.nextSibling.style.display = 'flex';
+                              }
+                            }}
+                          />
+                          <div 
+                            className="company-logo-fallback"
+                            style={{ display: student.companyLogo ? 'none' : 'flex' }}
+                            aria-hidden="true"
+                          >
+                            <i className="bi bi-building" aria-hidden="true"></i>
                           </div>
-                        ) : (
-                          <div className="company-logo-wrapper">
-                            <i className="bi bi-building"></i>
-                            <span className="company-name">{student.companyName || "Company"}</span>
+                        </div>
+                      ) : (
+                        <div className="company-logo-wrapper-premium">
+                          <div className="company-logo-fallback" aria-hidden="true">
+                            <i className="bi bi-building" aria-hidden="true"></i>
                           </div>
-                        )}
+                        </div>
+                      )}
+                      <div className="company-name-container">
+                        <span className="company-name-premium">{student.companyName || "Company Name"}</span>
                       </div>
-                      
-                      {(student.offerDetails || student.location) && (
-                        <div className="offer-details">
-                          {student.offerDetails && (
-                            <div className="detail-item">
-                              <i className="bi bi-briefcase"></i>
-                              <span>{student.offerDetails}</span>
-                            </div>
-                          )}
-                          {student.location && (
-                            <div className="detail-item">
-                              <i className="bi bi-geo-alt"></i>
-                              <span>{student.location}</span>
-                            </div>
-                          )}
+                    </div>
+                  </div>
+
+                  {/* Additional Details */}
+                  {(student.offerDetails || student.location) && (
+                    <div className="additional-details" role="list">
+                      {student.offerDetails && (
+                        <div className="detail-badge" role="listitem">
+                          <i className="bi bi-briefcase-fill me-1" aria-hidden="true"></i>
+                          <span>{student.offerDetails}</span>
+                        </div>
+                      )}
+                      {student.location && (
+                        <div className="detail-badge" role="listitem">
+                          <i className="bi bi-geo-alt-fill me-1" aria-hidden="true"></i>
+                          <span>{student.location}</span>
                         </div>
                       )}
                     </div>
-                    
-                    <div className="card-shine"></div>
-                    <div className="card-corner"></div>
-                  </div>
+                  )}
                 </div>
               </SwiperSlide>
-            ))}
+              ))
+            ) : (
+              <div className="text-center py-5">
+                <i className="bi bi-people display-1 text-muted"></i>
+                <h3 className="mt-3 text-muted">No placement data available</h3>
+                <p className="text-muted">Check back later for student success stories.</p>
+              </div>
+            )}
           </Swiper>
-          
-          {/* Custom pagination */}
-          <div className="custom-pagination"></div>
-          
-          {/* Custom navigation */}
-          <div className="swiper-button-prev-custom">
-            <i className="bi bi-chevron-left"></i>
-          </div>
-          <div className="swiper-button-next-custom">
-            <i className="bi bi-chevron-right"></i>
-          </div>
         </div>
       </div>
     </section>

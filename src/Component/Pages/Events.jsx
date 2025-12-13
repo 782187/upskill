@@ -71,12 +71,12 @@ function Events() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10 col-xl-8 text-center">
-              <h1 className="display-5 fw-bold mb-3 text-gradient">Festivals @ Upskill</h1>
+              <h1 className="display-5 fw-bold mb-3 text-gradient">Festivals @ RsSofttecs</h1>
               <div className="header-divider mx-auto my-3"></div>
               <p className="lead mb-4">
-                Upskill is a Software Training Institute and here we display all the memories created by the learners, 
+                RsSofttecs is a Software Training Institute and here we display all the memories created by the learners, 
                 faculty, and staff members of the institute. Keep checking this page for updates on all the happenings 
-                at Upskill - code-a-thons, Hack-a-thons, Celebrations & much more...!
+                at RsSofttecs - code-a-thons, Hack-a-thons, Celebrations & much more...!
               </p>
               <div className="event-counter badge rounded-pill bg-primary px-3 py-2">
                 {events.length} {events.length === 1 ? 'Memory' : 'Memories'} Captured
@@ -105,7 +105,7 @@ function Events() {
                   <h3 className="h5 fw-bold mb-2">{event.title}</h3>
                   <p className="text-muted small mb-2">
                     <i className="bi bi-geo-alt-fill me-1 text-primary"></i>
-                      Upskill
+                      RsSofttecs
                   </p>
                 </div>
               </div>
